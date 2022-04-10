@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+
+    <include
+        android:id="@+id/toolbar"
+        layout="@layout/toolbar_join" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="전화번호"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="35dp"/>
+    <EditText
+        android:id="@+id/loginPhone"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#A4A4A4"
+        android:hint="전화번호를 적어주세요."
+        android:maxLength="13"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="35dp"/>
+    <EditText
+        android:id="@+id/loginPw"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#A4A4A4"
+        android:hint="비밀번호를 적어주세요."
+        android:maxLength="13"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 확인"
+        android:textSize="15sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="25dp"
+        android:layout_marginLeft="35dp"/>
+    <EditText
+        android:id="@+id/loginPwCheck"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"
+        android:backgroundTint="#A4A4A4"
+        android:hint="비밀번호를 한번 더 적어주세요."
+        android:maxLength="13"
+        android:minHeight="48dp"
+        android:singleLine="true" />
+
+    <Button
+        android:id="@+id/btnJoinOk"
+        android:layout_width="340dp"
+        android:layout_height="wrap_content"
+        android:text="완료"
+        android:textColor="@color/white"
+        android:textStyle="bold"
+        android:layout_marginTop="120dp"
+        android:layout_gravity="center"
+        android:background="@drawable/btn_main"/>
+</LinearLayout>
