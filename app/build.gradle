@@ -27,6 +27,9 @@ android {
     }
 }
 
+apply plugin: 'com.android.application'
+apply plugin: 'com.google.gms.google-services'
+
 dependencies {
 
     implementation 'androidx.appcompat:appcompat:1.4.1'
@@ -42,5 +45,6 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
 
-
+    implementation platform('com.google.firebase:firebase-bom:29.2.1')
+    implementation 'com.google.firebase:firebase-analytics'
 }
