@@ -5,6 +5,5 @@
     android:background="@color/colorSchool">
 
     <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_main" />
+        android:id="@+id/toolbar"/>
 </LinearLayout>
