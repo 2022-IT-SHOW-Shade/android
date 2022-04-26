@@ -5,13 +5,14 @@
     android:background="@color/colorWrite">
 
     <TextView
-        android:id="@+id/no_keep"
+        android:id="@+id/no_write"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
         android:layout_gravity="center"
-        android:text="글 쓴 정보가 없습니다."
+        android:text="게시물이 없습니다."
         android:textStyle="bold"
+        android:textColor="@color/black"
         android:visibility="gone"
         />
 
