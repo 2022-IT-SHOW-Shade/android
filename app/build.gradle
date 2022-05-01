@@ -42,6 +42,9 @@ dependencies {
     implementation 'androidx.vectordrawable:vectordrawable:1.0.1'
     implementation 'androidx.navigation:navigation-fragment:2.0.0'
     implementation 'androidx.navigation:navigation-ui:2.0.0'
+    //noinspection GradleCompatible
+    implementation 'com.android.support:design:30.0.0'
+    implementation 'com.jakewharton.threetenabp:threetenabp:1.2.0'
 
 
 }
