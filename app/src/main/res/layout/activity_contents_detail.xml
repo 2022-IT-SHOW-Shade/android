@@ -11,7 +11,7 @@
     <FrameLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_onstraintTop_toBottomOf="@+id/toolbar_write"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_write"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent">
     </FrameLayout>
