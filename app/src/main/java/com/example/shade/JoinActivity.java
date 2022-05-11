@@ -50,7 +50,10 @@ public class JoinActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String value = snapshot.getValue(String.class);
 
-                        if(value != null){
+                        if(loginPhone.getText().toString().equals("") || loginPw.getText().toString().equals("") || loginPwCheck.getText().toString().equals("")){
+                            Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+                        }
+                        else if(value != null){
                             Toast.makeText(getApplicationContext(), "이미 가입된 번호입니다.", Toast.LENGTH_SHORT).show();
                         }else{
                             // 재입력한 비밀번호가 맞는지 확인
