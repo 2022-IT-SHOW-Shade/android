@@ -77,7 +77,7 @@
         android:text="완료"
         android:textColor="@color/white"
         android:textStyle="bold"
-        android:layout_marginTop="120dp"
+        android:layout_marginTop="110dp"
         android:layout_gravity="center"
         android:background="@drawable/btn_main"/>
 </LinearLayout>
