@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
-<shape xmlns:android="http://schemas.android.com/apk/res/android">
-    <gradient
-        android:angle="45"
-        android:centerColor="@color/colorCenter"
-        android:endColor="@color/colorEnd"
-        android:startColor="@color/colorStart"
-        android:type="linear" />
-</shape>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/background_splash"/>
+    <item>
+        <bitmap android:src="@drawable/icon_splash"/>
+    </item>
+</layer-list>
