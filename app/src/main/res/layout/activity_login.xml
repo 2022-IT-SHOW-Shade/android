@@ -2,8 +2,22 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
-    android:background="@color/white">
+    android:orientation="vertical">
+
+    <ProgressBar
+        android:id="@+id/login_progress"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:visibility="gone" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/icon_main"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="100dp"/>
+
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -11,8 +25,8 @@
         android:textStyle="bold"
         android:textSize="20dp"
         android:textColor="@color/colorMain"
-        android:layout_gravity="center"
-        android:layout_marginTop="240dp"/>
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="40dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -27,7 +41,7 @@
         android:id="@+id/loginPhone"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:backgroundTint="#A4A4A4"
         android:hint="전화번호를 적어주세요."
@@ -48,7 +62,7 @@
         android:id="@+id/loginPw"
         android:layout_width="340dp"
         android:layout_height="wrap_content"
-        android:layout_gravity="center"
+        android:layout_gravity="center_horizontal"
         android:layout_marginTop="10dp"
         android:backgroundTint="#A4A4A4"
         android:hint="비밀번호를 적어주세요."
@@ -56,26 +70,31 @@
         android:minHeight="48dp"
         android:singleLine="true" />
 
-    <Button
-        android:id="@+id/btnLogin"
-        android:layout_width="340dp"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="로그인"
-        android:textColor="@color/white"
-        android:textStyle="bold"
-        android:layout_marginTop="60dp"
         android:layout_gravity="center"
-        android:background="@drawable/btn_main"/>
+        android:orientation="vertical">
+        <Button
+            android:id="@+id/btnLogin"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:text="로그인"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_marginTop="60dp"
+            android:background="@drawable/btn_main"/>
 
-    <Button
-        android:id="@+id/btnJoin"
-        android:layout_width="340dp"
-        android:layout_height="wrap_content"
-        android:text="회원가입"
-        android:textColor="@color/colorMain"
-        android:textStyle="bold"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:background="@drawable/btn_second"/>
+        <Button
+            android:id="@+id/btnJoin"
+            android:layout_width="340dp"
+            android:layout_height="wrap_content"
+            android:text="회원가입"
+            android:textColor="@color/colorMain"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"
+            android:layout_gravity="center"
+            android:background="@drawable/btn_second"/>
+    </LinearLayout>
 
 </LinearLayout>
