@@ -134,11 +134,11 @@
                 app:queryBackground="@drawable/background_searchview"
                 android:layout_marginTop="10dp">
             </SearchView>
+
             <ListView
                 android:id="@+id/search_school_list"
                 android:layout_width="330dp"
-                android:layout_height="120dp">
-            </ListView>
+                android:layout_height="120dp"></ListView>
         </LinearLayout>
     </LinearLayout>
     <Button

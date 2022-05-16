@@ -63,6 +63,8 @@ public class LoginActivity extends AppCompatActivity {
                             if(post.getPwd().equals(pw)) {
                                 Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                                 // 메인화면으로 이동
+                                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                                startActivity(intent);
                             }else{
                                 Toast.makeText(getApplicationContext(), "비밀번호를 다시 입력하세요", Toast.LENGTH_SHORT).show();
                             }

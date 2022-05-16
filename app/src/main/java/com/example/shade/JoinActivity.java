@@ -23,7 +23,7 @@ public class JoinActivity extends AppCompatActivity {
     // 파이어베이스
     private DatabaseReference mDatabase;
 
-    EditText loginPhone, loginPw, loginPwCheck;
+    EditText loginPhone, loginPw, loginPwCheck, loginBirth;
     Button btnJoinOk;
 
     String phone, pw;
@@ -38,6 +38,7 @@ public class JoinActivity extends AppCompatActivity {
         loginPhone = findViewById(R.id.loginPhone);
         loginPw = findViewById(R.id.loginPw);
         loginPwCheck = findViewById(R.id.loginPwCheck);
+        loginBirth = findViewById(R.id.loginBirth);
         btnJoinOk = findViewById(R.id.btnJoinOk);
 
         // 완료 버튼 클릭시 값 저장, 비밀번호 체크
@@ -66,7 +67,9 @@ public class JoinActivity extends AppCompatActivity {
                                 pw = loginPw.getText().toString();
 
                                 // 파이어베이스에 값 저장
-                                addUser(phone, pw);
+                                String birth = loginBirth.getText().toString();
+                                String school = "";
+                                addUser(phone, pw, birth, school);
 
                                 // 로그인 창으로 넘어가기
                                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
@@ -84,8 +87,8 @@ public class JoinActivity extends AppCompatActivity {
         });
     }
 
-    public void addUser(String phone, String pw){
-        User user = new User(phone, pw);
+    public void addUser(String phone, String pw, String birth, String school){
+        User user = new User(phone, pw, birth, school);
 
         mDatabase.child("users").child(phone).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override

@@ -6,13 +6,17 @@ import java.security.PublicKey;
 public class User {
     String phone;
     String pwd;
+    String birth;
+    String school;
 
     public User(){}
 
     // 값을 추가할 때 사용
-    public User(String phone, String pwd){
+    public User(String phone, String pwd, String birth, String school){
         this.phone = phone;
         this.pwd = pwd;
+        this.birth = birth;
+        this.school = school;
     }
 
     public String getPhone() {
@@ -31,11 +35,29 @@ public class User {
         this.pwd = pwd;
     }
 
+    public String getBirth() {
+        return birth;
+    }
+
+    public void setBirth(String birth) {
+        this.birth = birth;
+    }
+
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
     @Override
     public String toString(){
         return "user{" +
                 "phone='" + phone + '\'' +
                 ", pwd='" + pwd + '\'' +
+                ", birth='" + birth + '\'' +
+                ", school='" + school + '\'' +
                 '}';
     }
 }
