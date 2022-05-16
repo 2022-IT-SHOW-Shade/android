@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "868313215435",
+    "project_id": "shade-e7444",
+    "storage_bucket": "shade-e7444.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:868313215435:android:ca3f027f25748c6e18064e",
+        "android_client_info": {
+          "package_name": "com.example.shade"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "868313215435-2ami4fgcpsf7u1k8ii25drgls8pvi0pp.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.shade",
+            "certificate_hash": "c66671356388651bf5785e6a74ab8edbe3e84f33"
+          }
+        },
+        {
+          "client_id": "868313215435-j88lgn0h4048qnqmp8b82bdascs1fv82.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA0Jsbw1GvVjPfXL-9xs_jWBMekIeuCOUA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "868313215435-j88lgn0h4048qnqmp8b82bdascs1fv82.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
