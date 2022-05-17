@@ -24,7 +24,7 @@
         <item name="android:textSize">16sp</item>
     </style>
     <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splash</item>
+        <item name="android:windowBackground">@drawable/splash</item>
     </style>
 
     <!-- 구분선 -->
@@ -33,6 +33,5 @@
         <item name="android:layout_height">1dp</item>
         <item name="android:background">?android:attr/listDivider</item>
     </style>
-
 
 </resources>
