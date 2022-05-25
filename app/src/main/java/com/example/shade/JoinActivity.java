@@ -23,8 +23,8 @@ public class JoinActivity extends AppCompatActivity {
     // 파이어베이스
     private DatabaseReference mDatabase;
 
-    EditText loginPhone, loginPw, loginPwCheck, loginBirth;
-    Button btnJoinOk;
+    EditText loginPhone, loginPhoneCheck, loginPw, loginPwCheck, loginBirth;
+    Button PhoneConfirm, btnPhoneCheck, btnSchool, btnJoinOk;
 
     String phone, pw;
 
@@ -36,10 +36,32 @@ public class JoinActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         loginPhone = findViewById(R.id.loginPhone);
+        loginPhoneCheck = findViewById(R.id.loginPhoneCheck);
         loginPw = findViewById(R.id.loginPw);
         loginPwCheck = findViewById(R.id.loginPwCheck);
         loginBirth = findViewById(R.id.loginBirth);
+
+        PhoneConfirm = findViewById(R.id.PhoneConfirm);
+        btnPhoneCheck = findViewById(R.id.btnPhoneCheck);
+        btnSchool = findViewById(R.id.btnSchool);
         btnJoinOk = findViewById(R.id.btnJoinOk);
+
+        // 전화번호 인증하기
+        btnPhoneCheck.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+
+            }
+        });
+
+        // 학교 등록하기
+        btnSchool.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), SearchSchoolActivity.class);
+                startActivity(intent);
+            }
+        });
 
         // 완료 버튼 클릭시 값 저장, 비밀번호 체크
         btnJoinOk.setOnClickListener(new View.OnClickListener() {
@@ -68,6 +90,7 @@ public class JoinActivity extends AppCompatActivity {
 
                                 // 파이어베이스에 값 저장
                                 String birth = loginBirth.getText().toString();
+                                // 학교 api
                                 String school = "";
                                 addUser(phone, pw, birth, school);
 
@@ -103,4 +126,6 @@ public class JoinActivity extends AppCompatActivity {
             }
         });
     }
+
+
 }
