@@ -7,12 +7,14 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Locale;
+
+import kr.go.neis.api.NEISException;
+import kr.go.neis.api.School;
 
 public class SearchSchoolActivity extends AppCompatActivity {
 
     SearchView search_school;
-    List<String> items = Arrays.asList("어벤져스", "배트맨", "배트맨2", "배구", "슈퍼맨");
+   // List<String> items = Arrays.asList("어벤져스", "배트맨", "배트맨2", "배구", "슈퍼맨");
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,6 +23,8 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
 
         search_school = findViewById(R.id.search_school);
+
+
 
         search_school.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
@@ -35,7 +39,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
             }
         });
     }
-
+/*
     private  String search(String query){
         StringBuilder sb = new StringBuilder();
 
@@ -64,5 +68,5 @@ public class SearchSchoolActivity extends AppCompatActivity {
         }
 
         return sb.toString();
-    }
+    }*/
 }
