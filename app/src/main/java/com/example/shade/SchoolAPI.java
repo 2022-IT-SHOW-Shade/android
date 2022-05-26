@@ -27,6 +27,10 @@ public class SchoolAPI {
         this.schoolHost = schoolHost;
     }
 
+    public SchoolAPI() {
+
+    }
+
     //
     public List<School> getSchoolByName(String name) throws ParseException {
         DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
