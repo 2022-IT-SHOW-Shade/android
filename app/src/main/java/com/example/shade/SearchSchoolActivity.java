@@ -8,9 +8,16 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import org.w3c.dom.Document;
+import org.xml.sax.SAXException;
+import org.xmlpull.v1.XmlPullParserException;
+
+import java.io.IOException;
 import java.text.ParseException;
 import java.util.Arrays;
 import java.util.List;
+
+import javax.xml.parsers.ParserConfigurationException;
 
 import kr.go.neis.api.NEISException;
 
@@ -22,6 +29,8 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
     List<School> list;
    // List<String> items = Arrays.asList("어벤져스", "배트맨", "배트맨2", "배구", "슈퍼맨");
+
+    Document doc;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,11 +47,25 @@ public class SearchSchoolActivity extends AppCompatActivity {
             public boolean onQueryTextSubmit(String query) {
                 //Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT).show();
                 SchoolAPI api = new SchoolAPI();
-                try {
-                    list = api.getSchoolByName(query);
-                } catch (ParseException e) {
-                    e.printStackTrace();
-                }
+
+                new Thread(() -> {
+
+                    try {
+                        list = api.getSchoolByName(query);
+                    } catch (ParseException e) {
+                        e.printStackTrace();
+                    } catch (ParserConfigurationException e) {
+                        e.printStackTrace();
+                    } catch (IOException e) {
+                        e.printStackTrace();
+                    } catch (SAXException e) {
+                        e.printStackTrace();
+                    } catch (XmlPullParserException e) {
+                        e.printStackTrace();
+                    }
+                }).start();
+
+
                 return true;
             }
 
