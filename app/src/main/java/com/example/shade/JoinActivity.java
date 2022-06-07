@@ -1,6 +1,7 @@
 package com.example.shade;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
@@ -62,7 +63,7 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SearchSchoolActivity.class);
-                startActivity(intent);
+                startActivityForResult(intent, 0);
 
             }
         });
@@ -135,14 +136,14 @@ public class JoinActivity extends AppCompatActivity {
     }
 
     @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RESULT_OK) {
-            if(resultCode != Activity.RESULT_OK){
-                return;
-            }
-            ResultSchool = data.getExtras().getString("school");
-        }
 
+        if(requestCode == 0){
+            if(resultCode == RESULT_OK){
+                ResultSchool = data.getStringExtra("school");
+                //System.out.println(ResultSchool);
+            }
+        }
     }
 }
