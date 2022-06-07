@@ -3,9 +3,11 @@ package com.example.shade;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
@@ -27,6 +29,7 @@ public class JoinActivity extends AppCompatActivity {
     Button PhoneConfirm, btnPhoneCheck, btnSchool, btnJoinOk;
 
     String phone, pw;
+    String ResultSchool;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -60,6 +63,7 @@ public class JoinActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(getApplicationContext(), SearchSchoolActivity.class);
                 startActivity(intent);
+
             }
         });
 
@@ -73,25 +77,28 @@ public class JoinActivity extends AppCompatActivity {
                     public void onDataChange(@NonNull DataSnapshot snapshot) {
                         String value = snapshot.getValue(String.class);
 
-                        if(loginPhone.getText().toString().equals("") || loginPw.getText().toString().equals("") || loginPwCheck.getText().toString().equals("")){
+                        if (loginPhone.getText().toString().equals("") || loginPw.getText().toString().equals("") || loginPwCheck.getText().toString().equals("") || loginBirth.getText().toString().equals("")) {
                             Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
-                        }
-                        else if(value != null){
+                        } else if (value != null) {
                             Toast.makeText(getApplicationContext(), "이미 가입된 번호입니다.", Toast.LENGTH_SHORT).show();
-                        }else{
+                        } else {
                             // 재입력한 비밀번호가 맞는지 확인
                             String loginPwd = loginPw.getText().toString();
                             String CheckPwd = loginPwCheck.getText().toString();
-                            if(!loginPwd.equals(CheckPwd)){
+                            if (!loginPwd.equals(CheckPwd)) {
                                 Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다." + loginPwd + " " + CheckPwd, Toast.LENGTH_SHORT).show();
-                            }else {
+                            } else {
                                 phone = loginPhone.getText().toString();
                                 pw = loginPw.getText().toString();
 
                                 // 파이어베이스에 값 저장
                                 String birth = loginBirth.getText().toString();
+
                                 // 학교 api
-                                String school = "";
+                                if(ResultSchool == null){
+                                    Toast.makeText(getApplicationContext(), "학교를 등록해주세요", Toast.LENGTH_SHORT).show();
+                                }
+                                String school = ResultSchool;
                                 addUser(phone, pw, birth, school);
 
                                 // 로그인 창으로 넘어가기
@@ -110,7 +117,7 @@ public class JoinActivity extends AppCompatActivity {
         });
     }
 
-    public void addUser(String phone, String pw, String birth, String school){
+    public void addUser(String phone, String pw, String birth, String school) {
         User user = new User(phone, pw, birth, school);
 
         mDatabase.child("users").child(phone).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
@@ -119,13 +126,23 @@ public class JoinActivity extends AppCompatActivity {
                 Toast.makeText(getApplicationContext(), "회원가입 성공", Toast.LENGTH_SHORT).show();
             }
         })
-        .addOnFailureListener(new OnFailureListener() {
-            @Override
-            public void onFailure(@NonNull Exception e) {
-                Toast.makeText(getApplicationContext(), "회원가입 실패", Toast.LENGTH_SHORT).show();
-            }
-        });
+                .addOnFailureListener(new OnFailureListener() {
+                    @Override
+                    public void onFailure(@NonNull Exception e) {
+                        Toast.makeText(getApplicationContext(), "회원가입 실패", Toast.LENGTH_SHORT).show();
+                    }
+                });
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if (requestCode == RESULT_OK) {
+            if(resultCode != Activity.RESULT_OK){
+                return;
+            }
+            ResultSchool = data.getExtras().getString("school");
+        }
 
+    }
 }

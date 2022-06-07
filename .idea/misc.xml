@@ -28,9 +28,13 @@
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/menu/menu.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/menu/menu_bottom_nav.xml" value="0.22604166666666667" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_contents_detail.xml" value="0.5536458333333333" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_join.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_join.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_login.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_mypage_like.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_search_school.xml" value="0.44114583333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/fragment_timeline.xml" value="0.27717391304347827" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/listview.xml" value="0.27717391304347827" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/listview_item.xml" value="0.5" />
       </map>
     </option>
   </component>

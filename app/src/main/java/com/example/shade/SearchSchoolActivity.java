@@ -1,6 +1,9 @@
 package com.example.shade;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.SearchView;
 import android.widget.TextView;
@@ -14,6 +17,7 @@ import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.text.ParseException;
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,12 +29,12 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
     SearchView search_school;
     ListView search_school_list;
-    TextView resultTextView;
 
-    List<School> list;
-   // List<String> items = Arrays.asList("어벤져스", "배트맨", "배트맨2", "배구", "슈퍼맨");
+    ArrayList<School> list = new ArrayList<>();
 
-    Document doc;
+    ListViewAdapter adapter;
+    boolean check = false;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,13 +43,11 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
 
         search_school = findViewById(R.id.search_school);
-        //search_school_list = findViewById(R.id.search_school_list);
-        resultTextView = findViewById(R.id.textView);
+        search_school_list = findViewById(R.id.search_school_list);
 
         search_school.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
-                //Toast.makeText(getApplicationContext(), query, Toast.LENGTH_SHORT).show();
                 SchoolAPI api = new SchoolAPI();
 
                 new Thread(() -> {
@@ -65,46 +67,42 @@ public class SearchSchoolActivity extends AppCompatActivity {
                     }
                 }).start();
 
+                try {
+                    Thread.sleep(500);
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                }
+
+                showAdapter(list);
 
                 return true;
             }
 
             @Override
             public boolean onQueryTextChange(String newText) {
-               // resultTextView.setText(search(newText));
                 return true;
+            }
+        });
+
+        search_school_list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
+                String school_name = (String) adapterView.getAdapter().getItem(i);
+
+                //System.out.println(school_name);
+
+                // 회원가입 창으로 돌아가기
+                Intent intent = new Intent();
+                intent.putExtra("school", school_name);
+                setResult(RESULT_OK, intent);
+                finish();
             }
         });
 
     }
 
-    private  String search(String query){
-        StringBuilder sb = new StringBuilder();
-
-        for(int i = 0; i < list.size(); i++){
-            String item = list.get(i).toString();
-            if(item.toLowerCase().contains(query.toLowerCase())){
-                sb.append(item);
-                if(i != list.size() - 1){
-                    sb.append("\n");
-                }
-            }
-        }
-
-        return sb.toString();
-    }
-
-    private String getResult(){
-        StringBuilder sb = new StringBuilder();
-
-        for(int i = 0; i < list.size(); i++){
-            String item = list.get(i).toString();
-            sb.append(item);
-            if(i != list.size() - 1){
-                sb.append("\n");
-            }
-        }
-
-        return sb.toString();
+    public void showAdapter(ArrayList<School> list){
+        adapter = new ListViewAdapter(list);
+        search_school_list.setAdapter(adapter);
     }
 }

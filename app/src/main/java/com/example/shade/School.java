@@ -14,9 +14,9 @@ public class School {
         this.name = name;
     }
 
-    public School(String location, String name) {
-        this.location = location;
+    public School(String name, String location) {
         this.name = name;
+        this.location = location;
     }
 
     public String getScCode() {
