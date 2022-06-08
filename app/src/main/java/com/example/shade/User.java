@@ -9,14 +9,17 @@ public class User {
     String birth;
     String school;
 
+    String user_nick;
+
     public User(){}
 
     // 값을 추가할 때 사용
-    public User(String phone, String pwd, String birth, String school){
+    public User(String phone, String pwd, String birth, String school, String user_nick){
         this.phone = phone;
         this.pwd = pwd;
         this.birth = birth;
         this.school = school;
+        this.user_nick = user_nick;
     }
 
     public String getPhone() {
@@ -51,6 +54,14 @@ public class User {
         this.school = school;
     }
 
+    public String getUser_nick() {
+        return user_nick;
+    }
+
+    public void setUser_nick(String user_nick) {
+        this.user_nick = user_nick;
+    }
+
     @Override
     public String toString(){
         return "user{" +
@@ -58,6 +69,7 @@ public class User {
                 ", pwd='" + pwd + '\'' +
                 ", birth='" + birth + '\'' +
                 ", school='" + school + '\'' +
+                ", nickname='" + user_nick + '\'' +
                 '}';
     }
 }

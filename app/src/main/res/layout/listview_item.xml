@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/sc_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="미림여자정보과학고"
+        android:paddingLeft="20dp"
+        android:paddingTop="10dp"
+        android:textStyle="bold"
+        android:textSize="18sp"/>
+
+    <TextView
+        android:id="@+id/sc_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="서울특별시 관악구 호암로 546"
+        android:paddingLeft="20dp"
+        android:paddingBottom="10dp"/>
+
+
+</LinearLayout>
