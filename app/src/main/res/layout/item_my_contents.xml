@@ -18,7 +18,9 @@
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:paddingLeft="10dp"
+            android:paddingTop="20dp">
             <TextView
                 android:id="@+id/Title"
                 android:layout_width="wrap_content"
@@ -27,8 +29,7 @@
                 android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textSize="17dp"
-                android:layout_marginLeft="10dp"
-                android:layout_marginTop="20dp"/>
+                android:maxLength="10"/>
             <TextView
                 android:id="@+id/content"
                 android:layout_width="wrap_content"
@@ -37,21 +38,22 @@
                 android:textStyle="normal"
                 android:textSize="14dp"
                 android:textColor="#4C4C4C"
-                android:layout_marginTop="10dp"
-                android:layout_marginLeft="10dp"/>
+                android:paddingTop="10dp"
+                android:maxLength="50"/>
         </LinearLayout>
+
         <View
-            android:background="#8F8F8F"
-            android:layout_width="320dp"
-            android:layout_height="2px"
-            android:layout_marginTop="115dp"
-            android:layout_marginLeft="10dp"/>
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#D8D8D8"
+            android:layout_marginTop="110dp"/>
+
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:layout_marginLeft="10dp"
-            android:layout_marginTop="120dp">
+            android:paddingLeft="15dp"
+            android:layout_marginTop="117dp">
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
@@ -64,15 +66,12 @@
                 android:layout_height="wrap_content"
                 android:text="10"
                 android:textSize="14dp"/>
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="    "/>
             <ImageView
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/chat"
-                android:layout_marginTop="2dp"/>
+                android:layout_marginTop="2dp"
+                android:layout_marginLeft="20dp"/>
             <TextView
                 android:id="@+id/chatCount"
                 android:padding="2dp"

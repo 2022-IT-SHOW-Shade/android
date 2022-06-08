@@ -23,9 +23,6 @@
     <style name="tabtext" parent="@android:style/TextAppearance.Widget.TabWidget">
         <item name="android:textSize">16sp</item>
     </style>
-    <style name="SplashTheme" parent="Theme.AppCompat.NoActionBar">
-        <item name="android:windowBackground">@drawable/background_splash</item>
-    </style>
 
     <!-- 구분선 -->
     <style name="Divider">
@@ -34,5 +31,13 @@
         <item name="android:background">?android:attr/listDivider</item>
     </style>
 
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.DarkActionBar">
+        <!-- No Title Bar-->
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+
+        <!-- background -->
+        <item name="android:windowBackground">@drawable/splash</item>
+    </style>
 
 </resources>

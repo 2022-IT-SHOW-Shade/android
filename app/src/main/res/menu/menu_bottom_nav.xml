@@ -2,22 +2,22 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/navigation_home"
+        android:id="@+id/navigation_timeline"
         android:icon="@drawable/timeline"
-        android:title="홈" />
+        android:title="타임라인" />
 
     <item
-        android:id="@+id/navigation_calender"
+        android:id="@+id/navigation_myschool"
         android:icon="@drawable/school"
         android:title="내 학교" />
 
     <item
-        android:id="@+id/navigation_call"
+        android:id="@+id/navigation_mywrite"
         android:icon="@drawable/write"
         android:title="글쓰기" />
 
     <item
-        android:id="@+id/navigation_bookmark"
+        android:id="@+id/navigation_mypage"
         android:icon="@drawable/mypage"
         android:title="마이페이지" />
 
