@@ -10,7 +10,6 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_join" />
-    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -177,31 +176,24 @@
                 android:layout_gravity="center"
                 android:padding="30dp">
                 <TextView
-                    android:layout_width="wrap_content"
+                    android:layout_width="330dp"
                     android:layout_height="wrap_content"
                     android:text="학교등록"
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
                     android:layout_marginLeft="3dp"/>
-                <SearchView
-                    android:id="@+id/search_school"
-                    android:layout_width="330dp"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:background="@drawable/background_searchview"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:iconifiedByDefault="false"
-                    app:queryBackground="@drawable/background_searchview"
-                    android:layout_marginTop="10dp">
-                </SearchView>
-                <ListView
-                    android:id="@+id/search_school_list"
-                    android:layout_width="330dp"
-                    android:layout_height="120dp">
-                </ListView>
+                <Button
+                    android:id="@+id/btnSchool"
+                    android:layout_width="80dp"
+                    android:layout_height="35dp"
+                    android:text="등록하기"
+                    android:textColor="@color/colorMain"
+                    android:textStyle="bold"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/background_btn_phone_confirm"
+                    android:layout_marginLeft="5dp"/>
             </LinearLayout>
         </LinearLayout>
         <Button
@@ -213,5 +205,5 @@
             android:textStyle="bold"
             android:layout_gravity="center"
             android:background="@drawable/btn_main"/>
-    </ScrollView>
+
 </LinearLayout>
