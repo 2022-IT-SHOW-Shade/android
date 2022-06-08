@@ -50,11 +50,13 @@ dependencies {
     implementation 'com.android.support:design:30.0.0'
     implementation 'com.jakewharton.threetenabp:threetenabp:1.2.0'
 
-    implementation platform('com.google.firebase:firebase-bom:29.2.1')
+    implementation platform('com.google.firebase:firebase-bom:30.0.1')
     implementation 'com.google.firebase:firebase-analytics:17.2.3'
     implementation 'com.google.firebase:firebase-core:17.2.3'
     implementation 'com.google.firebase:firebase-database:20.0.4'
     implementation 'com.google.firebase:firebase-auth:21.0.3'
+
+    implementation 'com.google.firebase:firebase-auth'
 
     implementation "kr.go.neis.api:neis-api:4.0.1"
 }

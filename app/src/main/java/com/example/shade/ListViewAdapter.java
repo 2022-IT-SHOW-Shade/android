@@ -62,4 +62,8 @@ public class ListViewAdapter extends BaseAdapter {
         return convertView;
     }
 
+    public String getAddress(int position){
+        return listViewItemList.get(position).getLocation();
+    }
+
 }

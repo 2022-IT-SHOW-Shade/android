@@ -21,6 +21,8 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.Calendar;
+
 public class JoinActivity extends AppCompatActivity {
 
     // 파이어베이스
@@ -29,8 +31,9 @@ public class JoinActivity extends AppCompatActivity {
     EditText loginPhone, loginPhoneCheck, loginPw, loginPwCheck, loginBirth;
     Button PhoneConfirm, btnPhoneCheck, btnSchool, btnJoinOk;
 
-    String phone, pw;
-    String ResultSchool;
+    String phone, pw, nickname;
+    String ResultSchool, ResultAddress;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +54,7 @@ public class JoinActivity extends AppCompatActivity {
         btnJoinOk = findViewById(R.id.btnJoinOk);
 
         // 전화번호 인증하기
-        btnPhoneCheck.setOnClickListener(new View.OnClickListener() {
+        PhoneConfirm.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
@@ -87,7 +90,7 @@ public class JoinActivity extends AppCompatActivity {
                             String loginPwd = loginPw.getText().toString();
                             String CheckPwd = loginPwCheck.getText().toString();
                             if (!loginPwd.equals(CheckPwd)) {
-                                Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다." + loginPwd + " " + CheckPwd, Toast.LENGTH_SHORT).show();
+                                Toast.makeText(getApplicationContext(), "비밀번호가 맞지 않습니다.", Toast.LENGTH_SHORT).show();
                             } else {
                                 phone = loginPhone.getText().toString();
                                 pw = loginPw.getText().toString();
@@ -98,13 +101,37 @@ public class JoinActivity extends AppCompatActivity {
                                 // 학교 api
                                 if(ResultSchool == null){
                                     Toast.makeText(getApplicationContext(), "학교를 등록해주세요", Toast.LENGTH_SHORT).show();
-                                }
-                                String school = ResultSchool;
-                                addUser(phone, pw, birth, school);
+                                }else {
+                                    // 사용자 닉네임 가져오기
+                                    // 지역구
+                                    String[] strArr = ResultAddress.split(" ");
+                                    nickname = strArr[1] + " ";
 
-                                // 로그인 창으로 넘어가기
-                                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-                                startActivity(intent);
+                                    // 초 중 고
+                                    if(!ResultSchool.substring(ResultSchool.length() - 4, ResultSchool.length() - 3).equals("초") && !ResultSchool.substring(ResultSchool.length() - 4, ResultSchool.length() - 3).equals("고"))
+                                        nickname += "중";
+                                    else nickname += ResultSchool.substring(ResultSchool.length() - 4, ResultSchool.length() - 3);
+
+                                    // 학년
+                                    String year = "20" + birth.substring(0, 2);
+                                    int age = Calendar.getInstance().get(Calendar.YEAR) - Integer.parseInt(year) + 1;
+
+                                    switch (age){
+                                        case 8 : case 14 : case 17 : nickname += "1"; break;
+                                        case 9 : case 15 : case 18 : nickname += "2"; break;
+                                        case 10 : case 16 : case 19 : nickname += "3"; break;
+                                        case 11 : nickname += "4"; break;
+                                        case 12 : nickname += "5"; break;
+                                        case 13 : nickname += "6"; break;
+                                    }
+
+                                    String school = ResultSchool;
+                                    addUser(phone, pw, birth, school, nickname);
+
+                                    // 로그인 창으로 넘어가기
+                                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                                    startActivity(intent);
+                                }
                             }
                         }
                     }
@@ -118,8 +145,8 @@ public class JoinActivity extends AppCompatActivity {
         });
     }
 
-    public void addUser(String phone, String pw, String birth, String school) {
-        User user = new User(phone, pw, birth, school);
+    public void addUser(String phone, String pw, String birth, String school, String nickname) {
+        User user = new User(phone, pw, birth, school, nickname);
 
         mDatabase.child("users").child(phone).setValue(user).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
@@ -142,6 +169,7 @@ public class JoinActivity extends AppCompatActivity {
         if(requestCode == 0){
             if(resultCode == RESULT_OK){
                 ResultSchool = data.getStringExtra("school");
+                ResultAddress = data.getStringExtra("address");
                 //System.out.println(ResultSchool);
             }
         }

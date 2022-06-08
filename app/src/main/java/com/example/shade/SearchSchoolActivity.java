@@ -88,12 +88,12 @@ public class SearchSchoolActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 String school_name = (String) adapterView.getAdapter().getItem(i);
-
-                //System.out.println(school_name);
+                String school_address = adapter.getAddress(i);
 
                 // 회원가입 창으로 돌아가기
                 Intent intent = new Intent();
                 intent.putExtra("school", school_name);
+                intent.putExtra("address", school_address);
                 setResult(RESULT_OK, intent);
                 finish();
             }

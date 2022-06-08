@@ -35,7 +35,12 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/fragment_timeline.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/listview.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/listview_item.xml" value="0.5" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_join.xml" value="0.20018115942028986" />
         <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_login.xml" value="0.20606884057971014" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_write_detail.xml" value="0.2658514492753623" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/fragment_my_school.xml" value="0.2658514492753623" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/fragment_my_write.xml" value="0.36614583333333334" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/fragment_mypage.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
