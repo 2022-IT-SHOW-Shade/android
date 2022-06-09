@@ -5,15 +5,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
-import androidx.annotation.Nullable;
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.fragment.app.Fragment;
 
 import com.example.shade.R;
-import com.example.shade.databinding.ActivityMainBinding;
 
-import java.util.ArrayList;
 
 public class TimeLineFragment extends Fragment {
 
