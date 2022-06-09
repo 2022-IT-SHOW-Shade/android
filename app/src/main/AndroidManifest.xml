@@ -28,6 +28,5 @@
         <activity android:name=".JoinActivity" />
         <activity android:name=".LoginActivity" />
         <activity android:name=".SearchSchoolActivity"/>
-        <activity android:name=".WritePostActivity"/>
     </application>
 </manifest>

@@ -11,7 +11,7 @@ public class User {
 
     String user_nick;
 
-    public User(){}
+    public User(String user_nick){}
 
     // 값을 추가할 때 사용
     public User(String phone, String pwd, String birth, String school, String user_nick){
