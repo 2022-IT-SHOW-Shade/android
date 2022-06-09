@@ -14,6 +14,7 @@
         android:paddingRight="20dp"
         android:paddingLeft="20dp">
         <EditText
+            android:id="@+id/editTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="제목을 입력하세요."
@@ -28,6 +29,7 @@
             android:background="#D8D8D8"
             android:layout_marginTop="10dp"/>
         <EditText
+            android:id="@+id/editContent"
             android:layout_width="match_parent"
             android:layout_height="500dp"
             android:background="@drawable/background_mypage_like"
