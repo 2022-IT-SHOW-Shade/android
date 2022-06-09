@@ -4,29 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable-v24/background_cardview_round.xml" value="0.2421875" />
-
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable-v24/splash.xml" value="0.32916666666666666" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/back.xml" value="0.32916666666666666" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_btn_phone_confirm.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_btn_reg.xml" value="0.32864583333333336" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_btn_write_finish.xml" value="0.35989583333333336" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_button.xml" value="0.32916666666666666" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_cardview_round.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_mypage_like.xml" value="0.32916666666666666" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_searchview.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/background_splash.xml" value="0.32916666666666666" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/btn_delete.xml" value="0.3546875" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/btn_main.xml" value="0.3546875" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/btn_second.xml" value="0.3546875" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/chat.xml" value="0.3307291666666667" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/delete-40px.xml" value="0.35989583333333336" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/delete.xml" value="0.35989583333333336" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/ic_launcher_background.xml" value="0.20520833333333333" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/like.xml" value="0.1" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/line.xml" value="0.3307291666666667" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/menu_selector_color.xml" value="0.2421875" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/mypage.xml" value="0.3537037037037037" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/school.xml" value="0.33125" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/drawable/splash.xml" value="0.35989583333333336" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_contents_detail.xml" value="0.25" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_join.xml" value="0.25" />
@@ -36,17 +17,11 @@
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_my_write.xml" value="0.1" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_mypage.xml" value="0.1" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_timeline.xml" value="0.33" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_write_detail.xml" value="0.33" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/fragment_contents.xml" value="0.3145833333333333" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/fragment_my_school.xml" value="0.25" />
+        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/activity_write_detail.xml" value="0.1" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/fragment_my_write.xml" value="0.33" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/fragment_mypage.xml" value="0.33" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/fragment_timeline.xml" value="0.31302083333333336" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/item_comments.xml" value="0.33" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/item_contents.xml" value="0.5" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/item_my_contents.xml" value="0.5" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/line.xml" value="0.3145833333333333" />
-        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/splash.xml" value="0.34375" />
+        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/item_comments.xml" value="0.1" />
+        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/item_contents.xml" value="0.1" />
+        <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/item_my_contents.xml" value="0.1" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/toolbar_join.xml" value="0.33" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/toolbar_main.xml" value="0.33" />
         <entry key="..\:/Users/82108/Downloads/Shade/app/src/main/res/layout/toolbar_write.xml" value="0.25" />
@@ -55,17 +30,23 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_contents_detail.xml" value="0.5536458333333333" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_join.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_login.xml" value="0.5536458333333333" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_main.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_mypage_like.xml" value="0.27717391304347827" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_search_school.xml" value="0.44114583333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/activity_search_school.xml" value="0.36387434554973824" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/fragment_my_school.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/fragment_mypage.xml" value="0.33" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/fragment_timeline.xml" value="0.27717391304347827" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/item_comments.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/item_contents.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/item_my_contents.xml" value="0.33177083333333335" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/listview.xml" value="0.27717391304347827" />
         <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/listview_item.xml" value="0.5" />
-        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_join.xml" value="0.20018115942028986" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/splash.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/toolbar_join.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/toolbar_mypage.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/layout/toolbar_write.xml" value="0.33177083333333335" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/shade/app/src/main/res/menu/menu_bottom_nav.xml" value="0.33177083333333335" />
         <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_login.xml" value="0.20606884057971014" />
-        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_write_detail.xml" value="0.2658514492753623" />
-        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/fragment_my_school.xml" value="0.2658514492753623" />
-        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/fragment_my_write.xml" value="0.36614583333333334" />
-        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/fragment_mypage.xml" value="0.36614583333333334" />
       </map>
     </option>
   </component>
