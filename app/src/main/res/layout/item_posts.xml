@@ -3,6 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/postDetails"
     android:orientation="vertical"
     android:layout_gravity="center">
 
@@ -22,7 +23,7 @@
             android:paddingLeft="10dp"
             android:paddingTop="20dp">
             <TextView
-                android:id="@+id/Title"
+                android:id="@+id/post_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="게시물 제목"
@@ -31,7 +32,7 @@
                 android:textSize="17dp"
                 android:maxLength="10"/>
             <TextView
-                android:id="@+id/content"
+                android:id="@+id/post_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="게시물 요약 본문입니다."
@@ -41,7 +42,7 @@
                 android:paddingTop="10dp"
                 android:maxLength="50"/>
             <TextView
-                android:id="@+id/nickname"
+                android:id="@+id/post_nickname"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="관악구 고3"
@@ -63,26 +64,30 @@
             android:orientation="horizontal"
             android:paddingLeft="15dp"
             android:layout_marginTop="117dp">
+
             <ImageView
+                android:id="@+id/like"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/like"
-                android:layout_marginTop="2dp"/>
+                android:layout_marginTop="2dp"
+                android:src="@drawable/like" />
+
             <TextView
-                android:id="@+id/likeCount"
+                android:id="@+id/post_likeCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
                 android:textSize="14dp"/>
             <ImageView
+                android:id="@+id/chat"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/chat"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="20dp"/>
             <TextView
-                android:id="@+id/chatCount"
+                android:id="@+id/post_chatCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

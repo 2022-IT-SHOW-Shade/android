@@ -2,9 +2,11 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical">
 
     <include
+        android:id="@+id/toolbar"
         layout="@layout/toolbar_write"/>
 
     <ScrollView
@@ -19,7 +21,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="20dp">
             <TextView
-                android:id="@+id/Title"
+                android:id="@+id/detail_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="애국가 가사 웅장하지 않냐?"
@@ -33,7 +35,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/nickname"
+                    android:id="@+id/detail_nickname"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="관악구 고3"
@@ -42,7 +44,7 @@
                     android:textStyle="bold"
                     android:paddingTop="10dp"/>
                 <TextView
-                    android:id="@+id/date"
+                    android:id="@+id/detail_date"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="2021/05/13"
@@ -56,7 +58,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
                 <TextView
-                    android:id="@+id/content"
+                    android:id="@+id/detail_content"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="동해 물과 백두산이 마르고 닳도록 하느님이 보우하사 우리나라 만세. 무궁화 삼천리 화려 강산 대한 사람, 대한으로 길이 보전하세."
@@ -72,13 +74,13 @@
                 android:orientation="horizontal"
                 android:paddingTop="20dp">
                 <Button
-                    android:id="@+id/btnLike"
+                    android:id="@+id/detail_btnLike"
                     android:layout_width="20dp"
                     android:layout_height="20dp"
                     android:background="@drawable/like"
                     android:layout_marginTop="2dp"/>
                 <TextView
-                    android:id="@+id/likeCount"
+                    android:id="@+id/detail_likeCount"
                     android:padding="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -91,7 +93,7 @@
                     android:layout_marginTop="2dp"
                     android:layout_marginLeft="15dp"/>
                 <TextView
-                    android:id="@+id/chatCount"
+                    android:id="@+id/detail_chatCount"
                     android:padding="2dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -114,11 +116,12 @@
                 android:layout_height="1dp"
                 android:background="#D8D8D8"/>
             <LinearLayout
-                android:id="@+id/comment_layout"
+                android:id="@+id/commentList"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="8dp"
-                android:orientation="vertical"/>
+                android:orientation="vertical">
+            </LinearLayout>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
@@ -137,7 +140,7 @@
             android:textStyle="bold"
             android:textColor="#4A4A4A"/>
         <Button
-            android:id="@+id/btn_reg"
+            android:id="@+id/detail_btn_reg"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:background="@drawable/background_btn_reg"

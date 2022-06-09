@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingRight="20dp"
+    android:paddingLeft="20dp"
+    android:paddingTop="20dp"
+    android:paddingBottom="10dp"
+    android:background="@drawable/background_cardview_round">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="정말로 탈퇴하시겠습니까?"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:textColor="#000"
+        android:paddingLeft="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="회원탈퇴 시 개인정보 및 Shade 데이터는 모두 삭제됩니다."
+        android:paddingLeft="10dp"
+        android:paddingTop="15dp"/>
+
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="취소"
+            android:textColor="#757575"
+            android:textSize="18sp"
+            android:id="@+id/btnCancel"
+            android:layout_weight="1" />
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:background="#fff"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="확인"
+            android:textColor="#757575"
+            android:textSize="18sp"
+            android:textStyle="bold"
+            android:id="@+id/btnOk"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+</LinearLayout>
