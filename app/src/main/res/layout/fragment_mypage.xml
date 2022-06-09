@@ -5,6 +5,7 @@
     android:layout_height="match_parent"
     android:background="@color/white"
     android:orientation="vertical"
+    android:id="@+id/layout_mypage"
     tools:context=".fragment.MyPageFragment">
 
     <RelativeLayout
@@ -31,7 +32,6 @@
                         android:id="@+id/my_page_user_name"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="관악구 고3"
                         android:textColor="@color/black"
                         android:textSize="24dp"
                         android:textStyle="bold" />
@@ -49,12 +49,11 @@
                 </LinearLayout>
 
                 <TextView
-                    android:id="@+id/school"
+                    android:id="@+id/my_school"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="-20dp"
                     android:paddingLeft="30dp"
-                    android:text="미림여자정보과학고등학교"
                     android:textColor="@color/colorMain"
                     android:textSize="14dp"
                     android:textStyle="bold" />

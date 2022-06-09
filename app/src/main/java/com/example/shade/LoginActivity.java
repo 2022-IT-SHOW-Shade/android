@@ -1,6 +1,8 @@
 package com.example.shade;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -36,6 +38,19 @@ public class LoginActivity extends AppCompatActivity {
         btnLogin = findViewById(R.id.btnLogin);
         btnJoin = findViewById(R.id.btnJoin);
 
+        // 자동로그인
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        String loginTel = sharedPreferences.getString("inputTel", null);
+        String loginPwd = sharedPreferences.getString("inputPwd", null);
+        String birth = sharedPreferences.getString("inputBirth", null);
+
+        if(loginTel != null && loginPwd != null){
+            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+            intent.putExtra("tel", loginTel);
+            startActivity(intent);
+            finish();
+        }
+
         // 회원가입 버튼 클릭 시 창 이동
         btnJoin.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +76,12 @@ public class LoginActivity extends AppCompatActivity {
                             Log.w("FirebaseData", "getData" + post.toString());
 
                             if(post.getPwd().equals(pw)) {
+                                SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                                SharedPreferences.Editor autoLogin = sharedPreferences.edit();
+                                autoLogin.putString("inputTel", phone);
+                                autoLogin.putString("inputPwd", pw);
+                                autoLogin.commit();
+
                                 Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
                                 // 메인화면으로 이동
                                 Intent intent = new Intent(getApplicationContext(), MainActivity.class);
