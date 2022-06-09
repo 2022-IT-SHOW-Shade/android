@@ -59,4 +59,5 @@ dependencies {
     implementation 'com.google.firebase:firebase-auth'
 
     implementation "kr.go.neis.api:neis-api:4.0.1"
+
 }
