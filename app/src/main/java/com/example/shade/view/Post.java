@@ -17,12 +17,6 @@ public class Post {
     String date;
     int like_cnt;
     int comment_cnt;
-    public Map<String, Boolean> like = new HashMap<>();
-
-
-    public Post(){}
-
-    public Post(String user_nick, String title, String content) {}
 
     public Post(String post_num, String user_nick, String title, String content, String date) {
         this.post_num = post_num;
@@ -88,18 +82,23 @@ public class Post {
         this.comment_cnt = comment_cnt;
     }
 
-    @Exclude
-    public Map<String, Object> toMap() {
-        HashMap<String, Object> result = new HashMap<>();
-        result.put("post_num", post_num);
-        result.put("user_nick", user_nick);
-        result.put("title", title);
-        result.put("content", content);
-        result.put("like_cnt", like_cnt);
-        result.put("comment_cnt", comment_cnt);
-        result.put("like", like);
+    @Override
+    public String toString(){
+        return "post{" +
+                "post_num='" + post_num + '\'' +
+                ", user_nick='" + user_nick + '\'' +
+                ", title='" + title + '\'' +
+                ", content='" + content + '\'' +
+                ", date='" + date + '\'' +
+                '}';
+    }
 
-        return result;
+    public Post() {
+        String post_num="";
+        String user_nick="";
+        String title="";
+        String content="";
+        String date="";
     }
 
 
