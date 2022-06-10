@@ -15,9 +15,10 @@ public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.splash);
         icon = findViewById(R.id.splash_icon);
-        // Animation anim = AnimationUtils.loadAnimation(this, R.anim.spin); 추후에 스플래시 애니메이션 넣기
-        // icon.setAnimation(anim);
+        Animation anim = AnimationUtils.loadAnimation(this, R.anim.spin);
+        icon.setAnimation(anim);
         Intent intent = new Intent(this, LoginActivity.class);
         startActivity(intent);
         finish();
