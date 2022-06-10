@@ -72,4 +72,12 @@ public class User {
                 ", nickname='" + user_nick + '\'' +
                 '}';
     }
+
+    public User() {
+        String phone="";
+        String pwd="";
+        String birth="";
+        String school="";
+        String user_nick="";
+    }
 }
