@@ -4,14 +4,14 @@ import java.security.PublicKey;
 
 // 테이블에 들어갈 속성값을 넣을 파일
 public class User {
-    String phone;
-    String pwd;
-    String birth;
-    String school;
+    String phone = "";
+    String pwd = "";
+    String birth = "";
+    String school = "";
 
-    String user_nick;
+    String user_nick = "";
 
-    public User(String user_nick){}
+    public User(){}
 
     public User(){}
 

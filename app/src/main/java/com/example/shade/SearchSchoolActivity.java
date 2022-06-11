@@ -64,6 +64,9 @@ public class SearchSchoolActivity extends AppCompatActivity {
         Intent intent_page = getIntent();
         page = intent_page.getStringExtra("page");
 
+        if(page == null)
+            page = "join";
+
         search_school.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -120,7 +123,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "학교가 변경되었습니다.", Toast.LENGTH_SHORT).show();
-                }else {
+                }else if(page.equals("join")) {
                     // 회원가입 창으로 돌아가기
                     Intent intent = new Intent();
                     intent.putExtra("school", school_name);
@@ -140,10 +143,13 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
     public void updateSchool(String name, String address){
 
+        databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
+
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
         String loginTel = sharedPreferences.getString("inputTel", null);
+        String nickname = sharedPreferences.getString("inputNickName", null);
 
-        String nickname;
+        String new_nickname;
 
         Map<String, Object> taskMap = new HashMap<String, Object>();
         taskMap.put(loginTel+"/school", name);
@@ -151,17 +157,28 @@ public class SearchSchoolActivity extends AppCompatActivity {
         // 닉네임
         // 지역구
         String[] strArr = address.split(" ");
-        nickname = strArr[1] + " ";
+        new_nickname = strArr[1] + " ";
 
         // 초 중 고
         final char c = name.charAt(name.length() - 4);
         if(c != '초' && c != '고')
-            nickname += "중";
-        else nickname += name.substring(name.length() - 4, name.length() - 3);
+            new_nickname += "중";
+        else new_nickname += name.substring(name.length() - 4, name.length() - 3);
 
-        System.out.println(nickname);
+        new_nickname += nickname.substring(nickname.length() - 1, nickname.length());
 
-        taskMap.put(loginTel+"/user_nick", nickname);
 
+        taskMap.put(loginTel+"/user_nick", new_nickname);
+
+        System.out.println(taskMap.get(loginTel+"/school"));
+        System.out.println(taskMap.get(loginTel+"/user_nick"));
+
+        // 데이터 업데이트
+        databaseReference.updateChildren(taskMap);
+
+        // 디바이스에 정보 업데이트
+        SharedPreferences.Editor autoLogin = sharedPreferences.edit();
+        autoLogin.putString("inputNickName", new_nickname);
+        autoLogin.commit();
     }
 }
