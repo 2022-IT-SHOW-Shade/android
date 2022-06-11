@@ -1,6 +1,8 @@
 package com.example.shade.fragment;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -9,6 +11,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -43,7 +46,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
         my_page_user_name = (TextView) v.findViewById(R.id.my_page_user_name);  // 닉네임
         my_school = (TextView) v.findViewById(R.id.my_school); // 학교
 
-        btnLike = (Button) v.findViewById(R.id.btnLike);    // 찜한 글
+        btnLike = (Button) v.findViewById(R.id.btnLikeList);    // 찜한 글
         notice = (Button) v.findViewById(R.id.notice);  // 공지사항
         change = (Button) v.findViewById(R.id.change);  // 학교 변경 및 본인 인증
         version = (Button)  v.findViewById(R.id.version);   // 앱 버전
@@ -75,9 +78,9 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
             }
         });
 
-
         logout.setOnClickListener(this);
         change.setOnClickListener(this);
+        withdrawal.setOnClickListener(this);
 
         return v;
     }
@@ -93,12 +96,51 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
                 intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
                 break;
-            case R.id.btnLike:
+            case R.id.btnLikeList:
                 break;
             case R.id.change:
                 intent = new Intent(getActivity(), SearchSchoolActivity.class);
                 intent.putExtra("page", "mypage");
                 startActivity(intent);
+                break;
+            case R.id.withdrawal:
+                Dialog dialog = new Dialog(getActivity());
+                dialog.setContentView(R.layout.dialog_withdrawal);
+                dialog.show();
+
+                Button btnOk = (Button) dialog.findViewById(R.id.btnOk);
+                Button btnCancle = (Button) dialog.findViewById(R.id.btnCancel);
+
+                // 회원 탈퇴
+                btnOk.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        Toast.makeText(getContext(), "탈퇴되었습니다.", Toast.LENGTH_SHORT).show();
+
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                        String loginTel = sharedPreferences.getString("inputTel", null);
+                        databaseReference.child(loginTel).removeValue();
+
+                        dialog.dismiss();
+
+                        // 로그아웃 및 디바이스 데이터 삭제
+                        SharedPreferences.Editor editor = sharedPreferences.edit();
+                        editor.remove("inputTel");
+                        editor.remove("inputPwd");
+                        editor.remove("inputNickName");
+                        editor.commit();
+
+                        intent = new Intent(getActivity(), LoginActivity.class);
+                        startActivity(intent);
+                    }
+                });
+
+                btnCancle.setOnClickListener(new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        dialog.dismiss();
+                    }
+                });
                 break;
         }
     }

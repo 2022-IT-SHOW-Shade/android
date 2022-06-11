@@ -80,6 +80,8 @@ public class LoginActivity extends AppCompatActivity {
                                 SharedPreferences.Editor autoLogin = sharedPreferences.edit();
                                 autoLogin.putString("inputTel", phone);
                                 autoLogin.putString("inputPwd", pw);
+                                autoLogin.putString("inputNickName", post.getUser_nick());
+
                                 autoLogin.commit();
 
                                 Toast.makeText(getApplicationContext(), "로그인 성공", Toast.LENGTH_SHORT).show();
