@@ -3,12 +3,11 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/postDetails"
-    android:orientation="vertical"
-    android:layout_gravity="center">
+    android:id="@+id/post_item"
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/post_card_view"
         android:layout_width="340dp"
         android:layout_height="147dp"
         app:cardElevation="0dp"
@@ -64,30 +63,27 @@
             android:orientation="horizontal"
             android:paddingLeft="15dp"
             android:layout_marginTop="117dp">
-
-            <ImageView
-                android:id="@+id/like"
+            <CheckBox
+                android:button="@null"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:layout_marginTop="2dp"
-                android:src="@drawable/like" />
-
+                android:background="@drawable/like_checkbox"
+                android:id="@+id/post_like_check"/>
             <TextView
-                android:id="@+id/post_likeCount"
+                android:id="@+id/likeCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
                 android:textSize="14dp"/>
             <ImageView
-                android:id="@+id/chat"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/chat"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="20dp"/>
             <TextView
-                android:id="@+id/post_chatCount"
+                android:id="@+id/chatCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

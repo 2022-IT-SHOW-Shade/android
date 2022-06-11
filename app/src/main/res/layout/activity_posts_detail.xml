@@ -73,12 +73,12 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:paddingTop="20dp">
-                <Button
-                    android:id="@+id/detail_btnLike"
-                    android:layout_width="20dp"
-                    android:layout_height="20dp"
-                    android:background="@drawable/like"
-                    android:layout_marginTop="2dp"/>
+                <CheckBox
+                    android:button="@null"
+                    android:layout_width="24dp"
+                    android:layout_height="24dp"
+                    android:background="@drawable/like_checkbox"
+                    android:id="@+id/postDetail_like_check"/>
                 <TextView
                     android:id="@+id/detail_likeCount"
                     android:padding="2dp"
@@ -126,7 +126,7 @@
     </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="40dp"
         android:orientation="horizontal"
         android:background="#F4F4F4">
         <EditText
@@ -134,15 +134,20 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:hint="댓글 내용을 입력하세요"
+            android:background="@null"
             android:textColorHint="#8C8C8C"
             android:textSize="14dp"
             android:textStyle="bold"
-            android:textColor="#4A4A4A"/>
-        <Button
-            android:id="@+id/detail_btn_reg"
-            android:layout_width="wrap_content"
+            android:textColor="#4A4A4A"
+            android:layout_gravity="center"/>
+        <ImageButton
+            android:id="@+id/btnComment"
+            android:layout_width="50dp"
             android:layout_height="match_parent"
+            android:src="@drawable/send"
             android:background="@drawable/background_btn_reg"
             android:text="등록하기"
             android:textStyle="bold"

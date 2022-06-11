@@ -3,8 +3,7 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
-    android:layout_gravity="center">
+    android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/card_view"
@@ -54,11 +53,12 @@
             android:orientation="horizontal"
             android:paddingLeft="15dp"
             android:layout_marginTop="117dp">
-            <ImageView
+            <CheckBox
+                android:button="@null"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
-                android:src="@drawable/like"
-                android:layout_marginTop="2dp"/>
+                android:background="@drawable/like_checkbox"
+                android:id="@+id/mypost_like_check"/>
             <TextView
                 android:id="@+id/likeCount"
                 android:padding="2dp"
