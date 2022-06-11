@@ -29,5 +29,6 @@
         <activity android:name=".LoginActivity" />
         <activity android:name=".SearchSchoolActivity"/>
         <activity android:name=".WritePostActivity"/>
+        <activity android:name=".PostDatailActivity"/>
     </application>
 </manifest>

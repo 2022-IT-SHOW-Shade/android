@@ -13,7 +13,6 @@ public class User {
 
     public User(){}
 
-    public User(){}
 
     // 값을 추가할 때 사용
     public User(String phone, String pwd, String birth, String school, String user_nick){

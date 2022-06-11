@@ -73,7 +73,7 @@ public class WritePostActivity extends AppCompatActivity {
 
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) { // 이거.. 일케하는 거 맞음?ㅌㅋㅋㅋ
+            public void onClick(View view) {
                 mDatabase.child("posts").child(editTitle.getText().toString()).child("title").addListenerForSingleValueEvent(new ValueEventListener() {
                     @Override
                     public void onDataChange(@NonNull DataSnapshot snapshot) {

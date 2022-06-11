@@ -70,20 +70,21 @@
                 android:background="@drawable/like_checkbox"
                 android:id="@+id/post_like_check"/>
             <TextView
-                android:id="@+id/likeCount"
+                android:id="@+id/postlikeCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
                 android:textSize="14dp"/>
             <ImageView
+                android:id="@+id/postChat"
                 android:layout_width="20dp"
                 android:layout_height="20dp"
                 android:src="@drawable/chat"
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="20dp"/>
             <TextView
-                android:id="@+id/chatCount"
+                android:id="@+id/postchatCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
