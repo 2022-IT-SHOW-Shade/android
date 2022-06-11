@@ -10,25 +10,23 @@
     <include
         android:id="@+id/toolbar"
         layout="@layout/toolbar_join" />
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp">
+            android:layout_marginTop="30dp">
             <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="42dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="전화번호"
                     android:textSize="15sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:layout_marginLeft="42dp"/>
+                    android:textStyle="bold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -38,14 +36,14 @@
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
                 <EditText
                     android:id="@+id/loginPhone"
                     android:layout_width="260dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:backgroundTint="#A4A4A4"
                     android:hint="전화번호를 적어주세요."
                     android:textSize="15sp"
@@ -53,29 +51,27 @@
                     android:textStyle="bold"
                     android:maxLength="11"
                     android:minHeight="48dp"
-                    android:singleLine="true"
-                    android:layout_marginLeft="42dp"/>
+                    android:singleLine="true"/>
                 <Button
                     android:id="@+id/PhoneConfirm"
-                    android:layout_width="80dp"
+                    android:layout_width="70dp"
                     android:layout_height="35dp"
                     android:text="인증하기"
                     android:textColor="@color/colorMain"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_btn_phone_confirm"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
             <LinearLayout
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal">
+                android:orientation="horizontal"
+                android:layout_gravity="center">
                 <EditText
                     android:id="@+id/loginPhoneCheck"
                     android:layout_width="260dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:backgroundTint="#A4A4A4"
                     android:hint="인증번호를 적어주세요."
                     android:textSize="15sp"
@@ -83,17 +79,15 @@
                     android:textStyle="bold"
                     android:maxLength="11"
                     android:minHeight="48dp"
-                    android:singleLine="true"
-                    android:layout_marginLeft="42dp"/>
+                    android:singleLine="true"/>
                 <Button
                     android:id="@+id/btnPhoneCheck"
-                    android:layout_width="80dp"
+                    android:layout_width="70dp"
                     android:layout_height="35dp"
                     android:text="확인"
                     android:textColor="@color/colorMain"
                     android:textStyle="bold"
                     android:textSize="14sp"
-                    android:layout_marginTop="10dp"
                     android:background="@drawable/background_btn_phone_confirm"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
@@ -139,7 +133,8 @@
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content">
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp">
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -174,7 +169,7 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical"
                 android:layout_gravity="center"
-                android:padding="30dp">
+                android:padding="35dp">
                 <TextView
                     android:layout_width="330dp"
                     android:layout_height="wrap_content"
@@ -192,14 +187,14 @@
                     android:textStyle="bold"
                     android:textSize="14sp"
                     android:layout_marginTop="10dp"
-                    android:background="@drawable/background_btn_phone_confirm"
-                    android:layout_marginLeft="5dp"/>
+                    android:background="@drawable/background_btn_phone_confirm"/>
             </LinearLayout>
         </LinearLayout>
         <Button
             android:id="@+id/btnJoinOk"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
             android:text="완료"
             android:textColor="@color/white"
             android:textStyle="bold"
