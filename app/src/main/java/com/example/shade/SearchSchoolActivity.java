@@ -64,6 +64,9 @@ public class SearchSchoolActivity extends AppCompatActivity {
         Intent intent_page = getIntent();
         page = intent_page.getStringExtra("page");
 
+        if(page == null)
+            page = "join";
+
         search_school.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
             @Override
             public boolean onQueryTextSubmit(String query) {
@@ -120,7 +123,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                     startActivity(intent);
                     Toast.makeText(getApplicationContext(), "학교가 변경되었습니다.", Toast.LENGTH_SHORT).show();
-                }else {
+                }else if(page.equals("join")) {
                     // 회원가입 창으로 돌아가기
                     Intent intent = new Intent();
                     intent.putExtra("school", school_name);
