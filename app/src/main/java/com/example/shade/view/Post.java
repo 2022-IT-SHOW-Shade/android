@@ -15,8 +15,10 @@ public class Post {
     String title;
     String content;
     String date;
-    int like_cnt;
-    int comment_cnt;
+    long like_cnt;
+    long comment_cnt;
+
+    public Post(){}
 
     public Post(String post_num, String user_nick, String title, String content, String date) {
         this.post_num = post_num;
@@ -66,19 +68,19 @@ public class Post {
         this.date = date;
     }
 
-    public int getLike_cnt() {
+    public long getLike_cnt() {
         return like_cnt;
     }
 
-    public void setLike_cnt(int like_cnt) {
+    public void setLike_cnt(long like_cnt) {
         this.like_cnt = like_cnt;
     }
 
-    public int getComment_cnt() {
+    public long getComment_cnt() {
         return comment_cnt;
     }
 
-    public void setComment_cnt(int comment_cnt) {
+    public void setComment_cnt(long comment_cnt) {
         this.comment_cnt = comment_cnt;
     }
 
@@ -92,15 +94,5 @@ public class Post {
                 ", date='" + date + '\'' +
                 '}';
     }
-
-    public Post() {
-        String post_num="";
-        String user_nick="";
-        String title="";
-        String content="";
-        String date="";
-    }
-
-
 
 }
