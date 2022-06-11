@@ -1,6 +1,8 @@
 package com.example.shade;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -13,7 +15,6 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.shade.fragment.MyWriteFragment;
 import com.example.shade.view.Post;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -21,7 +22,6 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.text.SimpleDateFormat;
@@ -31,8 +31,10 @@ import java.util.Locale;
 import java.util.Random;
 
 public class WritePostActivity extends AppCompatActivity {
-    private DatabaseReference mDatabase, data;
-    public static String format = "yyyy/MM/dd_hh:mm:ss";
+    private DatabaseReference mDatabase;
+    public static String format = "yyyy/MM/dd hh:mm";
+
+    SharedPreferences sharedPreferences;
 
     EditText editTitle, editContent;
     Button btnFinish;
@@ -46,8 +48,6 @@ public class WritePostActivity extends AppCompatActivity {
     final String r4 = String.valueOf((char) ((int) (random.nextInt(26))+65));
     final String r5 = String.valueOf((char) ((int) (random.nextInt(26))+65));
 
-    String post_num;
-    Query query;
     Date post_date;
     SimpleDateFormat format1;
 
@@ -56,10 +56,7 @@ public class WritePostActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_detail);
 
-        // nickname에 해당하는 키값이 포함된 데이터 가져오기
         mDatabase = FirebaseDatabase.getInstance().getReference();
-        data = FirebaseDatabase.getInstance().getReference("users");
-        query = data.child(data.getKey()).orderByChild("nickname");
 
         editTitle = findViewById(R.id.editTitle);
         editContent = findViewById(R.id.editContent);
@@ -83,28 +80,31 @@ public class WritePostActivity extends AppCompatActivity {
                         String value = snapshot.getValue(String.class);
                         if(editTitle.getText().toString().equals("") && editContent.getText().toString().equals("")){
                             Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
-                        }else if(editTitle.getText().toString().equals("")){
+                        } else if(editTitle.getText().toString().equals("")){
                             Toast.makeText(getApplicationContext(), "제목을 입력해주세요", Toast.LENGTH_SHORT).show();
                         }else if(editContent.getText().toString().equals("")){
                             Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
-                        }else{
+                        }
+                        else{
                             String title = editTitle.getText().toString();
                             String content = editContent.getText().toString();
 
-                            // 닉네임 가져오기
-                            String user_nick = query.toString();
+                            sharedPreferences  = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                            String nick = sharedPreferences.getString("inputNickName", null);
+
+                            // 닉네임 가져오기 (안 된거 같음)
+                            String user_nick = nick;
 
                             // 글 번호 랜덤 생성 (알파벳)
-                            post_num = (String.valueOf(r1+r2+r3+r4+r5)).toString();
+                            String post_num = (String.valueOf(r1+r2+r3+r4+r5)).toString();
 
                             // 날짜 생성
                             post_date = Calendar.getInstance().getTime();
                             format1 = new SimpleDateFormat(format, Locale.getDefault());
-                            String date = format1.format(post_date).toString();
+                            String date = format1.format(post_date);
 
                             addPost(post_num, user_nick, title, content, date);
-                            Intent intent = new Intent(getApplicationContext(), MyWriteFragment.class);
-                            startActivity(intent);
+                            finish();
                         }
                     }
 
