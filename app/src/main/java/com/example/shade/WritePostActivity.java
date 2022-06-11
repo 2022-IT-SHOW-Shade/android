@@ -32,7 +32,7 @@ import java.util.Random;
 
 public class WritePostActivity extends AppCompatActivity {
     private DatabaseReference mDatabase;
-    public static String format = "yyyy/MM/dd hh:mm";
+    public static String format = "yyyy/MM/dd";
 
     SharedPreferences sharedPreferences;
 
