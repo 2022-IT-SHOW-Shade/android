@@ -30,7 +30,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MyPageFragment extends Fragment implements View.OnClickListener {
 
     TextView my_page_user_name, my_school;
-    Button btnLike, notice, change, version, logout, withdrawal;
+    Button btnLike, notice, change, logout, withdrawal;
 
     // 파이어베이스
     private DatabaseReference databaseReference;

@@ -73,53 +73,59 @@ public class WritePostActivity extends AppCompatActivity {
 
         btnFinish.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                mDatabase.child("posts").child(editTitle.getText().toString()).child("title").addListenerForSingleValueEvent(new ValueEventListener() {
-                    @Override
-                    public void onDataChange(@NonNull DataSnapshot snapshot) {
-                        String value = snapshot.getValue(String.class);
-                        if(editTitle.getText().toString().equals("") && editContent.getText().toString().equals("")){
-                            Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
-                        } else if(editTitle.getText().toString().equals("")){
-                            Toast.makeText(getApplicationContext(), "제목을 입력해주세요", Toast.LENGTH_SHORT).show();
-                        }else if(editContent.getText().toString().equals("")){
-                            Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+            public void onClick(View v) {
+                if(editTitle.getText().toString().equals("") && editContent.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+                } else if(editTitle.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "제목을 입력해주세요", Toast.LENGTH_SHORT).show();
+                }else if(editContent.getText().toString().equals("")){
+                    Toast.makeText(getApplicationContext(), "내용을 입력해주세요", Toast.LENGTH_SHORT).show();
+                }
+                else {
+                    String title = editTitle.getText().toString();
+                    String content = editContent.getText().toString();
+
+                    sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                    String nick = sharedPreferences.getString("inputNickName", null);
+                    String tel = sharedPreferences.getString("inputTel", null);
+
+                    // 닉네임 가져오기 (안 된거 같음)
+                    String user_nick = nick;
+
+                    // 글 번호 랜덤 생성 (알파벳)
+                    String post_num = (String.valueOf(r1 + r2 + r3 + r4 + r5)).toString();
+
+                    // 날짜 생성
+                    post_date = Calendar.getInstance().getTime();
+                    format1 = new SimpleDateFormat(format, Locale.getDefault());
+                    String date = format1.format(post_date);
+
+                    // 학교가져오기
+                    mDatabase.child("users").child(tel).addValueEventListener(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot snapshot) {
+                            if(snapshot.getValue(User.class) != null){
+                                User user = snapshot.getValue(User.class);
+                                String school = user.getSchool();
+
+                                addPost(post_num, user_nick, title, content, date, school, tel);
+                                finish();
+                            }
                         }
-                        else{
-                            String title = editTitle.getText().toString();
-                            String content = editContent.getText().toString();
 
-                            sharedPreferences  = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
-                            String nick = sharedPreferences.getString("inputNickName", null);
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError error) {
 
-                            // 닉네임 가져오기 (안 된거 같음)
-                            String user_nick = nick;
-
-                            // 글 번호 랜덤 생성 (알파벳)
-                            String post_num = (String.valueOf(r1+r2+r3+r4+r5)).toString();
-
-                            // 날짜 생성
-                            post_date = Calendar.getInstance().getTime();
-                            format1 = new SimpleDateFormat(format, Locale.getDefault());
-                            String date = format1.format(post_date);
-
-                            addPost(post_num, user_nick, title, content, date);
-                            finish();
                         }
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
+                    });
+                }
             }
         });
 
     }
 
-    public void addPost(String post_num, String user_nick, String title, String content, String date){
-        Post post = new Post(post_num, user_nick, title, content, date);
+    public void addPost(String post_num, String user_nick, String title, String content, String date, String school, String tel){
+        Post post = new Post(post_num, user_nick, title, content, date, school, tel);
 
         mDatabase.child("posts").child(post_num).setValue(post).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
