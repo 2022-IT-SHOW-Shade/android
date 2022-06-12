@@ -12,24 +12,15 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.core.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/colorTimeline"
-            android:id="@+id/scrollView">
-
-            <LinearLayout
+            android:orientation="vertical">
+            <ListView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/contents_timeline"/>
-            </LinearLayout>
-
-        </androidx.core.widget.NestedScrollView>
+                android:layout_height="wrap_content"
+                android:id="@+id/contents_timeline"/>
+        </LinearLayout>
 
     </RelativeLayout>
 

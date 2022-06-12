@@ -29,7 +29,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MyPageFragment extends Fragment implements View.OnClickListener {
 
     TextView my_page_user_name, my_school;
-    Button btnLike, notice, change, version, logout, withdrawal;
+    Button btnLike, notice, change, logout, withdrawal;
 
     // 파이어베이스
     private DatabaseReference databaseReference;
@@ -48,7 +48,6 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
         btnLike = (Button) v.findViewById(R.id.btnLikeList);    // 찜한 글
         notice = (Button) v.findViewById(R.id.notice);  // 공지사항
         change = (Button) v.findViewById(R.id.change);  // 학교 변경 및 본인 인증
-        version = (Button)  v.findViewById(R.id.version);   // 앱 버전
         logout = (Button) v.findViewById(R.id.logout);  // 로그아웃
         withdrawal = (Button) v.findViewById(R.id.withdrawal);  // 탈퇴
 
