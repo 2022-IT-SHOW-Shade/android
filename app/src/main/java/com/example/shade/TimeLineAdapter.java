@@ -51,8 +51,8 @@ public class TimeLineAdapter extends BaseAdapter {
         post_title = (TextView) convertView.findViewById(R.id.post_title);
         post_content = (TextView) convertView.findViewById(R.id.post_content);
         post_nickname = (TextView) convertView.findViewById(R.id.post_nickname);
-        likeCount = (TextView) convertView.findViewById(R.id.likeCount);
-        chatCount = (TextView) convertView.findViewById(R.id.chatCount);
+        likeCount = (TextView) convertView.findViewById(R.id.postlikeCount);
+        chatCount = (TextView) convertView.findViewById(R.id.postchatCount);
 
         Post post_list = listViewItemList.get(pos);
 

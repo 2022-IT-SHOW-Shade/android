@@ -16,8 +16,8 @@
     <color name="colorCenter">#86A1D3</color>
 
     <!-- 글 -->
-    <color name="colorTimeline">#EEF3FF</color>
-    <color name="colorSchool">#CFDDFF</color>
-    <color name="colorWrite">#AFC5FF</color>
+    <color name="colorTimeline">#CBDAFD</color>
+    <color name="colorSchool">#B6C1FD</color>
+    <color name="colorWrite">#AFB3FF</color>
 
 </resources>

@@ -2,24 +2,26 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:gravity="center_vertical"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/post_item"
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
         android:id="@+id/post_card_view"
-        android:layout_width="340dp"
-        android:layout_height="147dp"
+        android:layout_width="360dp"
+        android:layout_height="150dp"
+        android:layout_gravity="center_vertical"
         app:cardElevation="0dp"
         android:layout_weight="1"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="10dp"
         android:focusable="true"
         android:clickable="true">
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:paddingTop="20dp">
             <TextView
                 android:id="@+id/post_title"
@@ -61,7 +63,7 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="horizontal"
-            android:paddingLeft="15dp"
+            android:paddingLeft="20dp"
             android:layout_marginTop="117dp">
             <CheckBox
                 android:button="@null"
