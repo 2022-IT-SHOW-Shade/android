@@ -20,6 +20,7 @@ import com.example.shade.LoginActivity;
 import com.example.shade.NoticeActivity;
 import com.example.shade.R;
 import com.example.shade.SearchSchoolActivity;
+import com.example.shade.VersionActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -30,7 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 public class MyPageFragment extends Fragment implements View.OnClickListener {
 
     TextView my_page_user_name, my_school;
-    Button btnLike, notice, change, logout, withdrawal;
+    Button btnLike, notice, version, change, logout, withdrawal;
 
     // 파이어베이스
     private DatabaseReference databaseReference;
@@ -94,7 +95,8 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.version:
-                Toast.makeText(getContext(), "최신 버전입니다.", Toast.LENGTH_SHORT).show();
+                intent = new Intent(getActivity(), VersionActivity.class);
+                startActivity(intent);
                 break;
             case R.id.logout:
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);

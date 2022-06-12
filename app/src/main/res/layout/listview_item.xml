@@ -9,8 +9,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="미림여자정보과학고"
+        android:textColor="@color/black"
         android:paddingLeft="20dp"
-        android:paddingTop="10dp"
+        android:paddingTop="20dp"
         android:textStyle="bold"
         android:textSize="18sp"/>
 
@@ -19,8 +20,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울특별시 관악구 호암로 546"
+        android:paddingTop="5dp"
         android:paddingLeft="20dp"
-        android:paddingBottom="10dp"/>
+        android:paddingBottom="20dp"/>
 
 
 </LinearLayout>
