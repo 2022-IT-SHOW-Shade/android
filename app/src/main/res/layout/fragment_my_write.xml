@@ -14,22 +14,15 @@
         android:layout_height="match_parent"
         android:paddingRight="15dp"
         android:paddingLeft="15dp">
-        <androidx.core.widget.NestedScrollView
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:orientation="vertical"
-            android:background="@color/colorWrite"
-            android:id="@+id/scrollView">
-            <LinearLayout
+            android:orientation="vertical">
+            <ListView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:orientation="vertical">
-                <ListView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/contents_write"/>
-            </LinearLayout>
-        </androidx.core.widget.NestedScrollView>
+                android:layout_height="wrap_content"
+                android:id="@+id/contents_write"/>
+        </LinearLayout>
     </LinearLayout>
 
     <ImageButton
