@@ -116,13 +116,16 @@
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:layout_height="60dp"
+                        android:layout_height="wrap_content"
                         android:orientation="horizontal"
                         android:gravity="center_vertical">
-                        <TextView
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
+                        <Button
+                            android:id="@+id/version"
+                            android:layout_width="300dp"
+                            android:layout_height="60dp"
                             android:layout_marginTop="10dp"
+                            android:layout_marginLeft="1dp"
+                            android:layout_marginRight="1dp"
                             android:background="@drawable/background_button"
                             android:backgroundTint="#ffffff"
                             android:drawableLeft="@drawable/mypage_button3"
@@ -130,14 +133,14 @@
                             android:gravity="left|center_vertical"
                             android:paddingLeft="20dp"
                             android:text="앱 버전"
-                            android:textColor="#000"
+                            android:textColor="#000000"
                             android:textSize="16dp"
-                            android:textStyle="normal"/>
+                            android:textStyle="normal" />
                         <TextView
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
+                            android:layout_marginLeft="10dp"
                             android:layout_marginTop="10dp"
-                            android:layout_marginLeft="200dp"
                             android:text="1.9.0"
                             android:textColor="#A8A8A8"
                             android:textSize="14sp"/>
@@ -146,7 +149,7 @@
                     <View
                         android:layout_width="match_parent"
                         android:layout_height="1dp"
-                        android:layout_marginTop="14dp"
+                        android:layout_marginTop="10dp"
                         android:background="#D8D8D8" />
 
                     <Button
