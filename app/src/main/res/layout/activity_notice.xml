@@ -1,29 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".NoticeActivity"
     android:background="@color/white">
 
     <include
         layout="@layout/toolbar_mypage"
         android:id="@+id/toolbar" />
-
-    <ScrollView
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/toolbar"
-        android:orientation="vertical"
-        android:fillViewport="true">
-        <LinearLayout
+        android:layout_height="wrap_content">
+        <ListView
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/noticelist"/>
-        </LinearLayout>
-    </ScrollView>
+            android:id="@+id/noticelist" />
+    </RelativeLayout>
 
-</RelativeLayout>
+</LinearLayout>

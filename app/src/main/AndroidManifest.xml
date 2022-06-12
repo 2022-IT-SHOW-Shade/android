@@ -30,5 +30,6 @@
         <activity android:name=".SearchSchoolActivity"/>
         <activity android:name=".WritePostActivity"/>
         <activity android:name=".PostDatailActivity"/>
+        <activity android:name=".NoticeActivity"/>
     </application>
 </manifest>
