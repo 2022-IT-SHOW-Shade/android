@@ -47,7 +47,9 @@ public class MyWriteFragment extends Fragment {
 
         btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override
-	@@ -30,6 +53,61 @@ public void onClick(View view) {
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), WritePostActivity.class);
+                startActivity(intent);
             }
         });
 

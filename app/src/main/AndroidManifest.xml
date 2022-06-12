@@ -31,5 +31,6 @@
         <activity android:name=".WritePostActivity"/>
         <activity android:name=".PostDatailActivity"/>
         <activity android:name=".NoticeActivity"/>
+        <activity android:name=".VersionActivity"/>
     </application>
 </manifest>
