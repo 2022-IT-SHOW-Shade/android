@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
 import com.example.shade.LoginActivity;
+import com.example.shade.NoticeActivity;
 import com.example.shade.R;
 import com.example.shade.SearchSchoolActivity;
 import com.google.firebase.database.DataSnapshot;
@@ -47,6 +48,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
 
         btnLike = (Button) v.findViewById(R.id.btnLikeList);    // 찜한 글
         notice = (Button) v.findViewById(R.id.notice);  // 공지사항
+        version = (Button) v.findViewById(R.id.version); // 앱 버전
         change = (Button) v.findViewById(R.id.change);  // 학교 변경 및 본인 인증
         logout = (Button) v.findViewById(R.id.logout);  // 로그아웃
         withdrawal = (Button) v.findViewById(R.id.withdrawal);  // 탈퇴
@@ -75,7 +77,8 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
 
             }
         });
-
+        notice.setOnClickListener(this);
+        version.setOnClickListener(this);
         logout.setOnClickListener(this);
         change.setOnClickListener(this);
         withdrawal.setOnClickListener(this);
@@ -86,6 +89,13 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
     @Override
     public void onClick(View view) {
         switch (view.getId()){
+            case R.id.notice:
+                intent = new Intent(getActivity(), NoticeActivity.class);
+                startActivity(intent);
+                break;
+            case R.id.version:
+                Toast.makeText(getContext(), "최신 버전입니다.", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.logout:
                 SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();

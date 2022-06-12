@@ -17,7 +17,7 @@
             android:layout_width="20dp"
             android:background="@color/white"
             android:layout_height="20dp"
-            android:id="@+id/btnBack"
+            android:id="@+id/mpbtnBack"
             android:src="@drawable/back"
             app:tint="#7C7C7C" />
     </LinearLayout>
