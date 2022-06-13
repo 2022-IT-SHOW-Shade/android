@@ -8,8 +8,8 @@
     android:background="@color/white">
 
     <include
-        layout="@layout/toolbar_mypage"
-        android:id="@+id/toolbar" />
+        layout="@layout/toolbar_base"
+        android:id="@+id/toolbar_notice" />
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">

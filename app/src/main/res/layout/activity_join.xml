@@ -8,8 +8,8 @@
     android:background="@color/white">
 
     <include
-        android:id="@+id/toolbar"
-        layout="@layout/toolbar_join" />
+        android:id="@+id/toolbar_join"
+        layout="@layout/toolbar_base" />
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

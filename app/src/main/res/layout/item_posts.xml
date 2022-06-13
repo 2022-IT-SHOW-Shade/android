@@ -18,14 +18,14 @@
         android:focusable="true"
         android:clickable="true">
         <LinearLayout
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingTop="20dp">
             <TextView
                 android:id="@+id/post_title"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="게시물 제목"
                 android:textColor="@color/black"
@@ -34,7 +34,7 @@
                 android:maxLength="10"/>
             <TextView
                 android:id="@+id/post_content"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="게시물 요약 본문입니다."
                 android:textStyle="normal"
@@ -44,7 +44,7 @@
                 android:maxLength="50"/>
             <TextView
                 android:id="@+id/post_nickname"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="관악구 고3"
                 android:textSize="11dp"

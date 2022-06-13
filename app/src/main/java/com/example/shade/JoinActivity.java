@@ -12,6 +12,7 @@ import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnFailureListener;
@@ -35,6 +36,8 @@ public class JoinActivity extends AppCompatActivity {
     String phone, pw, nickname;
     String ResultSchool, ResultAddress;
 
+    androidx.appcompat.widget.Toolbar tb;
+    TextView title;
     ImageButton btnBack;
 
     @Override
@@ -55,14 +58,20 @@ public class JoinActivity extends AppCompatActivity {
         btnSchool = findViewById(R.id.btnSchool);
         btnJoinOk = findViewById(R.id.btnJoinOk);
 
+        tb = findViewById(R.id.toolbar_join);
+        title = findViewById(R.id.toolbar_title);
+        title.setText("회원가입");
+
         // 툴바 뒤로가기 버튼
-        btnBack = findViewById(R.id.btnBackJoin);
+        btnBack = findViewById(R.id.btnback);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 finish();
             }
         });
+
+
 
         // 전화번호 인증하기
         PhoneConfirm.setOnClickListener(new View.OnClickListener() {
