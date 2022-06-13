@@ -5,6 +5,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
@@ -21,6 +22,8 @@ public class NoticeActivity extends AppCompatActivity {
     String[] title = {"올해 1.9.0 업데이트 안내", "Shade 사칭 주의", "Shade 개인정보 약관 변경 안내", "버그 업데이트 안내"};
     String[] date = {"22/06/02", "22/05/30", "21/09/20", "21/03/02"};
 
+    androidx.appcompat.widget.Toolbar tb;
+    TextView toolbar_title;
     ImageButton btnBack;
 
     @Override
@@ -47,7 +50,10 @@ public class NoticeActivity extends AppCompatActivity {
             }
         });
 
-        btnBack = findViewById(R.id.mpbtnBack);
+        tb = findViewById(R.id.toolbar_notice);
+        toolbar_title = findViewById(R.id.toolbar_title);
+        toolbar_title.setText("공지사항");
+        btnBack = findViewById(R.id.btnback);
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

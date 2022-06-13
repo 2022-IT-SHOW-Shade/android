@@ -6,8 +6,10 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.SearchView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -53,6 +55,10 @@ public class SearchSchoolActivity extends AppCompatActivity {
     // 파이어베이스
     private DatabaseReference databaseReference;
 
+    androidx.appcompat.widget.Toolbar tb;
+    TextView title;
+    ImageButton btnBack;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +66,17 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
         search_school = findViewById(R.id.search_school);
         search_school_list = findViewById(R.id.search_school_list);
+        tb = findViewById(R.id.toolbar_search);
+        title = findViewById(R.id.toolbar_title);
+        title.setText("학교 등록");
+        btnBack = findViewById(R.id.btnback);
+
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         Intent intent_page = getIntent();
         page = intent_page.getStringExtra("page");

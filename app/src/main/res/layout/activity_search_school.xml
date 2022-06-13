@@ -6,6 +6,10 @@
     android:orientation="vertical"
     android:layout_gravity="center">
 
+    <include
+        layout="@layout/toolbar_base"
+        android:id="@+id/toolbar_search" />
+
     <SearchView
         android:id="@+id/search_school"
         android:layout_width="330dp"

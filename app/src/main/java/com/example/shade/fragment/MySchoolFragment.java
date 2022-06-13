@@ -7,7 +7,9 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageButton;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
@@ -39,11 +41,17 @@ public class MySchoolFragment extends Fragment {
 
     private DatabaseReference databaseReference;
 
+    androidx.appcompat.widget.Toolbar tb;
+    TextView school_title;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_school, container, false);
 
         contents_school = view.findViewById(R.id.contents_school);
+        tb = view.findViewById(R.id.toolbar_frg);
+        school_title = view.findViewById(R.id.toolSchool);
+        school_title.setText("학교 등록");
 
         // 내 학교 가져오기
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
