@@ -36,7 +36,8 @@ public class Post {
         this.tel = tel;
     }
 
-    public Post(String title, String content, String nickname, long like_cnt, long chat_cnt) {
+    public Post(String post_num, String title, String content, String nickname, long like_cnt, long chat_cnt) {
+        this.post_num = post_num;
         this.title = title;
         this.content = content;
         this.user_nick = nickname;

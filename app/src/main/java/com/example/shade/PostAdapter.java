@@ -45,7 +45,7 @@ public class PostAdapter extends BaseAdapter {
     @Override
     public View getView(final int i, View view, ViewGroup viewGroup) {
         final Context context = viewGroup.getContext();
-
+/*
         if(view == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
             view = inflater.inflate(R.layout.item_posts, viewGroup, false);
@@ -87,7 +87,7 @@ public class PostAdapter extends BaseAdapter {
                 }
             }
         });
-
+*/
         return view;
     }
 }

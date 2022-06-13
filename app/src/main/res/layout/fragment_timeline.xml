@@ -18,7 +18,7 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="30dp">
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:divider="@null"
                 android:dividerHeight="20dp"
                 android:layout_marginLeft="20dp"

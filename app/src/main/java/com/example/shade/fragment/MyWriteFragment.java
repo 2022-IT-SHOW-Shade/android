@@ -14,6 +14,8 @@ import android.widget.ListView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shade.R;
 import com.example.shade.TimeLineAdapter;
@@ -31,7 +33,7 @@ public class MyWriteFragment extends Fragment {
 
     ImageButton btnWrite;
 
-    ListView contents_write;
+    RecyclerView contents_write;
 
     TimeLineAdapter adapter;
     ArrayList<Post> respone = new ArrayList<>();
@@ -71,18 +73,20 @@ public class MyWriteFragment extends Fragment {
 
                     if(tel.equals(post.getTel())) {
                         // 각각의 데이터
+                        String num = post.getPost_num();
                         String title = post.getTitle();
-                        String content = post.getContent();
+                        String content = post.getContent().split("\n")[0];
                         String nickname = post.getUser_nick();
                         long like_cnt = post.getLike_cnt();
                         long chat_cnt = post.getComment_cnt();
 
-                        respone.add(new Post(title, content, nickname, like_cnt, chat_cnt));
+                        respone.add(new Post(num, title, content, nickname, like_cnt, chat_cnt));
                     }
 
                     // 리스트뷰 띄우기
-                    adapter = new TimeLineAdapter(respone);
+                    adapter = new TimeLineAdapter(respone, getContext());
                     contents_write.setAdapter(adapter);
+                    contents_write.setLayoutManager(new LinearLayoutManager(getContext()));
                 }
 
             }
