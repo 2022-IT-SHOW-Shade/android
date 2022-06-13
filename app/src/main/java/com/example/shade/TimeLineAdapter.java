@@ -15,6 +15,7 @@ import com.example.shade.fragment.TimeLineFragment;
 import com.example.shade.view.Post;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder> {
 
@@ -24,6 +25,10 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
     public TimeLineAdapter(ArrayList<Post> post, Context context) {
         listViewItemList = post;
         this.context = context;
+
+        for(Post str : listViewItemList){
+            System.out.println("Adapter : " + str);
+        }
     }
 
     @NonNull
@@ -42,9 +47,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
 
         // 화면에 데이터 담기
         holder.setItem(post);
-
-        // 아이템 클릭 이벤트
-
     }
 
     @Override
