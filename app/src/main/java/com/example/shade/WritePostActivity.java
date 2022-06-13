@@ -62,7 +62,7 @@ public class WritePostActivity extends AppCompatActivity {
         editContent = findViewById(R.id.editContent);
         btnFinish = findViewById(R.id.btn_finish);
         toolbarWrite = findViewById(R.id.toolbar_write);
-        btnBack = findViewById(R.id.btnBack);
+        btnBack = findViewById(R.id.btnBackWrite);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override

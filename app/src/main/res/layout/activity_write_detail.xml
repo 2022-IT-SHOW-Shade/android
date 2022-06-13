@@ -16,6 +16,8 @@
         android:paddingRight="20dp"
         android:paddingLeft="20dp">
         <EditText
+            android:paddingLeft="10dp"
+            android:paddingRight="10dp"
             android:id="@+id/editTitle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -24,22 +26,23 @@
             android:textColor="#404040"
             android:textStyle="bold"
             android:textSize="17dp"
-            android:layout_marginTop="30dp"/>
-        <View
-            android:layout_width="match_parent"
-            android:layout_height="1dp"
-            android:background="#D8D8D8"
-            android:layout_marginTop="10dp"/>
+            android:lineSpacingMultiplier="1.5"
+            android:layout_marginTop="30dp"
+            android:maxLines="2"/>
         <EditText
             android:id="@+id/editContent"
             android:layout_width="match_parent"
-            android:layout_height="500dp"
+            android:layout_height="520dp"
+            android:paddingLeft="20dp"
+            android:paddingRight="20dp"
             android:background="@drawable/background_mypage_like"
             android:layout_marginTop="20dp"
             android:hint="상세 내용을 입력해주세요."
             android:textStyle="normal"
             android:textSize="15dp"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black"
+            android:lineSpacingMultiplier="1.5"
+            android:maxLines="10"/>
 
         <Button
             android:layout_width="match_parent"
