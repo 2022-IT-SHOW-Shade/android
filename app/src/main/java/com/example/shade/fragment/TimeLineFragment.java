@@ -47,7 +47,7 @@ public class TimeLineFragment extends Fragment {
         // 글쓰기 데이터 가져오기
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
+        databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Log.w("firebaseData", "Key : " + snapshot.getKey());
