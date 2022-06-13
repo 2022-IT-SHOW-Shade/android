@@ -18,14 +18,14 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="30dp">
-            <ListView
+            <androidx.recyclerview.widget.RecyclerView
                 android:divider="@null"
                 android:dividerHeight="20dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:scrollbars="none"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:scrollbars="none"
                 android:id="@+id/contents_timeline"/>
         </LinearLayout>
 
