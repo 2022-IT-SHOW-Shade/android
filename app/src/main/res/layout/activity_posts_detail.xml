@@ -29,7 +29,9 @@
                 android:textStyle="bold"
                 android:textSize="20dp"
                 android:paddingTop="30dp"
-                android:maxLength="15"/>
+                android:maxLines="2"
+                android:lineSpacingMultiplier="1.5"
+                android:ellipsize="end"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -66,13 +68,15 @@
                     android:textSize="14dp"
                     android:textColor="#4C4C4C"
                     android:paddingTop="20dp"
-                    android:maxLength="200"/>
+                    android:maxLines="10"
+                    android:lineSpacingMultiplier="1.5"
+                    android:ellipsize="end"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-                android:paddingTop="20dp">
+                android:paddingTop="30dp">
                 <CheckBox
                     android:button="@null"
                     android:layout_width="24dp"
@@ -104,7 +108,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D8D8D8"
-                android:layout_marginTop="15dp"/>
+                android:layout_marginTop="18dp"/>
             <TextView
                 android:padding="16dp"
                 android:layout_width="match_parent"
@@ -126,7 +130,7 @@
     </ScrollView>
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="40dp"
+        android:layout_height="50dp"
         android:orientation="horizontal"
         android:background="#F4F4F4">
         <EditText
@@ -134,7 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:paddingLeft="10dp"
+            android:paddingLeft="20dp"
             android:paddingRight="10dp"
             android:hint="댓글 내용을 입력하세요"
             android:background="@null"

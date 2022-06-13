@@ -47,7 +47,7 @@
         android:layout_width="80dp"
         android:layout_height="80dp"
         android:layout_gravity="right"
-        android:layout_marginTop="650dp"
+        android:layout_marginTop="600dp"
         android:layout_marginRight="10dp"
         android:src="@drawable/write"
         android:background="@drawable/background_btn_writepost"

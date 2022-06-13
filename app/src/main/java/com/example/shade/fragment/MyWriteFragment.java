@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shade.R;
+import com.example.shade.RecyclerDecoration;
 import com.example.shade.TimeLineAdapter;
 import com.example.shade.WritePostActivity;
 import com.example.shade.view.Post;
@@ -40,6 +41,9 @@ public class MyWriteFragment extends Fragment {
 
     private DatabaseReference databaseReference;
 
+    RecyclerDecoration recyclerDecoration;
+    androidx.recyclerview.widget.RecyclerView recyclerView;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_write, container, false);
@@ -54,6 +58,10 @@ public class MyWriteFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        recyclerView = view.findViewById(R.id.contents_write);
+        recyclerDecoration = new RecyclerDecoration(60);
+        recyclerView.addItemDecoration(recyclerDecoration);
 
         // 내가 쓴 글 가져오기
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);

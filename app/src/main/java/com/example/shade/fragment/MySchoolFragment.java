@@ -19,6 +19,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shade.R;
+import com.example.shade.RecyclerDecoration;
 import com.example.shade.TimeLineAdapter;
 import com.example.shade.view.Post;
 import com.google.firebase.database.ChildEventListener;
@@ -44,6 +45,10 @@ public class MySchoolFragment extends Fragment {
     androidx.appcompat.widget.Toolbar tb;
     TextView school_title;
 
+    RecyclerDecoration recyclerDecoration;
+    androidx.recyclerview.widget.RecyclerView recyclerView;
+
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_school, container, false);
@@ -52,6 +57,10 @@ public class MySchoolFragment extends Fragment {
         tb = view.findViewById(R.id.toolbar_frg);
         school_title = view.findViewById(R.id.toolSchool);
         school_title.setText("학교 등록");
+
+        recyclerView = view.findViewById(R.id.contents_school);
+        recyclerDecoration = new RecyclerDecoration(60);
+        recyclerView.addItemDecoration(recyclerDecoration);
 
         // 내 학교 가져오기
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);

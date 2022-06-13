@@ -3,6 +3,8 @@ package com.example.shade;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -25,6 +27,7 @@ public class PostDatailActivity extends AppCompatActivity {
     private DatabaseReference databaseReference;
 
     TextView detail_title, detail_nickname, detail_date, detail_content, detail_likeCount, detail_chatCount;
+    ImageButton btnback;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -40,6 +43,7 @@ public class PostDatailActivity extends AppCompatActivity {
         detail_content = (TextView) findViewById(R.id.detail_content);
         detail_likeCount = (TextView) findViewById(R.id.detail_likeCount);
         detail_chatCount = (TextView) findViewById(R.id.detail_chatCount);
+        btnback = (ImageButton) findViewById(R.id.btnBackWrite);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
@@ -71,6 +75,13 @@ public class PostDatailActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
             }
         });
 
