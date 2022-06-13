@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -11,11 +12,15 @@ import android.widget.SearchView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import com.example.shade.fragment.MyPageFragment;
+import com.example.shade.view.Post;
+import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -143,7 +148,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
     public void updateSchool(String name, String address){
 
-        databaseReference = FirebaseDatabase.getInstance().getReference().child("users");
+        databaseReference = FirebaseDatabase.getInstance().getReference();
 
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
         String loginTel = sharedPreferences.getString("inputTel", null);
@@ -170,15 +175,55 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
         taskMap.put(loginTel+"/user_nick", new_nickname);
 
-        System.out.println(taskMap.get(loginTel+"/school"));
-        System.out.println(taskMap.get(loginTel+"/user_nick"));
-
         // 데이터 업데이트
-        databaseReference.updateChildren(taskMap);
+        databaseReference.child("users").updateChildren(taskMap);
 
         // 디바이스에 정보 업데이트
         SharedPreferences.Editor autoLogin = sharedPreferences.edit();
         autoLogin.putString("inputNickName", new_nickname);
         autoLogin.commit();
+
+        // posts - 학교, 닉네임 변경
+        String finalNew_nickname = new_nickname;
+        databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                Log.w("firebaseData", "Key : " + snapshot.getKey());
+
+                if(snapshot.getValue(Post.class) != null){
+                    Post post = snapshot.getValue(Post.class);
+                    Log.w("FirebaseData", "getData" + post.toString());
+
+                    if(loginTel.equals(post.getTel())){
+                        Map<String, Object> taskMap_p = new HashMap<String, Object>();
+                        taskMap_p.put(snapshot.getKey()+ "/school", name);
+                        taskMap_p.put(snapshot.getKey() + "/user_nick", finalNew_nickname);
+
+                        databaseReference.child("posts").updateChildren(taskMap_p);
+                    }
+                }
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError error) {
+
+            }
+        });
     }
 }
