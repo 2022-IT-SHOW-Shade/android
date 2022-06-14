@@ -88,13 +88,13 @@ public class MyWriteFragment extends Fragment {
                         long like_cnt = post.getLike_cnt();
                         long chat_cnt = post.getComment_cnt();
 
-                        respone.add(new Post(num, title, content, nickname, like_cnt, chat_cnt));
-                    }
+                        respone.add(0, new Post(num, title, content, nickname, like_cnt, chat_cnt));
 
-                    // 리스트뷰 띄우기
-                    adapter = new TimeLineAdapter(respone, getContext());
-                    contents_write.setAdapter(adapter);
-                    contents_write.setLayoutManager(new LinearLayoutManager(getContext()));
+                        // 리스트뷰 띄우기
+                        adapter = new TimeLineAdapter(respone, getContext());
+                        contents_write.setAdapter(adapter);
+                        contents_write.setLayoutManager(new LinearLayoutManager(getContext()));
+                    }
                 }
 
             }
