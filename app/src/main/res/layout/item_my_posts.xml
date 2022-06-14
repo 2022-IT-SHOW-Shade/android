@@ -6,7 +6,7 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
-        android:id="@+id/card_view"
+        android:id="@+id/item_mypost"
         android:layout_width="340dp"
         android:layout_height="147dp"
         app:cardElevation="0dp"
@@ -21,7 +21,7 @@
             android:paddingLeft="10dp"
             android:paddingTop="20dp">
             <TextView
-                android:id="@+id/Title"
+                android:id="@+id/my_title"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="게시물 제목"
@@ -30,7 +30,7 @@
                 android:textSize="17dp"
                 android:maxLength="10"/>
             <TextView
-                android:id="@+id/content"
+                android:id="@+id/my_content"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="게시물 요약 본문입니다."
@@ -60,7 +60,7 @@
                 android:background="@drawable/like_checkbox"
                 android:id="@+id/mypost_like_check"/>
             <TextView
-                android:id="@+id/likeCount"
+                android:id="@+id/my_likeCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -73,12 +73,19 @@
                 android:layout_marginTop="2dp"
                 android:layout_marginLeft="20dp"/>
             <TextView
-                android:id="@+id/chatCount"
+                android:id="@+id/my_chatCount"
                 android:padding="2dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="10"
                 android:textSize="14dp"/>
+            <ImageButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/edit"
+                android:background="@color/white"
+                android:id="@+id/btnEdit"
+                android:layout_marginLeft="190dp"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 </LinearLayout>
