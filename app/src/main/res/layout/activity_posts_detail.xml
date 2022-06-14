@@ -119,13 +119,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D8D8D8"/>
-            <LinearLayout
-                android:id="@+id/commentList"
+            <ListView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:padding="8dp"
-                android:orientation="vertical">
-            </LinearLayout>
+                android:divider="@null"
+                android:dividerHeight="15dp"
+                android:scrollbars="none"
+                android:layout_marginTop="20dp"
+                android:id="@+id/commentlist"/>
         </LinearLayout>
     </ScrollView>
     <LinearLayout
