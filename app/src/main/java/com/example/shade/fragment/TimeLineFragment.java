@@ -26,6 +26,7 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
 
@@ -62,6 +63,9 @@ public class TimeLineFragment extends Fragment {
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
                     Log.w("FirebaseData", "getData" + post.toString());
+
+                    String key = databaseReference.child("comments").child(post.getPost_num()).getKey();
+                    System.out.println(key);
 
                     // 각각의 데이터
                     String num = post.getPost_num();
