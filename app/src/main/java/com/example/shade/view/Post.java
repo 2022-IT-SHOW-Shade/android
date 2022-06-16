@@ -45,6 +45,14 @@ public class Post {
         this.comment_cnt = chat_cnt;
     }
 
+    public Post(String num, String title, String content, long like_cnt, long chat_cnt) {
+        this.post_num = num;
+        this.title = title;
+        this.content = content;
+        this.like_cnt = like_cnt;
+        this.comment_cnt = chat_cnt;
+    }
+
     public String getPost_num() {
         return post_num;
     }
