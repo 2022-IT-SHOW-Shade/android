@@ -56,7 +56,6 @@ public class MySchoolFragment extends Fragment {
         contents_school = view.findViewById(R.id.contents_school);
         tb = view.findViewById(R.id.toolbar_frg);
         school_title = view.findViewById(R.id.toolSchool);
-        school_title.setText("학교 등록");
 
         recyclerView = view.findViewById(R.id.contents_school);
         recyclerDecoration = new RecyclerDecoration(60);
@@ -73,6 +72,7 @@ public class MySchoolFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot snapshot) {
                 for(DataSnapshot data : snapshot.getChildren()){
                     my_school = data.child("school").getValue().toString();
+                    school_title.setText(my_school);
                 }
             }
 
