@@ -51,10 +51,21 @@ public class WritePostActivity extends AppCompatActivity {
     Date post_date;
     SimpleDateFormat format1;
 
+    String intent_post_num = "";
+    String intent_title = "";
+    String intent_content = "";
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_write_detail);
+
+        Intent intent = getIntent();
+        System.out.println(intent);
+        intent_post_num = intent.getStringExtra("post_num");
+        System.out.println("ii " + intent_post_num);
+        intent_title = intent.getStringExtra("post_title");
+        intent_content = intent.getStringExtra("post_content");
 
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
@@ -63,6 +74,9 @@ public class WritePostActivity extends AppCompatActivity {
         btnFinish = findViewById(R.id.btn_finish);
         toolbarWrite = findViewById(R.id.toolbar_write);
         btnBack = findViewById(R.id.btnBackWrite);
+
+        editTitle.setText(intent_title);
+        editContent.setText(intent_content);
 
         btnBack.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,8 +106,13 @@ public class WritePostActivity extends AppCompatActivity {
                     // 닉네임 가져오기 (안 된거 같음)
                     String user_nick = nick;
 
-                    // 글 번호 랜덤 생성 (알파벳)
-                    String post_num = (String.valueOf(r1 + r2 + r3 + r4 + r5)).toString();
+                    String post_num = "";
+                    if(intent_post_num == null) {
+                        // 글 번호 랜덤 생성 (알파벳)
+                        post_num = (String.valueOf(r1 + r2 + r3 + r4 + r5)).toString();
+                    }else{
+                        post_num = intent_post_num;
+                    }
 
                     // 날짜 생성
                     post_date = Calendar.getInstance().getTime();
@@ -101,6 +120,7 @@ public class WritePostActivity extends AppCompatActivity {
                     String date = format1.format(post_date);
 
                     // 학교가져오기
+                    String finalPost_num = post_num;
                     mDatabase.child("users").child(tel).addValueEventListener(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot snapshot) {
@@ -108,7 +128,7 @@ public class WritePostActivity extends AppCompatActivity {
                                 User user = snapshot.getValue(User.class);
                                 String school = user.getSchool();
 
-                                addPost(post_num, user_nick, title, content, date, school, tel);
+                                addPost(finalPost_num, user_nick, title, content, date, school, tel);
                                 finish();
                             }
                         }
@@ -130,7 +150,11 @@ public class WritePostActivity extends AppCompatActivity {
         mDatabase.child("posts").child(post_num).setValue(post).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
-                Toast.makeText(getApplicationContext(), "글이 등록되었습니다", Toast.LENGTH_SHORT).show();
+                if(intent_post_num != null){
+                    Toast.makeText(getApplicationContext(), "글이 수정되었습니다.", Toast.LENGTH_SHORT).show();
+                }else {
+                    Toast.makeText(getApplicationContext(), "글이 등록되었습니다", Toast.LENGTH_SHORT).show();
+                }
             }
         })
                 .addOnFailureListener(new OnFailureListener() {

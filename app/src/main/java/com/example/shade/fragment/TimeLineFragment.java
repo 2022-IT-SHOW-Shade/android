@@ -58,11 +58,11 @@ public class TimeLineFragment extends Fragment {
         databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                Log.w("firebaseData", "Key : " + snapshot.getKey());
+                //Log.w("firebaseData", "Key : " + snapshot.getKey());
 
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
-                    Log.w("FirebaseData", "getData" + post.toString());
+                    //Log.w("FirebaseData", "getData" + post.toString());
 
                     String key = databaseReference.child("comments").child(post.getPost_num()).getKey();
                     System.out.println(key);

@@ -65,6 +65,8 @@
         <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_login.xml" value="0.20606884057971014" />
         <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/activity_posts_detail.xml" value="0.225" />
         <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/item_comments.xml" value="0.225" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/item_my_posts.xml" value="0.25" />
+        <entry key="..\:/android-sdk/AndroidProjects/shade/app/src/main/res/layout/item_posts.xml" value="0.17806484295845998" />
       </map>
     </option>
   </component>

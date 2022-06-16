@@ -17,6 +17,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.shade.MypostAdapter;
 import com.example.shade.R;
 import com.example.shade.RecyclerDecoration;
 import com.example.shade.TimeLineAdapter;
@@ -36,7 +37,7 @@ public class MyWriteFragment extends Fragment {
 
     RecyclerView contents_write;
 
-    TimeLineAdapter adapter;
+    MypostAdapter adapter;
     ArrayList<Post> respone = new ArrayList<>();
 
     private DatabaseReference databaseReference;
@@ -81,14 +82,13 @@ public class MyWriteFragment extends Fragment {
                         String num = post.getPost_num();
                         String title = post.getTitle();
                         String content = post.getContent().split("\n")[0];
-                        String nickname = post.getUser_nick();
                         long like_cnt = post.getLike_cnt();
                         long chat_cnt = post.getComment_cnt();
 
-                        respone.add(0, new Post(num, title, content, nickname, like_cnt, chat_cnt));
+                        respone.add(0, new Post(num, title, content, like_cnt, chat_cnt));
 
                         // 리스트뷰 띄우기
-                        adapter = new TimeLineAdapter(respone, getContext());
+                        adapter = new MypostAdapter(respone, getContext());
                         contents_write.setAdapter(adapter);
                         contents_write.setLayoutManager(new LinearLayoutManager(getContext()));
                     }

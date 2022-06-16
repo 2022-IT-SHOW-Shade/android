@@ -116,7 +116,7 @@ public class PostDatailActivity extends AppCompatActivity {
 
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
-                    Log.w("FirebaseData", "getDetail" + post.toString());
+                    //Log.w("FirebaseData", "getDetail" + post.toString());
 
                     // 각각의 데이터
                     String title = post.getTitle();
@@ -147,7 +147,7 @@ public class PostDatailActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if(snapshot.getValue(Comment.class) != null){
                     Comment comment = snapshot.getValue(Comment.class);
-                    Log.w("FirebaseData", "getDetail" + comment.toString());
+                    //Log.w("FirebaseData", "getDetail" + comment.toString());
 
                     // 각각의 데이터
                     String comm = comment.getComment();
@@ -220,7 +220,7 @@ public class PostDatailActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
-                    Log.w("FirebaseData", "getData" + post.toString());
+                    //Log.w("FirebaseData", "getData" + post.toString());
 
                     if(post_num.equals(post.getPost_num())){
                         long comm_cnt = snapshot.getValue(Post.class).getComment_cnt() + 1;
