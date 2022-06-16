@@ -18,6 +18,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shade.R;
+import com.example.shade.RecyclerDecoration;
 import com.example.shade.TimeLineAdapter;
 import com.example.shade.WritePostActivity;
 import com.example.shade.view.Post;
@@ -40,12 +41,16 @@ public class MyWriteFragment extends Fragment {
 
     private DatabaseReference databaseReference;
 
+    RecyclerDecoration recyclerDecoration;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_write, container, false);
 
         btnWrite = view.findViewById(R.id.btnWrite);
         contents_write = view.findViewById(R.id.contents_write);
+        recyclerDecoration = new RecyclerDecoration(60);
+        contents_write.addItemDecoration(recyclerDecoration);
 
         btnWrite.setOnClickListener(new View.OnClickListener() {
             @Override
