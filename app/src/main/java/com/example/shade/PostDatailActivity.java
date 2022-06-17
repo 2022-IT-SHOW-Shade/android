@@ -80,6 +80,14 @@ public class PostDatailActivity extends AppCompatActivity {
         commentlist = (ListView) findViewById(R.id.commentlist);
         comment_et = (EditText) findViewById(R.id.comment_et);
         btnComment = (ImageButton) findViewById(R.id.btnComment);
+        btnback = (ImageButton) findViewById(R.id.btnBackWrite);
+
+        btnback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // 댓글 달기
         btnComment.setOnClickListener(new View.OnClickListener() {

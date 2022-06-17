@@ -11,7 +11,7 @@
         android:layout_height="147dp"
         app:cardElevation="0dp"
         android:layout_weight="1"
-        app:cardCornerRadius="20dp"
+        app:cardCornerRadius="5dp"
         android:focusable="true"
         android:clickable="true">
         <LinearLayout

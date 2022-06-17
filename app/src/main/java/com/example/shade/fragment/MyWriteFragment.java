@@ -16,7 +16,9 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import com.example.shade.DeleteActivity;
 import com.example.shade.MypostAdapter;
 import com.example.shade.R;
 import com.example.shade.RecyclerDecoration;
@@ -33,7 +35,7 @@ import java.util.ArrayList;
 
 public class MyWriteFragment extends Fragment {
 
-    ImageButton btnWrite;
+    ImageButton btnWrite, btnDelete;
 
     RecyclerView contents_write;
 
@@ -44,11 +46,18 @@ public class MyWriteFragment extends Fragment {
 
     RecyclerDecoration recyclerDecoration;
 
+    SwipeRefreshLayout swipeRefreshLayout;
+
+    String num, title, content, nickname;
+    long like_cnt, chat_cnt;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_my_write, container, false);
 
+        btnDelete = view.findViewById(R.id.delete);
         btnWrite = view.findViewById(R.id.btnWrite);
+        swipeRefreshLayout = view.findViewById(R.id.swipeWrite);
         contents_write = view.findViewById(R.id.contents_write);
         recyclerDecoration = new RecyclerDecoration(60);
         contents_write.addItemDecoration(recyclerDecoration);
@@ -60,6 +69,15 @@ public class MyWriteFragment extends Fragment {
                 startActivity(intent);
             }
         });
+
+        btnDelete.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(getActivity(), DeleteActivity.class);
+                startActivity(intent);
+            }
+        });
+
 
         // 내가 쓴 글 가져오기
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
@@ -79,11 +97,11 @@ public class MyWriteFragment extends Fragment {
 
                     if(tel.equals(post.getTel())) {
                         // 각각의 데이터
-                        String num = post.getPost_num();
-                        String title = post.getTitle();
-                        String content = post.getContent().split("\n")[0];
-                        long like_cnt = post.getLike_cnt();
-                        long chat_cnt = post.getComment_cnt();
+                         num = post.getPost_num();
+                         title = post.getTitle();
+                         content = post.getContent().split("\n")[0];
+                         like_cnt = post.getLike_cnt();
+                         chat_cnt = post.getComment_cnt();
 
                         respone.add(0, new Post(num, title, content, like_cnt, chat_cnt));
 
@@ -114,6 +132,63 @@ public class MyWriteFragment extends Fragment {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+            }
+        });
+
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        Log.w("firebaseData", "Key : " + snapshot.getKey());
+
+                        if(snapshot.getValue(Post.class) != null){
+                            Post post = snapshot.getValue(Post.class);
+                            Log.w("FirebaseData", "getMyWrite" + post.toString());
+
+
+                            if(tel.equals(post.getTel())) {
+                                // 각각의 데이터
+                                num = post.getPost_num();
+                                title = post.getTitle();
+                                content = post.getContent().split("\n")[0];
+                                like_cnt = post.getLike_cnt();
+                                chat_cnt = post.getComment_cnt();
+
+                                respone.add(0, new Post(num, title, content, like_cnt, chat_cnt));
+
+                                // 리스트뷰 띄우기
+                                adapter = new MypostAdapter(respone, getContext());
+                                contents_write.setAdapter(adapter);
+                                contents_write.setLayoutManager(new LinearLayoutManager(getContext()));
+                            }
+                        }
+
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                swipeRefreshLayout.setColorSchemeResources(R.color.colorWrite);
+                swipeRefreshLayout.setRefreshing(false);
             }
         });
 

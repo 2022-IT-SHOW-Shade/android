@@ -14,7 +14,7 @@
         android:layout_gravity="center_vertical"
         app:cardElevation="0dp"
         android:layout_weight="1"
-        app:cardCornerRadius="10dp"
+        app:cardCornerRadius="5dp"
         android:focusable="true"
         android:clickable="true">
         <LinearLayout

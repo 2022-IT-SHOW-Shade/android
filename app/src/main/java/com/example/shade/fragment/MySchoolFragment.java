@@ -1,8 +1,11 @@
 package com.example.shade.fragment;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.SharedPreferences;
+import android.nfc.Tag;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -15,8 +18,10 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.example.shade.R;
 import com.example.shade.RecyclerDecoration;
@@ -48,6 +53,10 @@ public class MySchoolFragment extends Fragment {
     RecyclerDecoration recyclerDecoration;
     androidx.recyclerview.widget.RecyclerView recyclerView;
 
+    SwipeRefreshLayout swipeRefreshLayout;
+
+    String num, title, content, nickname;
+    long like_cnt, chat_cnt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -60,6 +69,8 @@ public class MySchoolFragment extends Fragment {
         recyclerView = view.findViewById(R.id.contents_school);
         recyclerDecoration = new RecyclerDecoration(60);
         recyclerView.addItemDecoration(recyclerDecoration);
+
+        swipeRefreshLayout = view.findViewById(R.id.swipeSchool);
 
         // 내 학교 가져오기
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
@@ -93,15 +104,14 @@ public class MySchoolFragment extends Fragment {
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
                     Log.w("FirebaseData", "getMySchool" + post.toString());
-
                     if(my_school.equals(post.getSchool())) {
                         // 각각의 데이터
-                        String num = post.getPost_num();
-                        String title = post.getTitle();
-                        String content = post.getContent().split("\n")[0];
-                        String nickname = post.getUser_nick();
-                        long like_cnt = post.getLike_cnt();
-                        long chat_cnt = post.getComment_cnt();
+                         num = post.getPost_num();
+                         title = post.getTitle();
+                         content = post.getContent().split("\n")[0];
+                         nickname = post.getUser_nick();
+                         like_cnt = post.getLike_cnt();
+                         chat_cnt = post.getComment_cnt();
 
                         respone.add(0, new Post(num, title, content, nickname, like_cnt, chat_cnt));
 
@@ -111,7 +121,6 @@ public class MySchoolFragment extends Fragment {
                         contents_school.setLayoutManager(new LinearLayoutManager(getContext()));
                     }
                 }
-
             }
 
             @Override
@@ -135,6 +144,60 @@ public class MySchoolFragment extends Fragment {
             }
         });
 
+        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
+                    @Override
+                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+                        Log.w("firebaseData", "Key : " + snapshot.getKey());
+
+                        if(snapshot.getValue(Post.class) != null){
+                            Post post = snapshot.getValue(Post.class);
+                            Log.w("FirebaseData", "getMySchool" + post.toString());
+                            if(my_school.equals(post.getSchool())) {
+                                // 각각의 데이터
+                                num = post.getPost_num();
+                                title = post.getTitle();
+                                content = post.getContent().split("\n")[0];
+                                nickname = post.getUser_nick();
+                                like_cnt = post.getLike_cnt();
+                                chat_cnt = post.getComment_cnt();
+
+                                respone.add(0, new Post(num, title, content, nickname, like_cnt, chat_cnt));
+
+                                // 리스트뷰 띄우기
+                                adapter = new TimeLineAdapter(respone, getContext());
+                                contents_school.setAdapter(adapter);
+                                contents_school.setLayoutManager(new LinearLayoutManager(getContext()));
+                            }
+                        }
+                    }
+
+                    @Override
+                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
+
+                    }
+
+                    @Override
+                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
+
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+                swipeRefreshLayout.setColorSchemeResources(R.color.colorWrite);
+                swipeRefreshLayout.setRefreshing(false);
+            }
+        });
         return  view;
     }
 }
