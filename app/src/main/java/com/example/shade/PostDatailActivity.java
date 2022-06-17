@@ -55,6 +55,8 @@ public class PostDatailActivity extends AppCompatActivity {
     ArrayList<Comment> list = new ArrayList<>();
     CommentAdpater adpater;
 
+    long comment_cnt = 0;
+
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -103,6 +105,24 @@ public class PostDatailActivity extends AppCompatActivity {
                 addComment(comm_num, post_num, tel, user_comment, date);
 
                 comment_et.setText("");
+
+                // postsDB - 댓글 수 업데이트
+                mDatabase.child("comment").child(post_num).child(tel).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(@NonNull DataSnapshot snapshot) {
+                        comment_cnt = snapshot.getChildrenCount();
+                        System.out.println("com : " + comment_cnt);
+                    }
+
+                    @Override
+                    public void onCancelled(@NonNull DatabaseError error) {
+
+                    }
+                });
+
+                Map<String, Object> taskMap = new HashMap<String, Object>();
+                taskMap.put(post_num+"/comment_cnt", comment_cnt);
+                databaseReference.child("posts").updateChildren(taskMap);
 
             }
         });
