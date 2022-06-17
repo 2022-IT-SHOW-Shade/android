@@ -67,7 +67,7 @@ public class MyWriteFragment extends Fragment {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
+        databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Log.w("firebaseData", "Key : " + snapshot.getKey());

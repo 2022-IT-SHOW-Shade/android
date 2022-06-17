@@ -85,7 +85,7 @@ public class MySchoolFragment extends Fragment {
         // 우리 학교 글만 보기
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        databaseReference.child("posts").addChildEventListener(new ChildEventListener() {
+        databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
             @Override
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 Log.w("firebaseData", "Key : " + snapshot.getKey());
