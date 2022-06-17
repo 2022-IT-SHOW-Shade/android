@@ -20,16 +20,22 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="70dp">
-            <androidx.recyclerview.widget.RecyclerView
-                android:layout_gravity="center_vertical"
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:divider="@null"
-                android:dividerHeight="20dp"
-                android:layout_marginLeft="20dp"
-                android:layout_marginRight="20dp"
-                android:scrollbars="none"
-                android:id="@+id/contents_school"/>
+                android:layout_height="match_parent"
+                android:id="@+id/swipeSchool">
+                <androidx.recyclerview.widget.RecyclerView
+                    android:layout_gravity="center_vertical"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:divider="@null"
+                    android:dividerHeight="20dp"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:scrollbars="none"
+                    android:id="@+id/contents_school"/>
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
         </LinearLayout>
 
     </LinearLayout>

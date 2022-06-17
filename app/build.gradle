@@ -60,4 +60,6 @@ dependencies {
 
     implementation "kr.go.neis.api:neis-api:4.0.1"
 
+    implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
+
 }
