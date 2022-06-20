@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -6,6 +6,8 @@ import android.widget.ImageButton;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.shade.R;
 
 public class VersionActivity extends AppCompatActivity {
     androidx.appcompat.widget.Toolbar tb;

@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp">
+            android:layout_marginTop="40dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -35,62 +35,19 @@
                     android:textColor="#A4A4A4"
                     android:layout_marginLeft="10dp"/>
             </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
+            <EditText
+                android:id="@+id/loginPhone"
+                android:layout_width="330dp"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
-                <EditText
-                    android:id="@+id/loginPhone"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#A4A4A4"
-                    android:hint="전화번호를 적어주세요."
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:maxLength="11"
-                    android:minHeight="48dp"
-                    android:singleLine="true"/>
-                <Button
-                    android:id="@+id/PhoneConfirm"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    android:text="인증하기"
-                    android:textColor="@color/colorMain"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:background="@drawable/background_btn_phone_confirm"
-                    android:layout_marginLeft="10dp"/>
-            </LinearLayout>
-            <LinearLayout
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_gravity="center">
-                <EditText
-                    android:id="@+id/loginPhoneCheck"
-                    android:layout_width="260dp"
-                    android:layout_height="wrap_content"
-                    android:backgroundTint="#A4A4A4"
-                    android:hint="인증번호를 적어주세요."
-                    android:textSize="15sp"
-                    android:textColor="@color/black"
-                    android:textStyle="bold"
-                    android:maxLength="11"
-                    android:minHeight="48dp"
-                    android:singleLine="true"/>
-                <Button
-                    android:id="@+id/btnPhoneCheck"
-                    android:layout_width="70dp"
-                    android:layout_height="35dp"
-                    android:text="확인"
-                    android:textColor="@color/colorMain"
-                    android:textStyle="bold"
-                    android:textSize="14sp"
-                    android:background="@drawable/background_btn_phone_confirm"
-                    android:layout_marginLeft="10dp"/>
-            </LinearLayout>
+                android:layout_gravity="center"
+                android:backgroundTint="#A4A4A4"
+                android:hint="비밀번호를 적어주세요."
+                android:textSize="15sp"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:maxLength="13"
+                android:minHeight="48dp"
+                android:singleLine="true" />
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -194,7 +151,7 @@
             android:id="@+id/btnJoinOk"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="40dp"
+            android:layout_marginTop="50dp"
             android:text="완료"
             android:textColor="@color/white"
             android:textStyle="bold"

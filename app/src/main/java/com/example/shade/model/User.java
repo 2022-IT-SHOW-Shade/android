@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.model;
 
 import java.security.PublicKey;
 

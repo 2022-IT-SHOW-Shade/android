@@ -2,7 +2,6 @@ package com.example.shade.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -16,11 +15,11 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
-import com.example.shade.LoginActivity;
-import com.example.shade.NoticeActivity;
+import com.example.shade.view.userActivity.LoginActivity;
+import com.example.shade.view.NoticeActivity;
 import com.example.shade.R;
-import com.example.shade.SearchSchoolActivity;
-import com.example.shade.VersionActivity;
+import com.example.shade.view.server.SearchSchoolActivity;
+import com.example.shade.view.VersionActivity;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

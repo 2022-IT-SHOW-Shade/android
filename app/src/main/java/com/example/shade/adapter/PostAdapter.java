@@ -1,20 +1,14 @@
-package com.example.shade;
+package com.example.shade.adapter;
 
 import android.content.Context;
-import android.content.Intent;
-import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
-import android.widget.CheckBox;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.TextView;
 
-import com.example.shade.view.Post;
+import com.example.shade.model.Post;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class PostAdapter extends BaseAdapter {
     ArrayList<Post> postItemList = new ArrayList<>();

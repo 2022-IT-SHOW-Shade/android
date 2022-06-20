@@ -5,7 +5,7 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/background_splash"
-    tools:context=".SplashActivity"
+    tools:context=".view.SplashActivity"
     android:orientation="vertical"
     android:gravity="center">
     <ImageView

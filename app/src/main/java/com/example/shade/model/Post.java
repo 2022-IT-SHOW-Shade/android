@@ -1,14 +1,4 @@
-package com.example.shade.view;
-
-import android.widget.CheckBox;
-
-import com.example.shade.User;
-import com.google.firebase.database.Exclude;
-import com.google.firebase.database.IgnoreExtraProperties;
-
-import java.util.Date;
-import java.util.HashMap;
-import java.util.Map;
+package com.example.shade.model;
 
 public class Post {
     String post_num; //primary

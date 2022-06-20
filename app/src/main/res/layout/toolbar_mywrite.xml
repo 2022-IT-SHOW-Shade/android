@@ -14,7 +14,7 @@
             android:layout_gravity="center"
             android:scaleType="fitCenter"
             android:layout_centerVertical="true"
-            android:layout_marginRight="20dp"
+            android:layout_marginRight="50dp"
             android:layout_width="30dp"
             android:background="@color/colorMain"
             android:layout_height="30dp"

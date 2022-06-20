@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.example.shade.R;
 import com.example.shade.fragment.MyPageFragment;
 import com.example.shade.fragment.MySchoolFragment;
 import com.example.shade.fragment.MyWriteFragment;

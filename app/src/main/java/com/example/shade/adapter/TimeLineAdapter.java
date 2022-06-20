@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -11,11 +11,11 @@ import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.shade.fragment.TimeLineFragment;
-import com.example.shade.view.Post;
+import com.example.shade.view.PostDatailActivity;
+import com.example.shade.R;
+import com.example.shade.model.Post;
 
 import java.util.ArrayList;
-import java.util.Collections;
 
 public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHolder> {
 

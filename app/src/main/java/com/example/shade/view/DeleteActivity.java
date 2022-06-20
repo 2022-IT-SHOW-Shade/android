@@ -1,8 +1,7 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.Manifest;
 import android.app.Dialog;
-import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -19,6 +18,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
+import com.example.shade.R;
 import com.example.shade.fragment.MyWriteFragment;
 
 import java.util.ArrayList;

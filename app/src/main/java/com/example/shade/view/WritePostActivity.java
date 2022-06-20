@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -15,7 +15,9 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.shade.view.Post;
+import com.example.shade.R;
+import com.example.shade.model.Post;
+import com.example.shade.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;

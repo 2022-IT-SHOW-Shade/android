@@ -2,24 +2,24 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp"
+    android:paddingRight="10dp"
+    android:paddingLeft="10dp"
     android:paddingTop="20dp"
     android:paddingBottom="10dp"
     android:background="@drawable/background_cardview_round">
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="고민을 대나무숲으로 보내시겠습니까?"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="#000"
         android:paddingLeft="10dp"/>
     <TextView
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="보낸 고민은 다시 돌려올 수 없습니다."
-        android:paddingLeft="10dp"
+        android:paddingLeft="14dp"
         android:paddingTop="15dp"/>
 
     <LinearLayout
@@ -34,7 +34,7 @@
             android:layout_height="wrap_content"
             android:text="취소"
             android:textColor="#757575"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:id="@+id/btnBambooCancel"
             android:layout_weight="1" />
         <Button
@@ -44,7 +44,7 @@
             android:layout_height="wrap_content"
             android:text="확인"
             android:textColor="#757575"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/btnBambooOk"
             android:layout_weight="1" />

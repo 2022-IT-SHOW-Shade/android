@@ -1,20 +1,21 @@
-package com.example.shade;
+package com.example.shade.view.userActivity;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ActionMenuView;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.example.shade.R;
+import com.example.shade.view.server.SearchSchoolActivity;
+import com.example.shade.model.User;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.firebase.database.DataSnapshot;
@@ -30,8 +31,8 @@ public class JoinActivity extends AppCompatActivity {
     // 파이어베이스
     private DatabaseReference mDatabase;
 
-    EditText loginPhone, loginPhoneCheck, loginPw, loginPwCheck, loginBirth;
-    Button PhoneConfirm, btnPhoneCheck, btnSchool, btnJoinOk;
+    EditText loginPhone, loginPw, loginPwCheck, loginBirth;
+    Button PhoneConfirm, btnSchool, btnJoinOk;
 
     String phone, pw, nickname;
     String ResultSchool, ResultAddress;
@@ -48,13 +49,10 @@ public class JoinActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference();
 
         loginPhone = findViewById(R.id.loginPhone);
-        loginPhoneCheck = findViewById(R.id.loginPhoneCheck);
         loginPw = findViewById(R.id.loginPw);
         loginPwCheck = findViewById(R.id.loginPwCheck);
         loginBirth = findViewById(R.id.loginBirth);
 
-        PhoneConfirm = findViewById(R.id.PhoneConfirm);
-        btnPhoneCheck = findViewById(R.id.btnPhoneCheck);
         btnSchool = findViewById(R.id.btnSchool);
         btnJoinOk = findViewById(R.id.btnJoinOk);
 
@@ -68,16 +66,6 @@ public class JoinActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 finish();
-            }
-        });
-
-
-
-        // 전화번호 인증하기
-        PhoneConfirm.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
             }
         });
 
