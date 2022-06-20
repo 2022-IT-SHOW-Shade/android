@@ -15,9 +15,9 @@
         android:roundIcon="@mipmap/ic_launcher_mainicon_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Shade">
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".view.MainActivity"/>
         <activity
-            android:name=".SplashActivity"
+            android:name=".view.SplashActivity"
             android:label="Shade"
             android:exported="true">
             <intent-filter>
@@ -26,13 +26,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".JoinActivity" />
-        <activity android:name=".LoginActivity" />
-        <activity android:name=".SearchSchoolActivity"/>
-        <activity android:name=".WritePostActivity"/>
-        <activity android:name=".PostDatailActivity"/>
-        <activity android:name=".NoticeActivity"/>
-        <activity android:name=".VersionActivity"/>
-        <activity android:name=".DeleteActivity"/>
+        <activity android:name=".view.userActivity.JoinActivity" />
+        <activity android:name=".view.userActivity.LoginActivity" />
+        <activity android:name=".view.server.SearchSchoolActivity"/>
+        <activity android:name=".view.WritePostActivity"/>
+        <activity android:name=".view.PostDatailActivity"/>
+        <activity android:name=".view.NoticeActivity"/>
+        <activity android:name=".view.VersionActivity"/>
+        <activity android:name=".view.DeleteActivity"/>
     </application>
 </manifest>

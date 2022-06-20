@@ -1,10 +1,13 @@
-package com.example.shade;
+package com.example.shade.adapter;
 
 import android.content.Context;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
+
+import com.example.shade.R;
+import com.example.shade.model.Notice;
 
 import java.util.ArrayList;
 
@@ -40,8 +43,8 @@ public class NoticeAdapter extends BaseAdapter {
         TextView title = view.findViewById(R.id.notice_title);
         TextView date = view.findViewById(R.id.notice_date);
 
-        title.setText(list.get(i).title);
-        date.setText(list.get(i).date);
+        title.setText(list.get(i).getTitle());
+        date.setText(list.get(i).getDate());
 
         return view;
     }

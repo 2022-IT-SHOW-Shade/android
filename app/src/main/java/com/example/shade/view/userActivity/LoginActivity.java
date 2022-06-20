@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view.userActivity;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -13,6 +13,9 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.example.shade.view.MainActivity;
+import com.example.shade.R;
+import com.example.shade.model.User;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

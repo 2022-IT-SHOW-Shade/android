@@ -12,7 +12,6 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.ImageButton;
-import android.widget.ListView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -20,16 +19,13 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
-import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
-import com.example.shade.DeleteActivity;
-import com.example.shade.MypostAdapter;
+import com.example.shade.view.DeleteActivity;
+import com.example.shade.adapter.MypostAdapter;
 import com.example.shade.R;
-import com.example.shade.RecyclerDecoration;
-import com.example.shade.TimeLineAdapter;
-import com.example.shade.WritePostActivity;
-import com.example.shade.view.Post;
-import com.google.android.material.snackbar.Snackbar;
+import com.example.shade.view.RecyclerDecoration;
+import com.example.shade.view.WritePostActivity;
+import com.example.shade.model.Post;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -87,7 +83,6 @@ public class MyWriteFragment extends Fragment {
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
                     Log.w("FirebaseData", "getMyWrite" + post.toString());
-
 
                     if(tel.equals(post.getTel())) {
                         // 각각의 데이터
@@ -151,6 +146,8 @@ public class MyWriteFragment extends Fragment {
                             if (mPost.isSelected() == true){
                                 data = mPost.getPost_num().toString();
                                 intent.putExtra("post_num", mPost.getPost_num());
+                                Log.d("test", "글번호 : " + data);
+                                databaseReference.child("posts").child(mPost.getPost_num()).removeValue();
                             }
                         }
                         startActivity(intent);

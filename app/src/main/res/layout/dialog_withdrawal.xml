@@ -1,17 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingRight="20dp"
-    android:paddingLeft="20dp"
     android:paddingTop="20dp"
-    android:paddingBottom="10dp"
-    android:background="@drawable/background_cardview_round">
+    android:paddingBottom="10dp">
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="정말로 탈퇴하시겠습니까?"
-        android:textSize="18dp"
+        android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="#000"
         android:paddingLeft="10dp"/>
@@ -19,6 +17,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회원탈퇴 시 개인정보 및 Shade 데이터는 모두 삭제됩니다."
+        android:textSize="13dp"
         android:paddingLeft="10dp"
         android:paddingTop="15dp"/>
 
@@ -34,7 +33,7 @@
             android:layout_height="wrap_content"
             android:text="취소"
             android:textColor="#757575"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:id="@+id/btnCancel"
             android:layout_weight="1" />
         <Button
@@ -44,7 +43,7 @@
             android:layout_height="wrap_content"
             android:text="확인"
             android:textColor="#757575"
-            android:textSize="18sp"
+            android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/btnOk"
             android:layout_weight="1" />

@@ -1,14 +1,16 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.Handler;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.ImageView;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.shade.R;
+import com.example.shade.view.userActivity.LoginActivity;
 
 public class SplashActivity extends AppCompatActivity {
     ImageView icon;

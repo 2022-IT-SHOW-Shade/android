@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.model;
 
 public class Notice {
     String title;

@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.os.Bundle;
 import android.view.View;
@@ -8,8 +8,11 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.shade.R;
+import com.example.shade.adapter.NoticeAdapter;
+import com.example.shade.model.Notice;
 
 import java.util.ArrayList;
 
@@ -19,8 +22,8 @@ public class NoticeActivity extends AppCompatActivity {
     ArrayList<Notice> arrayList;
     Notice item;
 
-    String[] title = {"올해 1.9.0 업데이트 안내", "Shade 사칭 주의", "Shade 개인정보 약관 변경 안내", "버그 업데이트 안내"};
-    String[] date = {"22/06/02", "22/05/30", "21/09/20", "21/03/02"};
+    String[] nTitle = {"올해 1.9.0 업데이트 안내", "Shade 사칭 주의", "Shade 개인정보 약관 변경 안내", "버그 업데이트 안내"};
+    String[] nDate = {"22/06/02", "22/05/30", "21/09/20", "21/03/02"};
 
     androidx.appcompat.widget.Toolbar tb;
     TextView toolbar_title;
@@ -34,8 +37,8 @@ public class NoticeActivity extends AppCompatActivity {
         list = findViewById(R.id.noticelist);
         arrayList = new ArrayList<>();
 
-        for (int i =0; i<title.length; i++){
-            item = new Notice(title[i], date[i]);
+        for (int i =0; i<nTitle.length; i++){
+            item = new Notice(nTitle[i], nDate[i]);
             arrayList.add(item);
         }
         noticeAdapter = new NoticeAdapter(this, arrayList);

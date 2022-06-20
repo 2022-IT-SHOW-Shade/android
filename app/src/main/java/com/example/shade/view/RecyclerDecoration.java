@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.graphics.Rect;
 import android.view.View;

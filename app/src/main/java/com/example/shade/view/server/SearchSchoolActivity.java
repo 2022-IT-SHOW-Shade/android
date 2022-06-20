@@ -1,4 +1,4 @@
-package com.example.shade;
+package com.example.shade.view.server;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -16,36 +16,28 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
-import androidx.recyclerview.widget.LinearLayoutManager;
 
-import com.example.shade.fragment.MyPageFragment;
-import com.example.shade.view.Post;
+import com.example.shade.view.MainActivity;
+import com.example.shade.R;
+import com.example.shade.adapter.ListViewAdapter;
+import com.example.shade.model.Post;
+import com.example.shade.model.School;
 import com.google.firebase.database.ChildEventListener;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
-import com.google.firebase.database.ValueEventListener;
 
-import org.w3c.dom.Document;
 import org.xml.sax.SAXException;
 import org.xmlpull.v1.XmlPullParserException;
 
 import java.io.IOException;
 import java.text.ParseException;
 import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Calendar;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 import javax.xml.parsers.ParserConfigurationException;
-
-import kr.go.neis.api.NEISException;
 
 public class SearchSchoolActivity extends AppCompatActivity {
 

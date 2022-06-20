@@ -1,4 +1,6 @@
-package com.example.shade;
+package com.example.shade.view.server;
+
+import com.example.shade.model.School;
 
 import org.json.JSONArray;
 import org.json.JSONException;

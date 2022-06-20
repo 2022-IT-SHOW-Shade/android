@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    tools:context=".WritePostActivity">
+    tools:context=".view.WritePostActivity">
 
     <include
         android:id="@+id/toolbar"
@@ -32,7 +32,7 @@
         <EditText
             android:id="@+id/editContent"
             android:layout_width="match_parent"
-            android:layout_height="520dp"
+            android:layout_height="550dp"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
             android:background="@drawable/background_mypage_like"

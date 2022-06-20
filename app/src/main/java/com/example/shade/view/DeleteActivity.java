@@ -1,6 +1,7 @@
-package com.example.shade;
+package com.example.shade.view;
 
 import android.Manifest;
+import android.app.Dialog;
 import android.content.Intent;
 import android.os.Build;
 import android.os.Bundle;
@@ -8,23 +9,35 @@ import android.speech.RecognitionListener;
 import android.speech.RecognizerIntent;
 import android.speech.SpeechRecognizer;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
+
+import com.example.shade.R;
+import com.example.shade.fragment.MyWriteFragment;
 
 import java.util.ArrayList;
 
-public class DeleteActivity extends AppCompatActivity {
+public class DeleteActivity extends AppCompatActivity{
 
     final int PERMISSION = 1;
     ImageButton btnMic, btnBack;
     TextView txtDelete, tbTitle;
     Intent intent;
     SpeechRecognizer mRecognizer;
-    androidx.appcompat.widget.Toolbar tb;
+    Toolbar tb;
+
+    private int count = 0;
+
+    // 15개
+    String [] spell = {"두밧두 와리와리", "가나다라마바사하쿠나마타타", "쩗쭓짧", "하나가 되는 순간 모두가 주목해", "Happiness!", "둘 셋 방탄", "We are one",
+                        "어이구~ 하이라이트입니다~", "All I Wanna do!", "투더월 여긴 엔시티", "(쿵) 후 몬스타엑스", "쪽~! 내 꿈꿔", "Let's get Crazy",
+                        "아이~! 아이들입니다", "우리는 슈퍼주니어에요!"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,6 +65,9 @@ public class DeleteActivity extends AppCompatActivity {
             }
         });
 
+        // 랜덤 주문 출력
+        txtDelete.setText(spell[(int)(Math.random()*15)]);
+
         // RecognizerIntent 생성
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
         intent.putExtra(RecognizerIntent.EXTRA_CALLING_PACKAGE,getPackageName()); // 여분의 키
@@ -63,6 +79,23 @@ public class DeleteActivity extends AppCompatActivity {
                 mRecognizer = SpeechRecognizer.createSpeechRecognizer(DeleteActivity.this); // 새 SpeechRecognizer 를 만드는 팩토리 메서드
                 mRecognizer.setRecognitionListener(listener); // 리스너 설정
                 mRecognizer.startListening(intent); // 듣기 시작
+                count++;
+
+                if(count % 2 == 0){
+                    Dialog dialog = new Dialog(DeleteActivity.this);
+                    dialog.setContentView(R.layout.dialog_delete);
+                    dialog.show();
+
+                    Button btnDeleteOk = dialog.findViewById(R.id.btnDeleteOk);
+                    btnDeleteOk.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View view) {
+                            dialog.dismiss();
+                            Intent  intent = new Intent(getApplicationContext(), MyWriteFragment.class);
+                            startActivity(intent);
+                        }
+                    });
+                }
             }
         });
     }
