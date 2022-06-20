@@ -9,7 +9,7 @@
 
     <include
         layout="@layout/toolbar_mywrite"
-        android:id="@+id/toolbar_mywrite"/>
+        android:id="@+id/toolbar_frg"/>
 
     <LinearLayout
         android:id="@+id/listLayout"
@@ -20,20 +20,15 @@
             android:layout_height="match_parent"
             android:orientation="vertical"
             android:paddingTop="80dp">
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/swipeWrite">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:divider="@null"
-                    android:dividerHeight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:scrollbars="none"
-                    android:id="@+id/contents_write"/>
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                android:layout_height="wrap_content"
+                android:divider="@null"
+                android:dividerHeight="20dp"
+                android:layout_marginLeft="20dp"
+                android:layout_marginRight="20dp"
+                android:scrollbars="none"
+                android:id="@+id/contents_write"/>
         </LinearLayout>
     </LinearLayout>
 
