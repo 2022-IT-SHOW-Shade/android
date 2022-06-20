@@ -19,9 +19,11 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.app.ActivityCompat;
 
+import com.example.shade.fragment.MyWriteFragment;
+
 import java.util.ArrayList;
 
-public class DeleteActivity extends AppCompatActivity implements View.OnClickListener {
+public class DeleteActivity extends AppCompatActivity{
 
     final int PERMISSION = 1;
     ImageButton btnMic, btnBack;
@@ -79,16 +81,18 @@ public class DeleteActivity extends AppCompatActivity implements View.OnClickLis
                 mRecognizer.startListening(intent); // 듣기 시작
                 count++;
 
-                if(count == 2){
-                    Dialog dialog = new Dialog(getApplicationContext());
+                if(count % 2 == 0){
+                    Dialog dialog = new Dialog(DeleteActivity.this);
                     dialog.setContentView(R.layout.dialog_delete);
                     dialog.show();
 
-                    Button btnDeleteOk = findViewById(R.id.btnDeleteOk);
+                    Button btnDeleteOk = dialog.findViewById(R.id.btnDeleteOk);
                     btnDeleteOk.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View view) {
-                            finish();
+                            dialog.dismiss();
+                            Intent  intent = new Intent(getApplicationContext(), MyWriteFragment.class);
+                            startActivity(intent);
                         }
                     });
                 }
@@ -185,9 +189,4 @@ public class DeleteActivity extends AppCompatActivity implements View.OnClickLis
             // 향후 이벤트를 추가하기 위해 예약
         }
     };
-
-    @Override
-    public void onClick(View view) {
-
-    }
 }

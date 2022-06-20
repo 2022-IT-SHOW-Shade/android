@@ -88,7 +88,6 @@ public class MyWriteFragment extends Fragment {
                     Post post = snapshot.getValue(Post.class);
                     Log.w("FirebaseData", "getMyWrite" + post.toString());
 
-
                     if(tel.equals(post.getTel())) {
                         // 각각의 데이터
                          num = post.getPost_num();
@@ -151,6 +150,8 @@ public class MyWriteFragment extends Fragment {
                             if (mPost.isSelected() == true){
                                 data = mPost.getPost_num().toString();
                                 intent.putExtra("post_num", mPost.getPost_num());
+                                Log.d("test", "글번호 : " + data);
+                                databaseReference.child("posts").child(mPost.getPost_num()).removeValue();
                             }
                         }
                         startActivity(intent);
