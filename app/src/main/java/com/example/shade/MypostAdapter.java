@@ -1,20 +1,33 @@
 package com.example.shade;
 
+import android.app.Activity;
+import android.app.Dialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageButton;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.appcompat.app.AlertDialog;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.shade.view.Post;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder> {
 
@@ -42,6 +55,16 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
 
         // 화면에 데이터 담기
         holder.setItem(post);
+
+        // 체크박스 해제 버그 고침
+        holder.deleteCheck.setOnCheckedChangeListener(null);
+        holder.deleteCheck.setChecked(post.isSelected());
+        holder.deleteCheck.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+            @Override
+            public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                post.setSelected(b);
+            }
+        });
     }
 
     @Override
@@ -49,12 +72,13 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
         return listViewItemList.size();
     }
 
-    static class ViewHolder extends RecyclerView.ViewHolder{
-
+    public class ViewHolder extends RecyclerView.ViewHolder{
         CardView item_mypost;
         TextView my_title, my_content, my_likeCount, my_chatCount;
-        ImageButton btnEdit;
+        ImageButton btnEdit, btnDelete;
+        CheckBox deleteCheck;
         Context context;
+        private DatabaseReference databaseReference;
 
         public ViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
@@ -64,7 +88,10 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
             my_content = (TextView) itemView.findViewById(R.id.my_content);
             my_likeCount = (TextView) itemView.findViewById(R.id.my_likeCount);
             my_chatCount = (TextView) itemView.findViewById(R.id.my_chatCount);
+            btnDelete = (ImageButton) itemView.findViewById(R.id.delete);
             btnEdit = (ImageButton) itemView.findViewById(R.id.btnEdit);
+            deleteCheck = (CheckBox) itemView.findViewById(R.id.deleteCheck);
+            databaseReference = FirebaseDatabase.getInstance().getReference();
             this.context = context;
 
         }
@@ -95,6 +122,22 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
                     intent.putExtra("post_title", post.getTitle());
                     intent.putExtra("post_content", post.getContent());
                     (context).startActivity(intent);
+                }
+            });
+
+            deleteCheck.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    final int pos = getAdapterPosition();
+                    post.setSelected(deleteCheck.isChecked());
+                    listViewItemList.get(pos).setSelected(deleteCheck.isChecked());
+                    //String data = "";
+                   /*for (int i = 0; i < listViewItemList.size(); i++){
+                        Post mPost = listViewItemList.get(i);
+                        if (mPost.isSelected() == true){
+                            data = mPost.getPost_num().toString();
+                        }
+                    }*/
                 }
             });
         }

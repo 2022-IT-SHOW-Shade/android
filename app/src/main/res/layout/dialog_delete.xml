@@ -30,7 +30,7 @@
             android:textColor="#757575"
             android:textSize="18sp"
             android:textStyle="bold"
-            android:id="@+id/btnOk"
+            android:id="@+id/btnDeleteOk"
             android:layout_weight="1" />
     </LinearLayout>
 

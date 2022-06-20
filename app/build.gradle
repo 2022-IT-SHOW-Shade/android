@@ -56,6 +56,9 @@ dependencies {
     implementation 'com.google.firebase:firebase-database:20.0.5'
     implementation 'com.google.firebase:firebase-auth:21.0.3'
 
+    implementation "androidx.cardview:cardview:1.0.0"
+    implementation "androidx.recyclerview:recyclerview-selection:1.1.0-rc01"
+
     implementation 'com.google.firebase:firebase-auth'
 
     implementation "kr.go.neis.api:neis-api:4.0.1"

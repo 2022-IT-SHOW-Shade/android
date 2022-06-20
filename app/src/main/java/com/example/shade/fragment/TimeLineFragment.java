@@ -44,8 +44,6 @@ public class TimeLineFragment extends Fragment {
     RecyclerDecoration recyclerDecoration;
     androidx.recyclerview.widget.RecyclerView recyclerView;
 
-    SwipeRefreshLayout swipeRefreshLayout;
-
     String num, title, content, nickname;
     long like_cnt, chat_cnt;
 
@@ -53,7 +51,6 @@ public class TimeLineFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View view = inflater.inflate(R.layout.fragment_timeline, container, false);
 
-        swipeRefreshLayout = (SwipeRefreshLayout) view.findViewById(R.id.swipeTime);
         contents_timeline = (RecyclerView) view.findViewById(R.id.contents_timeline);
         recyclerView = view.findViewById(R.id.contents_timeline);
         recyclerDecoration = new RecyclerDecoration(60);
@@ -115,65 +112,6 @@ public class TimeLineFragment extends Fragment {
             }
         });
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
-            @Override
-            public void onRefresh() {
-                databaseReference.child("posts").orderByChild("date").addChildEventListener(new ChildEventListener() {
-                    @Override
-                    public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-                        //Log.w("firebaseData", "Key : " + snapshot.getKey());
-
-                        if(snapshot.getValue(Post.class) != null){
-                            Post post = snapshot.getValue(Post.class);
-                            //Log.w("FirebaseData", "getData" + post.toString());
-
-                            String key = databaseReference.child("comments").child(post.getPost_num()).getKey();
-                            System.out.println(key);
-
-                            // 각각의 데이터
-                            num = post.getPost_num();
-                            title = post.getTitle();
-                            content = post.getContent().split("\n")[0];
-                            nickname = post.getUser_nick();
-                            like_cnt = post.getLike_cnt();
-                            chat_cnt = post.getComment_cnt();
-
-                            System.out.println("chat : " + chat_cnt);
-
-                            respone.add(0, new Post(num, title, content, nickname, like_cnt, chat_cnt));
-
-                            // 리스트뷰 띄우기
-                            adapter = new TimeLineAdapter(respone, getContext());
-                            contents_timeline.setAdapter(adapter);
-                            contents_timeline.setLayoutManager(new LinearLayoutManager(getContext()));
-                        }
-
-                    }
-
-                    @Override
-                    public void onChildChanged(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                    }
-
-                    @Override
-                    public void onChildRemoved(@NonNull DataSnapshot snapshot) {
-
-                    }
-
-                    @Override
-                    public void onChildMoved(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
-
-                    }
-
-                    @Override
-                    public void onCancelled(@NonNull DatabaseError error) {
-
-                    }
-                });
-                swipeRefreshLayout.setColorSchemeResources(R.color.colorWrite);
-                swipeRefreshLayout.setRefreshing(false);
-            }
-        });
         return view;
     }
 }

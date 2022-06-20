@@ -10,26 +10,22 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_gravity="center">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:orientation="vertical"
-            android:paddingTop="30dp">
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+            android:paddingTop="30dp"
+            android:paddingRight="20dp"
+            android:paddingLeft="20dp">
+            <androidx.recyclerview.widget.RecyclerView
+                android:divider="@null"
+                android:dividerHeight="20dp"
+                android:scrollbars="none"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/swipeTime">
-                <androidx.recyclerview.widget.RecyclerView
-                    android:divider="@null"
-                    android:dividerHeight="20dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
-                    android:scrollbars="none"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/contents_timeline"/>
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+                android:layout_height="wrap_content"
+                android:id="@+id/contents_timeline"/>
         </LinearLayout>
 
     </LinearLayout>
