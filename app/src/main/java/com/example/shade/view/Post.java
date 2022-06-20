@@ -1,5 +1,7 @@
 package com.example.shade.view;
 
+import android.widget.CheckBox;
+
 import com.example.shade.User;
 import com.google.firebase.database.Exclude;
 import com.google.firebase.database.IgnoreExtraProperties;
@@ -19,6 +21,7 @@ public class Post {
     String user_nick;
     long like_cnt;
     long comment_cnt;
+    private boolean isSelected;
 
     public Post(){}
 
@@ -123,6 +126,14 @@ public class Post {
 
     public void setComment_cnt(long comment_cnt) {
         this.comment_cnt = comment_cnt;
+    }
+
+    public boolean isSelected() {
+        return isSelected;
+    }
+
+    public void setSelected(boolean selected) {
+        isSelected = selected;
     }
 
     @Override

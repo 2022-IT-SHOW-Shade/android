@@ -5,6 +5,7 @@
     <!-- 인터넷 사용 권한 -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
 
     <application
         android:usesCleartextTraffic="true"
@@ -32,5 +33,6 @@
         <activity android:name=".PostDatailActivity"/>
         <activity android:name=".NoticeActivity"/>
         <activity android:name=".VersionActivity"/>
+        <activity android:name=".DeleteActivity"/>
     </application>
 </manifest>
