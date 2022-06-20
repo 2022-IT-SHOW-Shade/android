@@ -51,8 +51,6 @@ public class MyWriteFragment extends Fragment {
 
     RecyclerDecoration recyclerDecoration;
 
-    SwipeRefreshLayout swipeRefreshLayout;
-
     String num, title, content;
     long like_cnt, chat_cnt;
 

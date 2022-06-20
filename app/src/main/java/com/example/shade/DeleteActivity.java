@@ -20,10 +20,11 @@ import java.util.ArrayList;
 public class DeleteActivity extends AppCompatActivity {
 
     final int PERMISSION = 1;
-    ImageButton btnMic;
-    TextView txtDelete;
+    ImageButton btnMic, btnBack;
+    TextView txtDelete, tbTitle;
     Intent intent;
     SpeechRecognizer mRecognizer;
+    androidx.appcompat.widget.Toolbar tb;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,8 +38,19 @@ public class DeleteActivity extends AppCompatActivity {
                     Manifest.permission.RECORD_AUDIO}, PERMISSION);
         }
 
+        tb = findViewById(R.id.toolbar_delete);
         btnMic = findViewById(R.id.btnMic);
         txtDelete = findViewById(R.id.txtDelete);
+        btnBack = findViewById(R.id.btnback);
+        tbTitle = findViewById(R.id.toolbar_title);
+
+        tbTitle.setText("대나무숲");
+        btnBack.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                finish();
+            }
+        });
 
         // RecognizerIntent 생성
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -58,7 +70,7 @@ public class DeleteActivity extends AppCompatActivity {
     private RecognitionListener listener = new RecognitionListener() {
         @Override
         public void onReadyForSpeech(Bundle params) {
-            // 말하기 시작할 준비가되면 호출
+            // 말하기 시작할 준비가 되면 호출
             Toast.makeText(getApplicationContext(),"음성인식 시작",Toast.LENGTH_SHORT).show();
         }
 
@@ -127,8 +139,7 @@ public class DeleteActivity extends AppCompatActivity {
         public void onResults(Bundle results) {
             // 인식 결과가 준비되면 호출
             // 말을 하면 ArrayList에 단어를 넣고 textView에 단어를 이어줌
-            ArrayList<String> matches =
-                    results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
+            ArrayList<String> matches = results.getStringArrayList(SpeechRecognizer.RESULTS_RECOGNITION);
 
             for(int i = 0; i < matches.size() ; i++){
                 txtDelete.setText(matches.get(i));
