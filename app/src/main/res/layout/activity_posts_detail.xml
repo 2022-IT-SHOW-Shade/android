@@ -31,7 +31,8 @@
                 android:paddingTop="30dp"
                 android:maxLines="2"
                 android:lineSpacingMultiplier="1.5"
-                android:ellipsize="end"/>
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskrbold"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -44,7 +45,7 @@
                     android:textColor="@color/colorMain"
                     android:textSize="13dp"
                     android:textStyle="bold"
-                    android:paddingTop="10dp"/>
+                    android:fontFamily="@font/notosanskrregular"/>
                 <TextView
                     android:id="@+id/detail_date"
                     android:layout_width="wrap_content"
@@ -53,7 +54,8 @@
                     android:textColor="#A3A3A3"
                     android:textSize="11dp"
                     android:textStyle="bold"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/notosanskrdemilite"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -69,7 +71,8 @@
                     android:textColor="#4C4C4C"
                     android:paddingTop="20dp"
                     android:maxLines="10"
-                    android:lineSpacingMultiplier="1.5"
+                    android:lineSpacingMultiplier="1.2"
+                    android:fontFamily="@font/notosanskrdemilite"
                     android:ellipsize="end"/>
             </LinearLayout>
             <LinearLayout
@@ -107,11 +110,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#D8D8D8"
-                android:layout_marginTop="18dp"/>
+                android:layout_marginTop="20dp"/>
             <TextView
-                android:padding="16dp"
+                android:padding="10dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/notosanskrdemilite"
                 android:text="댓글"/>
 
             <View
@@ -124,7 +128,7 @@
                 android:divider="@null"
                 android:dividerHeight="15dp"
                 android:scrollbars="none"
-                android:layout_marginTop="20dp"
+                android:layout_marginTop="10dp"
                 android:id="@+id/commentlist"/>
         </LinearLayout>
     </ScrollView>
@@ -142,6 +146,7 @@
             android:paddingLeft="20dp"
             android:paddingRight="10dp"
             android:hint="댓글 내용을 입력하세요"
+            android:fontFamily="@font/notosanskrdemilite"
             android:background="@null"
             android:textColorHint="#8C8C8C"
             android:textSize="14dp"

@@ -28,7 +28,8 @@
             android:textSize="17dp"
             android:lineSpacingMultiplier="1.5"
             android:layout_marginTop="30dp"
-            android:maxLines="2"/>
+            android:fontFamily="@font/notosanskrbold"
+            android:maxLines="1"/>
         <EditText
             android:id="@+id/editContent"
             android:layout_width="match_parent"
@@ -42,6 +43,7 @@
             android:textSize="15dp"
             android:textColor="@color/black"
             android:lineSpacingMultiplier="1.5"
+            android:fontFamily="@font/notosanskrdemilite"
             android:maxLines="10"/>
 
         <Button
@@ -52,6 +54,7 @@
             android:textSize="15dp"
             android:textColor="@color/white"
             android:id="@+id/btn_finish"
+            android:fontFamily="@font/notosanskrdemilite"
             android:layout_marginTop="20dp"/>
 
     </LinearLayout>

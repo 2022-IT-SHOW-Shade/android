@@ -2,8 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingRight="10dp"
-    android:paddingLeft="10dp"
     android:paddingTop="20dp"
     android:paddingBottom="10dp"
     android:background="@drawable/background_cardview_round">
@@ -14,11 +12,13 @@
         android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="#000"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:fontFamily="@font/notosanskrdemilite"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="보낸 고민은 다시 돌려올 수 없습니다."
+        android:fontFamily="@font/notosanskrdemilite"
         android:paddingLeft="14dp"
         android:paddingTop="15dp"/>
 
@@ -36,7 +36,8 @@
             android:textColor="#757575"
             android:textSize="13sp"
             android:id="@+id/btnBambooCancel"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskrdemilite"/>
         <Button
             style="?android:attr/borderlessButtonStyle"
             android:background="#fff"
@@ -47,7 +48,8 @@
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/btnBambooOk"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskrdemilite"/>
     </LinearLayout>
 
 </LinearLayout>

@@ -12,14 +12,16 @@
         android:textSize="15dp"
         android:textStyle="bold"
         android:textColor="#000"
-        android:paddingLeft="10dp"/>
+        android:paddingLeft="10dp"
+        android:fontFamily="@font/notosanskrdemilite"/>
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="회원탈퇴 시 개인정보 및 Shade 데이터는 모두 삭제됩니다."
         android:textSize="13dp"
         android:paddingLeft="10dp"
-        android:paddingTop="15dp"/>
+        android:paddingTop="15dp"
+        android:fontFamily="@font/notosanskrdemilite"/>
 
     <LinearLayout
         android:layout_marginTop="30dp"
@@ -35,7 +37,8 @@
             android:textColor="#757575"
             android:textSize="13sp"
             android:id="@+id/btnCancel"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskrdemilite"/>
         <Button
             style="?android:attr/borderlessButtonStyle"
             android:background="#fff"
@@ -46,7 +49,8 @@
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/btnOk"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskrdemilite" />
     </LinearLayout>
 
 </LinearLayout>

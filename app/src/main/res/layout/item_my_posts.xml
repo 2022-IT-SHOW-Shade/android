@@ -9,8 +9,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/item_mypost"
-        android:layout_width="380dp"
-        android:layout_height="150dp"
+        android:layout_width="370dp"
+        android:layout_height="160dp"
         android:layout_gravity="center_vertical"
         app:cardElevation="0dp"
         android:layout_weight="1"
@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingTop="20dp">
+            android:paddingTop="10dp">
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -37,7 +37,8 @@
                     android:textStyle="bold"
                     android:textSize="17dp"
                     android:maxLines="1"
-                    android:ellipsize="end"/>
+                    android:ellipsize="end"
+                    android:fontFamily="@font/notosanskrbold"/>
                 <CheckBox
                     android:id="@+id/deleteCheck"
                     android:layout_width="wrap_content"
@@ -52,16 +53,16 @@
                 android:textStyle="normal"
                 android:textSize="14dp"
                 android:textColor="#4C4C4C"
-                android:paddingTop="10dp"
                 android:maxLines="1"
-                android:ellipsize="end"/>
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskrdemilite"/>
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#D8D8D8"
-            android:layout_marginTop="110dp"/>
+            android:layout_marginTop="120dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -69,7 +70,7 @@
             android:orientation="horizontal"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingTop="120dp">
+            android:paddingTop="130dp">
             <!--<CheckBox
                 android:button="@null"
                 android:layout_width="20dp"
