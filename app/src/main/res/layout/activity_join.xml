@@ -26,14 +26,16 @@
                     android:text="전화번호"
                     android:textSize="15sp"
                     android:textColor="@color/black"
-                    android:textStyle="bold"/>
+                    android:textStyle="bold"
+                    android:fontFamily="@font/notosanskrbold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="' - ' 제외"
                     android:textSize="13sp"
                     android:textColor="#A4A4A4"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/notosanskrdemilite"/>
             </LinearLayout>
             <EditText
                 android:id="@+id/loginPhone"
@@ -47,7 +49,8 @@
                 android:textStyle="bold"
                 android:maxLength="13"
                 android:minHeight="48dp"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:fontFamily="@font/notosanskrdemilite"/>
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -60,7 +63,8 @@
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_marginLeft="12dp"/>
+                    android:layout_marginLeft="12dp"
+                    android:fontFamily="@font/notosanskrbold"/>
                 <EditText
                     android:id="@+id/loginPw"
                     android:layout_width="330dp"
@@ -73,7 +77,8 @@
                     android:textStyle="bold"
                     android:maxLength="13"
                     android:minHeight="48dp"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:fontFamily="@font/notosanskrdemilite"/>
                 <EditText
                     android:id="@+id/loginPwCheck"
                     android:layout_width="330dp"
@@ -86,7 +91,8 @@
                     android:textStyle="bold"
                     android:maxLength="13"
                     android:minHeight="48dp"
-                    android:singleLine="true" />
+                    android:singleLine="true"
+                    android:fontFamily="@font/notosanskrdemilite"/>
             </LinearLayout>
             <LinearLayout
                 android:layout_width="match_parent"
@@ -99,14 +105,16 @@
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_marginLeft="42dp"/>
+                    android:layout_marginLeft="42dp"
+                    android:fontFamily="@font/notosanskrbold"/>
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="ex. YYMMDD"
                     android:textSize="13sp"
                     android:textColor="#A4A4A4"
-                    android:layout_marginLeft="10dp"/>
+                    android:layout_marginLeft="10dp"
+                    android:fontFamily="@font/notosanskrdemilite"/>
             </LinearLayout>
             <EditText
                 android:id="@+id/loginBirth"
@@ -120,7 +128,8 @@
                 android:textStyle="bold"
                 android:maxLength="6"
                 android:minHeight="48dp"
-                android:singleLine="true" />
+                android:singleLine="true"
+                android:fontFamily="@font/notosanskrdemilite"/>
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -134,7 +143,8 @@
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:layout_marginLeft="3dp"/>
+                    android:layout_marginLeft="3dp"
+                    android:fontFamily="@font/notosanskrbold"/>
                 <Button
                     android:id="@+id/btnSchool"
                     android:layout_width="80dp"
@@ -156,6 +166,7 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:background="@drawable/btn_main"/>
+            android:background="@drawable/btn_main"
+            android:fontFamily="@font/notosanskrdemilite"/>
 
 </LinearLayout>

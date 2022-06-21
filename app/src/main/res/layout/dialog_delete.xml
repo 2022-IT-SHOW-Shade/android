@@ -2,8 +2,6 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:paddingRight="10dp"
-    android:paddingLeft="10dp"
     android:paddingTop="20dp"
     android:paddingBottom="10dp"
     android:background="@drawable/background_cardview_round">
@@ -14,7 +12,8 @@
         android:text="당신의 모든 고민은 사라졌습니다."
         android:textSize="15dp"
         android:textStyle="bold"
-        android:textColor="#000"/>
+        android:textColor="#000"
+        android:fontFamily="@font/notosanskrdemilite"/>
 
     <LinearLayout
         android:layout_marginTop="30dp"
@@ -31,7 +30,8 @@
             android:textSize="13sp"
             android:textStyle="bold"
             android:id="@+id/btnDeleteOk"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:fontFamily="@font/notosanskrdemilite"/>
     </LinearLayout>
 
 </LinearLayout>

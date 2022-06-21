@@ -21,13 +21,15 @@
             android:id="@+id/notice_date"
             android:textSize="12sp"
             android:text="22/06/02"
-            android:textColor="#777676" />
+            android:textColor="#777676"
+            android:fontFamily="@font/notosanskrdemilite"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:id="@+id/notice_title"
             android:textSize="16sp"
             android:text="공지사항입니다."
-            android:textColor="#000" />
+            android:textColor="#000"
+            android:fontFamily="@font/notosanskrdemilite"/>
     </LinearLayout>
 </LinearLayout>

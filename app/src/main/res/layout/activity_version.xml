@@ -2,7 +2,8 @@
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/white">
 
     <include
         layout="@layout/toolbar_base"
@@ -23,13 +24,15 @@
             android:layout_height="wrap_content"
             android:text="최신 버전을 사용 중입니다"
             android:textColor="@color/colorMain"
+            android:fontFamily="@font/notosanskrdemilite"
             android:textStyle="bold"
             android:textSize="15dp"
-            android:padding="10dp"/>
+            android:padding="5dp"/>
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="현재 버전 1.9.0"
+            android:fontFamily="@font/notosanskrdemilite"
             android:textSize="11dp"/>
     </LinearLayout>
 

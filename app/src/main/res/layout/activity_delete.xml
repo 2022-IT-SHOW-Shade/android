@@ -18,10 +18,11 @@
         android:textStyle="bold"
         android:textSize="17dp"
         android:layout_gravity="center"
-        android:paddingTop="95dp"
+        android:paddingTop="80dp"
         android:id="@+id/txtDelete"
         android:layout_marginTop="140dp"
-        android:background="@drawable/cloud"/>
+        android:background="@drawable/cloud"
+        android:fontFamily="@font/notosanskrdemilite"/>
 
     <ImageButton
         android:id="@+id/btnMic"
@@ -40,7 +41,8 @@
         android:layout_gravity="center"
         android:layout_marginTop="20dp"
         android:textSize="13dp"
-        android:background="@color/white"/>
+        android:background="@color/white"
+        android:fontFamily="@font/notosanskrdemilite"/>
 
 
 </LinearLayout>

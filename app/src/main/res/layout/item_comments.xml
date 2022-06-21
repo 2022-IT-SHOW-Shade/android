@@ -14,7 +14,8 @@
         android:textColor="@color/colorMain"
         android:textSize="13dp"
         android:textStyle="bold"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/notosanskrregular"/>
     <TextView
         android:id="@+id/comment"
         android:layout_width="match_parent"
@@ -22,5 +23,6 @@
         android:text="댓글입니다."
         android:textSize="12dp"
         android:textColor="#4A4A4A"
-        android:maxLength="100"/>
+        android:maxLength="100"
+        android:fontFamily="@font/notosanskrdemilite"/>
 </LinearLayout>

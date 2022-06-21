@@ -14,7 +14,7 @@
         android:layout_height="wrap_content"
         android:src="@drawable/icon_main"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="90dp"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -24,7 +24,8 @@
         android:textSize="20dp"
         android:textColor="@color/colorMain"
         android:layout_gravity="center_horizontal"
-        android:layout_marginTop="40dp"/>
+        android:layout_marginTop="40dp"
+        android:fontFamily="@font/notosanskrbold"/>
 
     <TextView
         android:layout_width="wrap_content"
@@ -34,7 +35,8 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="50dp"
-        android:layout_marginLeft="35dp"/>
+        android:layout_marginLeft="35dp"
+        android:fontFamily="@font/notosanskrbold"/>
     <EditText
         android:id="@+id/loginPhone"
         android:layout_width="340dp"
@@ -46,7 +48,8 @@
         android:textSize="15dp"
         android:maxLength="13"
         android:minHeight="48dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:fontFamily="@font/notosanskrdemilite"/>
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -55,7 +58,8 @@
         android:textColor="@color/black"
         android:textStyle="bold"
         android:layout_marginTop="25dp"
-        android:layout_marginLeft="35dp"/>
+        android:layout_marginLeft="35dp"
+        android:fontFamily="@font/notosanskrbold"/>
 
     <EditText
         android:id="@+id/loginPw"
@@ -68,7 +72,8 @@
         android:textSize="15dp"
         android:maxLength="13"
         android:minHeight="48dp"
-        android:singleLine="true" />
+        android:singleLine="true"
+        android:fontFamily="@font/notosanskrdemilite" />
 
     <LinearLayout
         android:layout_width="wrap_content"
@@ -84,7 +89,8 @@
             android:textColor="@color/white"
             android:textStyle="bold"
             android:layout_marginTop="60dp"
-            android:background="@drawable/btn_main"/>
+            android:background="@drawable/btn_main"
+            android:fontFamily="@font/notosanskrdemilite"/>
 
         <Button
             android:id="@+id/btnJoin"
@@ -95,7 +101,8 @@
             android:textStyle="bold"
             android:layout_marginTop="30dp"
             android:layout_gravity="center"
-            android:background="@drawable/btn_second"/>
+            android:background="@drawable/btn_second"
+            android:fontFamily="@font/notosanskrdemilite"/>
     </LinearLayout>
 
 </LinearLayout>

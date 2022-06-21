@@ -13,16 +13,17 @@
         android:paddingLeft="20dp"
         android:paddingTop="20dp"
         android:textStyle="bold"
-        android:textSize="18sp"/>
+        android:textSize="18sp"
+        android:fontFamily="@font/notosanskrdemilite"/>
 
     <TextView
         android:id="@+id/sc_address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="서울특별시 관악구 호암로 546"
-        android:paddingTop="5dp"
         android:paddingLeft="20dp"
-        android:paddingBottom="20dp"/>
+        android:paddingBottom="20dp"
+        android:fontFamily="@font/notosanskrdemilite"/>
 
 
 </LinearLayout>

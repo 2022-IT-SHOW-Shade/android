@@ -9,8 +9,8 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/post_card_view"
-        android:layout_width="380dp"
-        android:layout_height="150dp"
+        android:layout_width="370dp"
+        android:layout_height="180dp"
         android:layout_gravity="center_vertical"
         app:cardElevation="0dp"
         android:layout_weight="1"
@@ -23,7 +23,7 @@
             android:orientation="vertical"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingTop="20dp">
+            android:paddingTop="10dp">
             <TextView
                 android:id="@+id/post_title"
                 android:layout_width="match_parent"
@@ -33,7 +33,8 @@
                 android:textStyle="bold"
                 android:textSize="17dp"
                 android:maxLines="1"
-                android:ellipsize="end"/>
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskrbold"/>
             <TextView
                 android:id="@+id/post_content"
                 android:layout_width="match_parent"
@@ -42,9 +43,9 @@
                 android:textStyle="normal"
                 android:textSize="14dp"
                 android:textColor="#4C4C4C"
-                android:paddingTop="10dp"
                 android:maxLines="1"
-                android:ellipsize="end"/>
+                android:ellipsize="end"
+                android:fontFamily="@font/notosanskrdemilite"/>
             <TextView
                 android:id="@+id/post_nickname"
                 android:layout_width="match_parent"
@@ -53,14 +54,14 @@
                 android:textSize="11dp"
                 android:textStyle="bold"
                 android:textColor="@color/colorMain"
-                android:paddingTop="17dp"/>
+                android:fontFamily="@font/notosanskrregular"/>
         </LinearLayout>
 
         <View
             android:layout_width="match_parent"
             android:layout_height="1dp"
             android:background="#D8D8D8"
-            android:layout_marginTop="115dp"/>
+            android:layout_marginTop="140dp"/>
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -68,7 +69,7 @@
             android:orientation="horizontal"
             android:paddingLeft="20dp"
             android:paddingRight="20dp"
-            android:paddingTop="120dp">
+            android:paddingTop="150dp">
             <!--<CheckBox
                 android:button="@null"
                 android:layout_width="20dp"
