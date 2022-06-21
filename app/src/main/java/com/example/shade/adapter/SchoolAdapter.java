@@ -13,17 +13,17 @@ import com.example.shade.model.School;
 import java.util.ArrayList;
 
 
-public class ListViewAdapter extends BaseAdapter {
+public class SchoolAdapter extends BaseAdapter {
 
     ArrayList<School> listViewItemList = new ArrayList<>();
 
     TextView school_name, school_address;
 
-    public ListViewAdapter(){
+    public SchoolAdapter(){
 
     }
 
-    public ListViewAdapter(ArrayList<School> list){
+    public SchoolAdapter(ArrayList<School> list){
         listViewItemList = list;
         System.out.println("li : " + list);
     }
@@ -51,7 +51,7 @@ public class ListViewAdapter extends BaseAdapter {
 
         if(convertView == null){
             LayoutInflater inflater = (LayoutInflater) context.getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            convertView = inflater.inflate(R.layout.listview_item, parent, false);
+            convertView = inflater.inflate(R.layout.item_school, parent, false);
         }
 
         school_name = (TextView) convertView.findViewById(R.id.sc_name);
