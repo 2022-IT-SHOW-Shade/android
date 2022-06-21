@@ -26,6 +26,7 @@
     <ListView
         android:id="@+id/search_school_list"
         android:layout_width="352dp"
+        android:scrollbars="none"
         android:layout_height="623dp"
         android:layout_gravity="center"
         android:paddingTop="10dp"/>

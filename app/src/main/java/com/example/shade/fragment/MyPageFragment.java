@@ -46,7 +46,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
         my_page_user_name = (TextView) v.findViewById(R.id.my_page_user_name);  // 닉네임
         my_school = (TextView) v.findViewById(R.id.my_school); // 학교
 
-        btnLike = (Button) v.findViewById(R.id.btnLikeList);    // 찜한 글
+        // btnLike = (Button) v.findViewById(R.id.btnLikeList);    // 찜한 글
         notice = (Button) v.findViewById(R.id.notice);  // 공지사항
         version = (Button) v.findViewById(R.id.version); // 앱 버전
         change = (Button) v.findViewById(R.id.change);  // 학교 변경 및 본인 인증
@@ -104,8 +104,6 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
                 editor.commit();
                 intent = new Intent(getActivity(), LoginActivity.class);
                 startActivity(intent);
-                break;
-            case R.id.btnLikeList:
                 break;
             case R.id.change:
                 intent = new Intent(getActivity(), SearchSchoolActivity.class);

@@ -89,10 +89,10 @@ public class MyWriteFragment extends Fragment {
                          num = post.getPost_num();
                          title = post.getTitle();
                          content = post.getContent().split("\n")[0];
-                         like_cnt = post.getLike_cnt();
+                         // like_cnt = post.getLike_cnt();
                          chat_cnt = post.getComment_cnt();
 
-                        respone.add(0, new Post(num, title, content, like_cnt, chat_cnt));
+                        respone.add(0, new Post(num, title, content, chat_cnt));
 
                         // 리스트뷰 띄우기
                         adapter = new MypostAdapter(respone, getContext());
