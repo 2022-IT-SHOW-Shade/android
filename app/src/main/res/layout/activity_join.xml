@@ -43,7 +43,7 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:backgroundTint="#A4A4A4"
-                android:hint="비밀번호를 적어주세요."
+                android:hint="전화번호를 적어주세요."
                 android:textSize="15sp"
                 android:textColor="@color/black"
                 android:textStyle="bold"
