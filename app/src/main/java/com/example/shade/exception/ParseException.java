@@ -1,4 +1,4 @@
-package com.example.shade.Exception;
+package com.example.shade.exception;
 
 public class ParseException extends NeisException {
     public ParseException(){

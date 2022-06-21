@@ -19,7 +19,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.shade.view.MainActivity;
 import com.example.shade.R;
-import com.example.shade.adapter.ListViewAdapter;
+import com.example.shade.adapter.SchoolAdapter;
 import com.example.shade.model.Post;
 import com.example.shade.model.School;
 import com.google.firebase.database.ChildEventListener;
@@ -46,7 +46,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
     ArrayList<School> list = new ArrayList<>();
 
-    ListViewAdapter adapter;
+    SchoolAdapter adapter;
     String page = "Join";
 
     // 파이어베이스
@@ -151,7 +151,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
     }
 
     public void showAdapter(ArrayList<School> list){
-        adapter = new ListViewAdapter(list);
+        adapter = new SchoolAdapter(list);
         search_school_list.setAdapter(adapter);
     }
 

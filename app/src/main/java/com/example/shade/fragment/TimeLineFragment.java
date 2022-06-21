@@ -68,12 +68,12 @@ public class TimeLineFragment extends Fragment {
                      title = post.getTitle();
                      content = post.getContent().split("\n")[0];
                      nickname = post.getUser_nick();
-                     like_cnt = post.getLike_cnt();
+                     // like_cnt = post.getLike_cnt();
                      chat_cnt = post.getComment_cnt();
 
                     System.out.println("chat : " + chat_cnt);
 
-                    respone.add(0, new Post(num, title, content, nickname, like_cnt, chat_cnt));
+                    respone.add(0, new Post(num, title, content, nickname, chat_cnt));
 
                     // 리스트뷰 띄우기
                     adapter = new TimeLineAdapter(respone, getContext());

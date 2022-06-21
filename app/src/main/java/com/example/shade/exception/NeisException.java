@@ -1,4 +1,4 @@
-package com.example.shade.Exception;
+package com.example.shade.exception;
 
 public class NeisException extends RuntimeException{
     public NeisException(){

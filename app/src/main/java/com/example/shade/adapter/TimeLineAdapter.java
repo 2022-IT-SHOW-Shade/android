@@ -67,7 +67,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             post_title = (TextView) itemView.findViewById(R.id.post_title);
             post_content = (TextView) itemView.findViewById(R.id.post_content);
             post_nickname = (TextView) itemView.findViewById(R.id.post_nickname);
-            likeCount = (TextView) itemView.findViewById(R.id.postlikeCount);
+            // likeCount = (TextView) itemView.findViewById(R.id.postlikeCount);
             chatCount = (TextView) itemView.findViewById(R.id.postchatCount);
             this.context = context;
 
@@ -77,7 +77,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             post_title.setText(post.getTitle());
             post_content.setText(post.getContent());
             post_nickname.setText(post.getUser_nick());
-            likeCount.setText(String.valueOf(post.getLike_cnt()));
+            // likeCount.setText(String.valueOf(post.getLike_cnt()));
             chatCount.setText(String.valueOf(post.getComment_cnt()));
 
             cardView.setOnClickListener(new View.OnClickListener() {

@@ -29,7 +29,7 @@ public class Post {
         this.tel = tel;
     }
 
-    public Post(String post_num, String title, String content, String nickname, long like_cnt, long chat_cnt) {
+    public Post(String post_num, String title, String content, String nickname, long chat_cnt) { //둘 다 like_cnt 삭제
         this.post_num = post_num;
         this.title = title;
         this.content = content;
@@ -38,7 +38,7 @@ public class Post {
         this.comment_cnt = chat_cnt;
     }
 
-    public Post(String num, String title, String content, long like_cnt, long chat_cnt) {
+    public Post(String num, String title, String content, long chat_cnt) {
         this.post_num = num;
         this.title = title;
         this.content = content;

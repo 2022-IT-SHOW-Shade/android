@@ -80,7 +80,7 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
             item_mypost = (CardView) itemView.findViewById(R.id.item_mypost);
             my_title = (TextView) itemView.findViewById(R.id.my_title);
             my_content = (TextView) itemView.findViewById(R.id.my_content);
-            my_likeCount = (TextView) itemView.findViewById(R.id.my_likeCount);
+            //my_likeCount = (TextView) itemView.findViewById(R.id.my_likeCount);
             my_chatCount = (TextView) itemView.findViewById(R.id.my_chatCount);
             btnDelete = (ImageButton) itemView.findViewById(R.id.delete);
             btnEdit = (ImageButton) itemView.findViewById(R.id.btnEdit);
@@ -93,7 +93,7 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
         public void setItem(Post post){
             my_title.setText(post.getTitle());
             my_content.setText(post.getContent());
-            my_likeCount.setText(String.valueOf(post.getLike_cnt()));
+            //my_likeCount.setText(String.valueOf(post.getLike_cnt()));
             my_chatCount.setText(String.valueOf(post.getComment_cnt()));
 
             item_mypost.setOnClickListener(new View.OnClickListener() {

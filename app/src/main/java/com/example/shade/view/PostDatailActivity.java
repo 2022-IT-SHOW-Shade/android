@@ -76,7 +76,7 @@ public class PostDatailActivity extends AppCompatActivity {
         detail_nickname = (TextView) findViewById(R.id.detail_nickname);
         detail_date = (TextView) findViewById(R.id.detail_date);
         detail_content = (TextView) findViewById(R.id.detail_content);
-        detail_likeCount = (TextView) findViewById(R.id.detail_likeCount);
+        // detail_likeCount = (TextView) findViewById(R.id.detail_likeCount);
         detail_chatCount = (TextView) findViewById(R.id.detail_chatCount);
         btnback = (ImageButton) findViewById(R.id.btnBackWrite);
         commentlist = (ListView) findViewById(R.id.commentlist);
@@ -153,14 +153,14 @@ public class PostDatailActivity extends AppCompatActivity {
                     String nickname = post.getUser_nick();
                     String date = post.getDate();
                     String content = post.getContent();
-                    long like_cnt = post.getLike_cnt();
+                   // long like_cnt = post.getLike_cnt();
                     long chat_cnt = post.getComment_cnt();
 
                     detail_title.setText(title);
                     detail_nickname.setText(nickname);
                     detail_date.setText(date);
                     detail_content.setText(content);
-                    detail_likeCount.setText(String.valueOf(like_cnt));
+                    // detail_likeCount.setText(String.valueOf(like_cnt));
                     detail_chatCount.setText(String.valueOf(chat_cnt));
                 }
             }
