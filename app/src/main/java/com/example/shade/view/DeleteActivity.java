@@ -91,7 +91,7 @@ public class DeleteActivity extends AppCompatActivity{
                         @Override
                         public void onClick(View view) {
                             dialog.dismiss();
-                            Intent  intent = new Intent(getApplicationContext(), MyWriteFragment.class);
+                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                             startActivity(intent);
                         }
                     });
