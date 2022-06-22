@@ -15,7 +15,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:layout_marginTop="40dp">
+            android:layout_marginTop="20dp">
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
                     android:textSize="15sp"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    android:fontFamily="@font/notosanskrbold"/>
+                    android:fontFamily="@font/notosanskrbold"/>clou
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -161,7 +161,7 @@
             android:id="@+id/btnJoinOk"
             android:layout_width="340dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="20dp"
             android:text="완료"
             android:textColor="@color/white"
             android:textStyle="bold"

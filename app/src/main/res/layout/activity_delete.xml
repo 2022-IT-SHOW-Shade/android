@@ -31,7 +31,7 @@
         android:layout_gravity="center"
         android:src="@drawable/mic"
         android:background="@drawable/background_btnmic"
-        android:layout_marginTop="100dp"/>
+        android:layout_marginTop="180dp"/>
 
     <TextView
         android:layout_width="wrap_content"
