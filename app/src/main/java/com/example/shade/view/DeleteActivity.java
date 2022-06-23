@@ -35,9 +35,7 @@ public class DeleteActivity extends AppCompatActivity{
     private int count = 0;
 
     // 15개
-    String [] spell = {"두밧두 와리와리", "가나다라마바사하쿠나마타타", "쩗쭓짧", "하나가 되는 순간 모두가 주목해", "Happiness!", "둘 셋 방탄", "We are one",
-                        "어이구~ 하이라이트입니다~", "All I Wanna do!", "투더월 여긴 엔시티", "(쿵) 후 몬스타엑스", "쪽~! 내 꿈꿔", "Let's get Crazy",
-                        "아이~! 아이들입니다", "우리는 슈퍼주니어에요!"};
+    String [] spell = {"두밧두 와리와리", "가나다라마바사하쿠나마타타"};
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +64,7 @@ public class DeleteActivity extends AppCompatActivity{
         });
 
         // 랜덤 주문 출력
-        txtDelete.setText(spell[(int)(Math.random()*15)]);
+        txtDelete.setText(spell[(int)(Math.random()*2)]);
 
         // RecognizerIntent 생성
         intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
@@ -91,8 +89,6 @@ public class DeleteActivity extends AppCompatActivity{
                         @Override
                         public void onClick(View view) {
                             dialog.dismiss();
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            startActivity(intent);
                         }
                     });
                 }
@@ -125,6 +121,20 @@ public class DeleteActivity extends AppCompatActivity{
         @Override
         public void onEndOfSpeech() {
             // 말하기를 중지하면 호출
+            Dialog dialog = new Dialog(DeleteActivity.this);
+            dialog.setContentView(R.layout.dialog_delete);
+            dialog.show();
+
+            Button btnDeleteOk = dialog.findViewById(R.id.btnDeleteOk);
+            btnDeleteOk.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    dialog.dismiss();
+
+                    Intent intent = new Intent(getApplicationContext(), MainActivity.class);
+                    startActivity(intent);
+                }
+            });
         }
 
         @Override
@@ -150,6 +160,7 @@ public class DeleteActivity extends AppCompatActivity{
                     break;
                 case SpeechRecognizer.ERROR_NO_MATCH:
                     message = "찾을 수 없음";
+                    System.out.println(error);
                     break;
                 case SpeechRecognizer.ERROR_RECOGNIZER_BUSY:
                     message = "RECOGNIZER 가 바쁨";
