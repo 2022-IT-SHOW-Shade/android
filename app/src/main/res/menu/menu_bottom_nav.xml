@@ -9,7 +9,7 @@
     <item
         android:id="@+id/navigation_myschool"
         android:icon="@drawable/school"
-        android:title="내 학교" />
+        android:title="학교" />
 
     <item
         android:id="@+id/navigation_mywrite"
