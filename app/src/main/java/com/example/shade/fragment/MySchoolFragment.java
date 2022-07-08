@@ -45,8 +45,12 @@ public class MySchoolFragment extends Fragment {
     RecyclerDecoration recyclerDecoration;
     androidx.recyclerview.widget.RecyclerView recyclerView;
 
-    String num, title, content, nickname;
-    long like_cnt, chat_cnt;
+    String num;
+    String title;
+    String content;
+    String nickname;
+
+    long chat_cnt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -98,7 +102,6 @@ public class MySchoolFragment extends Fragment {
                          title = post.getTitle();
                          content = post.getContent().split("\n")[0];
                          nickname = post.getUser_nick();
-                         // like_cnt = post.getLike_cnt();
                          chat_cnt = post.getComment_cnt();
 
                         respone.add(0, new Post(num, title, content, nickname, chat_cnt));
