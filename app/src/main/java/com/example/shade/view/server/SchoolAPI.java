@@ -1,5 +1,7 @@
 package com.example.shade.view.server;
 
+import android.util.Log;
+
 import com.example.shade.model.School;
 
 import org.json.JSONArray;
