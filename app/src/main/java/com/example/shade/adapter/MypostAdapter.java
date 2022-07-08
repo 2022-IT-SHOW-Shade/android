@@ -68,11 +68,13 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         CardView item_mypost;
-        TextView my_title, my_content, my_likeCount, my_chatCount;
-        ImageButton btnEdit, btnDelete;
+        TextView my_title;
+        TextView my_content;
+        TextView my_chatCount;
+        ImageButton btnEdit;
+        ImageButton btnDelete;
         CheckBox deleteCheck;
         Context context;
-        private DatabaseReference databaseReference;
 
         public ViewHolder(@NonNull View itemView, Context context) {
             super(itemView);
@@ -80,12 +82,10 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
             item_mypost = (CardView) itemView.findViewById(R.id.item_mypost);
             my_title = (TextView) itemView.findViewById(R.id.my_title);
             my_content = (TextView) itemView.findViewById(R.id.my_content);
-            //my_likeCount = (TextView) itemView.findViewById(R.id.my_likeCount);
             my_chatCount = (TextView) itemView.findViewById(R.id.my_chatCount);
             btnDelete = (ImageButton) itemView.findViewById(R.id.delete);
             btnEdit = (ImageButton) itemView.findViewById(R.id.btnEdit);
             deleteCheck = (CheckBox) itemView.findViewById(R.id.deleteCheck);
-            databaseReference = FirebaseDatabase.getInstance().getReference();
             this.context = context;
 
         }
@@ -93,14 +93,11 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
         public void setItem(Post post){
             my_title.setText(post.getTitle());
             my_content.setText(post.getContent());
-            //my_likeCount.setText(String.valueOf(post.getLike_cnt()));
             my_chatCount.setText(String.valueOf(post.getComment_cnt()));
 
             item_mypost.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int mPosition = getAdapterPosition();
-
                     Intent intent = new Intent(context, PostDatailActivity.class);
                     intent.putExtra("post_num", post.getPost_num());
                     (context).startActivity(intent);
@@ -125,13 +122,6 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
                     final int pos = getAdapterPosition();
                     post.setSelected(deleteCheck.isChecked());
                     listViewItemList.get(pos).setSelected(deleteCheck.isChecked());
-                    //String data = "";
-                   /*for (int i = 0; i < listViewItemList.size(); i++){
-                        Post mPost = listViewItemList.get(i);
-                        if (mPost.isSelected() == true){
-                            data = mPost.getPost_num().toString();
-                        }
-                    }*/
                 }
             });
         }
