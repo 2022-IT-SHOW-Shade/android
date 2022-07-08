@@ -1,9 +1,11 @@
 package com.example.shade.fragment;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.ContentInfo;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,7 +67,7 @@ public class MySchoolFragment extends Fragment {
         recyclerView.addItemDecoration(recyclerDecoration);
 
         // 내 학교 가져오기
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String tel = sharedPreferences.getString("inputTel", null);
 
         databaseReference = FirebaseDatabase.getInstance().getReference("users");

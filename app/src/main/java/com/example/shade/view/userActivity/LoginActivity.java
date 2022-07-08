@@ -1,6 +1,7 @@
 package com.example.shade.view.userActivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -42,7 +43,7 @@ public class LoginActivity extends AppCompatActivity {
         btnJoin = findViewById(R.id.btnJoin);
 
         // 자동로그인
-        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String loginTel = sharedPreferences.getString("inputTel", null);
         String loginPwd = sharedPreferences.getString("inputPwd", null);
         String birth = sharedPreferences.getString("inputBirth", null);
@@ -79,7 +80,7 @@ public class LoginActivity extends AppCompatActivity {
                             Log.w("FirebaseData", "getData" + post.toString());
 
                             if(post.getPwd().equals(pw)) {
-                                SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                                SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
                                 SharedPreferences.Editor autoLogin = sharedPreferences.edit();
                                 autoLogin.putString("inputTel", phone);
                                 autoLogin.putString("inputPwd", pw);

@@ -2,6 +2,7 @@ package com.example.shade.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -73,7 +74,7 @@ public class MyWriteFragment extends Fragment {
         });
 
         // 내가 쓴 글 가져오기
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String tel = sharedPreferences.getString("inputTel", null);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();

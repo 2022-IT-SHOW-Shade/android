@@ -2,6 +2,7 @@ package com.example.shade.fragment;
 
 import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -101,7 +102,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
                 startActivity(intent);
                 break;
             case R.id.logout:
-                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
                 SharedPreferences.Editor editor = sharedPreferences.edit();
                 editor.clear();
                 editor.commit();
@@ -127,7 +128,7 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
                     public void onClick(View v) {
                         Toast.makeText(getContext(), "탈퇴되었습니다.", Toast.LENGTH_SHORT).show();
 
-                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
                         String loginTel = sharedPreferences.getString("inputTel", null);
                         databaseReference.child(loginTel).removeValue();
 
