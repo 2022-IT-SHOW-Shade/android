@@ -1,6 +1,7 @@
 package com.example.shade.adapter;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,7 +18,8 @@ public class SchoolAdapter extends BaseAdapter {
 
     ArrayList<School> listViewItemList = new ArrayList<>();
 
-    TextView school_name, school_address;
+    TextView school_name;
+    TextView school_address;
 
     public SchoolAdapter(){
 
@@ -25,7 +27,7 @@ public class SchoolAdapter extends BaseAdapter {
 
     public SchoolAdapter(ArrayList<School> list){
         listViewItemList = list;
-        System.out.println("li : " + list);
+        Log.i("tag","li : " + list);
     }
 
     @Override
@@ -45,8 +47,6 @@ public class SchoolAdapter extends BaseAdapter {
 
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
-
-        final int pos = position;
         final Context context = parent.getContext();
 
         if(convertView == null){
