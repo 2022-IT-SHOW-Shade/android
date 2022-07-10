@@ -18,8 +18,6 @@ import com.example.shade.view.PostDatailActivity;
 import com.example.shade.R;
 import com.example.shade.view.WritePostActivity;
 import com.example.shade.model.Post;
-import com.google.firebase.database.DatabaseReference;
-import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 

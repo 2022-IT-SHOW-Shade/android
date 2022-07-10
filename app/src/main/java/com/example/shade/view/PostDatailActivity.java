@@ -1,6 +1,5 @@
 package com.example.shade.view;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -48,8 +47,15 @@ public class PostDatailActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
 
-    TextView detail_title, detail_nickname, detail_date, detail_content, detail_chatCount;
-    ImageButton btnback, btnComment;
+    TextView detail_title;
+    TextView detail_nickname;
+    TextView detail_date;
+    TextView detail_content;
+    TextView detail_chatCount;
+
+    ImageButton btnback;
+    ImageButton btnComment;
+
     ListView commentlist;
     EditText comment_et;
 
@@ -57,6 +63,8 @@ public class PostDatailActivity extends AppCompatActivity {
     CommentAdpater adpater;
 
     long comment_cnt = 0;
+
+    private Random random = new Random();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
