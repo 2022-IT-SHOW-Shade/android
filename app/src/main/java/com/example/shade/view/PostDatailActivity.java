@@ -3,6 +3,7 @@ package com.example.shade.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.shade.R;
@@ -64,7 +66,7 @@ public class PostDatailActivity extends AppCompatActivity {
 
     long comment_cnt = 0;
 
-    private Random random = new Random();
+    Random random = new Random();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -99,6 +101,7 @@ public class PostDatailActivity extends AppCompatActivity {
 
         // 댓글 달기
         btnComment.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 // 댓글 내용
@@ -109,15 +112,11 @@ public class PostDatailActivity extends AppCompatActivity {
                 SimpleDateFormat format1 = new SimpleDateFormat(format, Locale.getDefault());
                 String date = format1.format(post_date);
 
-                Random random = new Random();
                 // 댓글 번호
-                String r1 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-                String r2 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-                String r3 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-                String r4 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-                String r5 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-
-                String comm_num = r1 + r2 + r3 + r4 + r5;
+                String comm_num = random.ints(97, 122 + 1)
+                        .limit(5)
+                        .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                        .toString();
 
                 addComment(comm_num, post_num, tel, user_comment, date);
 
