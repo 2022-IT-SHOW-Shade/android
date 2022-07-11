@@ -49,11 +49,11 @@ public class PostDatailActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
 
-    TextView detail_title;
-    TextView detail_nickname;
-    TextView detail_date;
-    TextView detail_content;
-    TextView detail_chatCount;
+    TextView detailTitle;
+    TextView detailNickname;
+    TextView detailDate;
+    TextView detailContent;
+    TextView detailChatCnt;
 
     ImageButton btnback;
     ImageButton btnComment;
@@ -81,11 +81,11 @@ public class PostDatailActivity extends AppCompatActivity {
         SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String tel = sharedPreferences.getString("inputTel", null);
 
-        detail_title = (TextView) findViewById(R.id.detail_title);
-        detail_nickname = (TextView) findViewById(R.id.detail_nickname);
-        detail_date = (TextView) findViewById(R.id.detail_date);
-        detail_content = (TextView) findViewById(R.id.detail_content);
-        detail_chatCount = (TextView) findViewById(R.id.detail_chatCount);
+        detailTitle = (TextView) findViewById(R.id.detail_title);
+        detailNickname = (TextView) findViewById(R.id.detail_nickname);
+        detailDate = (TextView) findViewById(R.id.detail_date);
+        detailContent = (TextView) findViewById(R.id.detail_content);
+        detailChatCnt = (TextView) findViewById(R.id.detail_chatCount);
         btnback = (ImageButton) findViewById(R.id.btnBackWrite);
         commentlist = (ListView) findViewById(R.id.commentlist);
         comment_et = (EditText) findViewById(R.id.comment_et);
@@ -160,11 +160,11 @@ public class PostDatailActivity extends AppCompatActivity {
                     String content = post.getContent();
                     long chat_cnt = post.getComment_cnt();
 
-                    detail_title.setText(title);
-                    detail_nickname.setText(nickname);
-                    detail_date.setText(date);
-                    detail_content.setText(content);
-                    detail_chatCount.setText(String.valueOf(chat_cnt));
+                    detailTitle.setText(title);
+                    detailNickname.setText(nickname);
+                    detailDate.setText(date);
+                    detailContent.setText(content);
+                    detailChatCnt.setText(String.valueOf(chat_cnt));
                 }
             }
 

@@ -50,7 +50,7 @@ public class MySchoolFragment extends Fragment {
     String content;
     String nickname;
 
-    long chat_cnt;
+    long chatCnt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -102,9 +102,9 @@ public class MySchoolFragment extends Fragment {
                          title = post.getTitle();
                          content = post.getContent().split("\n")[0];
                          nickname = post.getUser_nick();
-                         chat_cnt = post.getComment_cnt();
+                        chatCnt = post.getComment_cnt();
 
-                        respone.add(0, new Post(num, title, content, nickname, chat_cnt));
+                        respone.add(0, new Post(num, title, content, nickname, chatCnt));
 
                         // 리스트뷰 띄우기
                         adapter = new TimeLineAdapter(respone, getContext());

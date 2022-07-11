@@ -66,9 +66,9 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
 
     public class ViewHolder extends RecyclerView.ViewHolder{
         CardView item_mypost;
-        TextView my_title;
-        TextView my_content;
-        TextView my_chatCount;
+        TextView myTitle;
+        TextView myContent;
+        TextView myChatCnt;
         ImageButton btnEdit;
         ImageButton btnDelete;
         CheckBox deleteCheck;
@@ -78,9 +78,9 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
             super(itemView);
 
             item_mypost = (CardView) itemView.findViewById(R.id.item_mypost);
-            my_title = (TextView) itemView.findViewById(R.id.my_title);
-            my_content = (TextView) itemView.findViewById(R.id.my_content);
-            my_chatCount = (TextView) itemView.findViewById(R.id.my_chatCount);
+            myTitle = (TextView) itemView.findViewById(R.id.my_title);
+            myContent = (TextView) itemView.findViewById(R.id.my_content);
+            myChatCnt = (TextView) itemView.findViewById(R.id.my_chatCount);
             btnDelete = (ImageButton) itemView.findViewById(R.id.delete);
             btnEdit = (ImageButton) itemView.findViewById(R.id.btnEdit);
             deleteCheck = (CheckBox) itemView.findViewById(R.id.deleteCheck);
@@ -89,9 +89,9 @@ public class MypostAdapter extends RecyclerView.Adapter<MypostAdapter.ViewHolder
         }
 
         public void setItem(Post post){
-            my_title.setText(post.getTitle());
-            my_content.setText(post.getContent());
-            my_chatCount.setText(String.valueOf(post.getComment_cnt()));
+            myTitle.setText(post.getTitle());
+            myContent.setText(post.getContent());
+            myChatCnt.setText(String.valueOf(post.getComment_cnt()));
 
             item_mypost.setOnClickListener(new View.OnClickListener() {
                 @Override

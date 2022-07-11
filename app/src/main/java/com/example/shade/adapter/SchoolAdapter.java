@@ -18,8 +18,8 @@ public class SchoolAdapter extends BaseAdapter {
 
     ArrayList<School> listViewItemList = new ArrayList<>();
 
-    TextView school_name;
-    TextView school_address;
+    TextView schoolName;
+    TextView schoolAddress;
 
     public SchoolAdapter(){
 
@@ -54,13 +54,13 @@ public class SchoolAdapter extends BaseAdapter {
             convertView = inflater.inflate(R.layout.item_school, parent, false);
         }
 
-        school_name = (TextView) convertView.findViewById(R.id.sc_name);
-        school_address = (TextView) convertView.findViewById(R.id.sc_address);
+        schoolName = (TextView) convertView.findViewById(R.id.sc_name);
+        schoolAddress = (TextView) convertView.findViewById(R.id.sc_address);
 
         School school_list = listViewItemList.get(position);
 
-        school_name.setText(school_list.getName());
-        school_address.setText(school_list.getLocation());
+        schoolName.setText(school_list.getName());
+        schoolAddress.setText(school_list.getLocation());
 
         return convertView;
     }

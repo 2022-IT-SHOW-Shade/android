@@ -30,8 +30,8 @@ import com.google.firebase.database.ValueEventListener;
 
 public class MyPageFragment extends Fragment implements View.OnClickListener {
 
-    TextView my_page_user_name;
-    TextView my_school;
+    TextView myPageUserName;
+    TextView mySchool;
 
     Button notice;
     Button version;
@@ -48,8 +48,8 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
         View v = inflater.inflate(R.layout.fragment_mypage, container, false);
 
-        my_page_user_name = (TextView) v.findViewById(R.id.my_page_user_name);  // 닉네임
-        my_school = (TextView) v.findViewById(R.id.my_school); // 학교
+        myPageUserName = (TextView) v.findViewById(R.id.my_page_user_name);  // 닉네임
+        mySchool = (TextView) v.findViewById(R.id.my_school); // 학교
 
         notice = (Button) v.findViewById(R.id.notice);  // 공지사항
         version = (Button) v.findViewById(R.id.version); // 앱 버전
@@ -71,8 +71,8 @@ public class MyPageFragment extends Fragment implements View.OnClickListener {
                     String nick = data.child("user_nick").getValue().toString();
                     String school = data.child("school").getValue().toString();
 
-                    my_page_user_name.setText(nick);
-                    my_school.setText(school);
+                    myPageUserName.setText(nick);
+                    mySchool.setText(school);
                 }
             }
 

@@ -58,9 +58,9 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         CardView cardView;
-        TextView post_title;
-        TextView post_content;
-        TextView post_nickname;
+        TextView postTitle;
+        TextView postContent;
+        TextView postNickname;
         TextView chatCount;
         Context context;
 
@@ -68,18 +68,18 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             super(itemView);
 
             cardView = (CardView) itemView.findViewById(R.id.post_card_view);
-            post_title = (TextView) itemView.findViewById(R.id.post_title);
-            post_content = (TextView) itemView.findViewById(R.id.post_content);
-            post_nickname = (TextView) itemView.findViewById(R.id.post_nickname);
+            postTitle = (TextView) itemView.findViewById(R.id.post_title);
+            postContent = (TextView) itemView.findViewById(R.id.post_content);
+            postNickname = (TextView) itemView.findViewById(R.id.post_nickname);
             chatCount = (TextView) itemView.findViewById(R.id.postchatCount);
             this.context = context;
 
         }
 
         public void setItem(Post post){
-            post_title.setText(post.getTitle());
-            post_content.setText(post.getContent());
-            post_nickname.setText(post.getUser_nick());
+            postTitle.setText(post.getTitle());
+            postContent.setText(post.getContent());
+            postNickname.setText(post.getUser_nick());
             chatCount.setText(String.valueOf(post.getComment_cnt()));
 
             cardView.setOnClickListener(new View.OnClickListener() {
