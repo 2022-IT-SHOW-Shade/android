@@ -113,12 +113,12 @@ public class PostDatailActivity extends AppCompatActivity {
                 String date = format1.format(post_date);
 
                 // 댓글 번호
-                String comm_num = random.ints(97, 122 + 1)
+                String commNum = random.ints(97, 122 + 1)
                         .limit(5)
                         .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
                         .toString();
 
-                addComment(comm_num, post_num, tel, user_comment, date);
+                addComment(commNum, post_num, tel, user_comment, date);
 
                 comment_et.setText("");
 
