@@ -3,6 +3,7 @@ package com.example.shade.view;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -12,6 +13,7 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -44,11 +46,6 @@ public class WritePostActivity extends AppCompatActivity {
     ImageButton btnBack;
 
     Random random = new Random();
-    final String r1 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-    final String r2 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-    final String r3 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-    final String r4 = String.valueOf((char) ((int) (random.nextInt(26))+65));
-    final String r5 = String.valueOf((char) ((int) (random.nextInt(26))+65));
 
     Date post_date;
     SimpleDateFormat format1;
@@ -88,6 +85,7 @@ public class WritePostActivity extends AppCompatActivity {
         });
 
         btnFinish.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.N)
             @Override
             public void onClick(View v) {
                 if(editTitle.getText().toString().equals("") && editContent.getText().toString().equals("")){
@@ -111,7 +109,10 @@ public class WritePostActivity extends AppCompatActivity {
                     String post_num = "";
                     if(intent_post_num == null) {
                         // 글 번호 랜덤 생성 (알파벳)
-                        post_num = (String.valueOf(r1 + r2 + r3 + r4 + r5)).toString();
+                        post_num = random.ints(97, 122 + 1)
+                                .limit(5)
+                                .collect(StringBuilder::new, StringBuilder::appendCodePoint, StringBuilder::append)
+                                .toString();
                     }else{
                         post_num = intent_post_num;
                     }
