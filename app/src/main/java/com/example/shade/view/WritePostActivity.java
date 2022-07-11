@@ -1,6 +1,6 @@
 package com.example.shade.view;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -101,7 +101,7 @@ public class WritePostActivity extends AppCompatActivity {
                     String title = editTitle.getText().toString();
                     String content = editContent.getText().toString();
 
-                    sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+                    sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
                     String nick = sharedPreferences.getString("inputNickName", null);
                     String tel = sharedPreferences.getString("inputTel", null);
 

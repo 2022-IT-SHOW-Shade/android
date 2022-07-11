@@ -9,7 +9,6 @@ public class Post {
     String date;
     String school;
     String user_nick;
-    long like_cnt;
     long comment_cnt;
     private boolean isSelected;
 
@@ -34,7 +33,6 @@ public class Post {
         this.title = title;
         this.content = content;
         this.user_nick = nickname;
-        this.like_cnt = like_cnt;
         this.comment_cnt = chat_cnt;
     }
 
@@ -42,7 +40,6 @@ public class Post {
         this.post_num = num;
         this.title = title;
         this.content = content;
-        this.like_cnt = like_cnt;
         this.comment_cnt = chat_cnt;
     }
 
@@ -84,14 +81,6 @@ public class Post {
 
     public void setDate(String date) {
         this.date = date;
-    }
-
-    public long getLike_cnt() {
-        return like_cnt;
-    }
-
-    public void setLike_cnt(long like_cnt) {
-        this.like_cnt = like_cnt;
     }
 
     public long getComment_cnt() {

@@ -1,6 +1,6 @@
 package com.example.shade.view;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -47,17 +47,24 @@ public class PostDatailActivity extends AppCompatActivity {
 
     private DatabaseReference databaseReference;
 
-    TextView detail_title, detail_nickname, detail_date, detail_content, detail_likeCount, detail_chatCount;
-    ImageButton btnback, btnComment;
+    TextView detail_title;
+    TextView detail_nickname;
+    TextView detail_date;
+    TextView detail_content;
+    TextView detail_chatCount;
+
+    ImageButton btnback;
+    ImageButton btnComment;
+
     ListView commentlist;
     EditText comment_et;
-
-    Random random = new Random();
 
     ArrayList<Comment> list = new ArrayList<>();
     CommentAdpater adpater;
 
     long comment_cnt = 0;
+
+    private Random random = new Random();
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -69,14 +76,13 @@ public class PostDatailActivity extends AppCompatActivity {
         Intent intent_page = getIntent();
         post_num = intent_page.getStringExtra("post_num");
 
-        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String tel = sharedPreferences.getString("inputTel", null);
 
         detail_title = (TextView) findViewById(R.id.detail_title);
         detail_nickname = (TextView) findViewById(R.id.detail_nickname);
         detail_date = (TextView) findViewById(R.id.detail_date);
         detail_content = (TextView) findViewById(R.id.detail_content);
-        // detail_likeCount = (TextView) findViewById(R.id.detail_likeCount);
         detail_chatCount = (TextView) findViewById(R.id.detail_chatCount);
         btnback = (ImageButton) findViewById(R.id.btnBackWrite);
         commentlist = (ListView) findViewById(R.id.commentlist);
@@ -103,6 +109,7 @@ public class PostDatailActivity extends AppCompatActivity {
                 SimpleDateFormat format1 = new SimpleDateFormat(format, Locale.getDefault());
                 String date = format1.format(post_date);
 
+                Random random = new Random();
                 // 댓글 번호
                 String r1 = String.valueOf((char) ((int) (random.nextInt(26))+65));
                 String r2 = String.valueOf((char) ((int) (random.nextInt(26))+65));
@@ -110,7 +117,7 @@ public class PostDatailActivity extends AppCompatActivity {
                 String r4 = String.valueOf((char) ((int) (random.nextInt(26))+65));
                 String r5 = String.valueOf((char) ((int) (random.nextInt(26))+65));
 
-                String comm_num = (String.valueOf(r1 + r2 + r3 + r4 + r5)).toString();
+                String comm_num = r1 + r2 + r3 + r4 + r5;
 
                 addComment(comm_num, post_num, tel, user_comment, date);
 
@@ -146,21 +153,18 @@ public class PostDatailActivity extends AppCompatActivity {
 
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
-                    //Log.w("FirebaseData", "getDetail" + post.toString());
 
                     // 각각의 데이터
                     String title = post.getTitle();
                     String nickname = post.getUser_nick();
                     String date = post.getDate();
                     String content = post.getContent();
-                   // long like_cnt = post.getLike_cnt();
                     long chat_cnt = post.getComment_cnt();
 
                     detail_title.setText(title);
                     detail_nickname.setText(nickname);
                     detail_date.setText(date);
                     detail_content.setText(content);
-                    // detail_likeCount.setText(String.valueOf(like_cnt));
                     detail_chatCount.setText(String.valueOf(chat_cnt));
                 }
             }
@@ -177,7 +181,6 @@ public class PostDatailActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if(snapshot.getValue(Comment.class) != null){
                     Comment comment = snapshot.getValue(Comment.class);
-                    //Log.w("FirebaseData", "getDetail" + comment.toString());
 
                     // 각각의 데이터
                     String comm = comment.getComment();
@@ -232,8 +235,6 @@ public class PostDatailActivity extends AppCompatActivity {
     public void addComment(String comm_num, String post_num, String tel, String user_comment, String date) {
         Comment comment = new Comment(post_num, tel, user_comment, date);
 
-        //databaseReference.child("comments").removeValue();
-
         mDatabase.child("comments").child(post_num).child(tel).child(comm_num).setValue(comment).addOnSuccessListener(new OnSuccessListener<Void>() {
             @Override
             public void onSuccess(Void unused) {
@@ -250,7 +251,6 @@ public class PostDatailActivity extends AppCompatActivity {
             public void onChildAdded(@NonNull DataSnapshot snapshot, @Nullable String previousChildName) {
                 if(snapshot.getValue(Post.class) != null){
                     Post post = snapshot.getValue(Post.class);
-                    //Log.w("FirebaseData", "getData" + post.toString());
 
                     if(post_num.equals(post.getPost_num())){
                         long comm_cnt = snapshot.getValue(Post.class).getComment_cnt() + 1;

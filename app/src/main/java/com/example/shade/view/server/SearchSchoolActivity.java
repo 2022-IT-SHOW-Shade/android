@@ -1,6 +1,6 @@
 package com.example.shade.view.server;
 
-import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -159,7 +159,7 @@ public class SearchSchoolActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
 
-        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String loginTel = sharedPreferences.getString("inputTel", null);
         String nickname = sharedPreferences.getString("inputNickName", null);
 

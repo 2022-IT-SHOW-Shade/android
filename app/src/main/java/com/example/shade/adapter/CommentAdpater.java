@@ -16,14 +16,15 @@ public class CommentAdpater extends BaseAdapter {
 
     ArrayList<Comment> listViewItemList = new ArrayList<>();
 
-    TextView nickname, comment;
+    TextView nickname;
+    TextView comment;
 
     public CommentAdpater(){
 
     }
 
-    public CommentAdpater(ArrayList<Comment> list){
-        listViewItemList = list;
+    public CommentAdpater(ArrayList<Comment> commentArrayList){
+        listViewItemList = commentArrayList;
     }
 
     @Override
@@ -44,7 +45,6 @@ public class CommentAdpater extends BaseAdapter {
     @Override
     public View getView(int position, View convertView, ViewGroup parent) {
 
-        final int pos = position;
         final Context context = parent.getContext();
 
         if(convertView == null){
@@ -55,10 +55,10 @@ public class CommentAdpater extends BaseAdapter {
         nickname = (TextView) convertView.findViewById(R.id.nickname);
         comment = (TextView) convertView.findViewById(R.id.comment);
 
-        Comment comment_list = listViewItemList.get(position);
+        Comment commentList = listViewItemList.get(position);
 
-        nickname.setText(comment_list.getNickname());
-        comment.setText(comment_list.getComment());
+        nickname.setText(commentList.getNickname());
+        comment.setText(commentList.getComment());
 
         return convertView;
     }

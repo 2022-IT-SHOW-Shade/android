@@ -1,7 +1,7 @@
 package com.example.shade.fragment;
 
-import android.app.Activity;
 import android.app.Dialog;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -36,7 +36,8 @@ import java.util.ArrayList;
 
 public class MyWriteFragment extends Fragment {
 
-    ImageButton btnWrite, btnDelete;
+    ImageButton btnWrite;
+    ImageButton btnDelete;
     CheckBox deleteCheck;
     RecyclerView contents_write;
 
@@ -47,8 +48,10 @@ public class MyWriteFragment extends Fragment {
 
     RecyclerDecoration recyclerDecoration;
 
-    String num, title, content;
-    long like_cnt, chat_cnt;
+    String num;
+    String title;
+    String content;
+    long chat_cnt;
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState){
@@ -70,7 +73,7 @@ public class MyWriteFragment extends Fragment {
         });
 
         // 내가 쓴 글 가져오기
-        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Activity.MODE_PRIVATE);
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("sharedPreferences", Context.MODE_PRIVATE);
         String tel = sharedPreferences.getString("inputTel", null);
 
         databaseReference = FirebaseDatabase.getInstance().getReference();
@@ -89,7 +92,6 @@ public class MyWriteFragment extends Fragment {
                          num = post.getPost_num();
                          title = post.getTitle();
                          content = post.getContent().split("\n")[0];
-                         // like_cnt = post.getLike_cnt();
                          chat_cnt = post.getComment_cnt();
 
                         respone.add(0, new Post(num, title, content, chat_cnt));
@@ -138,13 +140,13 @@ public class MyWriteFragment extends Fragment {
                     @Override
                     public void onClick(View v) {
                         Toast.makeText(getContext(), "대나무숲으로 이동합니다.", Toast.LENGTH_SHORT).show();
-                        dialog.dismiss();;
+                        dialog.dismiss();
                         Intent intent = new Intent(getActivity(), DeleteActivity.class);
                         String data = "";
                         for (int i = 0; i < respone.size(); i++) {
                             Post mPost = respone.get(i);
-                            if (mPost.isSelected() == true){
-                                data = mPost.getPost_num().toString();
+                            if (mPost.isSelected()){
+                                data = mPost.getPost_num();
                                 intent.putExtra("post_num", mPost.getPost_num());
                                 Log.d("test", "글번호 : " + data);
                                 databaseReference.child("posts").child(mPost.getPost_num()).removeValue();

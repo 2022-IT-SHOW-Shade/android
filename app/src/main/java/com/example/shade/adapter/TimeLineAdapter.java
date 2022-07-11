@@ -2,6 +2,7 @@ package com.example.shade.adapter;
 
 import android.content.Context;
 import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -27,7 +28,7 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
         this.context = context;
 
         for(Post str : listViewItemList){
-            System.out.println("Adapter : " + str);
+            Log.i("tag","Adapter : " + str);
         }
     }
 
@@ -57,7 +58,10 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
     static class ViewHolder extends RecyclerView.ViewHolder{
 
         CardView cardView;
-        TextView post_title, post_content, post_nickname, likeCount, chatCount;
+        TextView post_title;
+        TextView post_content;
+        TextView post_nickname;
+        TextView chatCount;
         Context context;
 
         public ViewHolder(@NonNull View itemView, Context context) {
@@ -67,7 +71,6 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             post_title = (TextView) itemView.findViewById(R.id.post_title);
             post_content = (TextView) itemView.findViewById(R.id.post_content);
             post_nickname = (TextView) itemView.findViewById(R.id.post_nickname);
-            // likeCount = (TextView) itemView.findViewById(R.id.postlikeCount);
             chatCount = (TextView) itemView.findViewById(R.id.postchatCount);
             this.context = context;
 
@@ -77,14 +80,11 @@ public class TimeLineAdapter extends RecyclerView.Adapter<TimeLineAdapter.ViewHo
             post_title.setText(post.getTitle());
             post_content.setText(post.getContent());
             post_nickname.setText(post.getUser_nick());
-            // likeCount.setText(String.valueOf(post.getLike_cnt()));
             chatCount.setText(String.valueOf(post.getComment_cnt()));
 
             cardView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    int mPosition = getAdapterPosition();
-
                     Intent intent = new Intent(context, PostDatailActivity.class);
                     intent.putExtra("post_num", post.getPost_num());
                     (context).startActivity(intent);
