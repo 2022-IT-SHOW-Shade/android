@@ -34,6 +34,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        
         <activity android:name=".view.userActivity.JoinActivity" />
         <activity android:name=".view.userActivity.LoginActivity" />
         <activity android:name=".view.server.SearchSchoolActivity"/>
