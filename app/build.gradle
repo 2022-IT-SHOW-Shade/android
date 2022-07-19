@@ -66,6 +66,7 @@ dependencies {
 
     implementation "androidx.swiperefreshlayout:swiperefreshlayout:1.1.0"
 
+    implementation group: 'de.svenkubiak', name: 'jBCrypt', version: '0.4.1'
 }
 
 sonarqube {
