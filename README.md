@@ -72,7 +72,7 @@ android {
 [김유나](https://github.com/U-and-Me) – s2005@e-mirim.hs.kr <br/>
 * 안드로이드 개발 (API 담당)
 
-<br><br><br>
+<br><br>
 
 ## ⚡How to contribute
 
