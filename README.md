@@ -74,15 +74,6 @@ android {
 
 <br><br><br>
 
-## ⚡How to contribute
-
-1. (<https://github.com/2022-IT-SHOW-Shade/android.git>)을 포크합니다.
-2. (`git checkout -b feature/branch-name`) 명령어로 새 브랜치를 만드세요.
-3. (`git commit -am 'Add some branch-name'`) 명령어로 커밋하세요.
-4. (`git push origin feature/branch-name`) 명령어로 브랜치에 푸시하세요. 
-5. PR을 보내주세요!
-
-<br/><br/>
 
 [![SonarCloud](https://sonarcloud.io/images/project_badges/sonarcloud-white.svg)](https://sonarcloud.io/summary/new_code?id=2022-IT-SHOW-Shade_android)
 
